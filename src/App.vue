@@ -1,36 +1,25 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Application</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <Tiles />
-    </v-main>
+    <component :is="layout">
+      <v-fade-transition mode="out-in">
+        <router-view :key="$route.fullPath" :layout.sync="layout" />
+      </v-fade-transition>
+    </component>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import Tiles from "./components/Tiles.vue";
 
 export default Vue.extend({
   name: "App",
 
-  components: {
-    Tiles
-  },
-
   data: () => ({
-    //
-  })
+    layout: "div"
+  }),
+
+  created() {
+    this.$vuetify.theme.dark = false;
+  }
 });
 </script>

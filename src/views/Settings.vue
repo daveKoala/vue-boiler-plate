@@ -1,21 +1,20 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <v-container>
+    <Tiles />
+  </v-container>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import Tiles from "@/components/Tiles.vue";
 export default Vue.extend({
-  name: "Home",
-  components: {
-    HelloWorld
-  },
+  name: "AppSettings" as string,
+  components: { Tiles },
   created() {
     this.$emit("update:layout", BasicLayout);
   }
 });
 </script>
+
+<style lang="scss" scoped></style>
