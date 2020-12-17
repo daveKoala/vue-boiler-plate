@@ -13,8 +13,7 @@ const state: AppState = {
 };
 
 const getters = {
-  appName: (state: AppState) =>
-    `${state.app.appName} (${process.env.VUE_APP_ENV || "x"})`
+  appName: (state: AppState) => state.app.appName
 };
 const mutations = {};
 

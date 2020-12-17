@@ -43,7 +43,7 @@ export default Vue.extend({
 
   computed: {
     applicationName(): string {
-      return this.$store.getters["App/appName"];
+      return `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`;
     }
   }
 });

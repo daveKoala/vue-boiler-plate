@@ -1,5 +1,18 @@
 <template>
   <v-list nav dense>
+    <v-list-item>
+      <v-list-item-content class="title white--text">
+        <v-list-item-title>
+          {{ applicationName }}
+        </v-list-item-title>
+        <v-list-item-subtitle class="title white--text">
+          {{ subtitle }}
+        </v-list-item-subtitle>
+      </v-list-item-content>
+    </v-list-item>
+
+    <v-divider></v-divider>
+
     <v-list-item
       v-for="([icon, text, to], i) in items"
       :key="i"
@@ -29,6 +42,17 @@ export default Vue.extend({
       ["mdi-information-outline", "About", "/about"],
       ["mdi-cog-outline", "Settings", "./settings"]
     ]
-  })
+  }),
+  computed: {
+    applicationName(): string {
+      return this.$store.getters["App/appName"];
+    },
+    subtitle(): string {
+      if (process.env.VUE_APP_ENV !== "production")
+        return process.env.VUE_APP_ENV;
+
+      return "";
+    }
+  }
 });
 </script>
