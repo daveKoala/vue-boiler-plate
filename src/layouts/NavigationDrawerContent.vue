@@ -39,6 +39,7 @@ export default Vue.extend({
   data: () => ({
     items: [
       ["mdi-home", "Home", "/"],
+      ["mdi-head-heart-outline", "Desires", "/desires"],
       ["mdi-information-outline", "About", "/about"],
       ["mdi-cog-outline", "Settings", "./settings"]
     ]

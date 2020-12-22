@@ -23,3 +23,11 @@ export default Vue.extend({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/styles/common.scss";
+
+.theme--light.v-application {
+  background-color: $AppBackgroundColor;
+}
+</style>
