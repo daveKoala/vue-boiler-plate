@@ -32,7 +32,7 @@
 import Vue from "vue";
 import NavigationDrawerContent from "@/layouts/NavigationDrawerContent.vue";
 export default Vue.extend({
-  name: "BAsicLayout" as string,
+  name: "BasicLayout" as string,
   components: {
     NavigationDrawerContent
   },

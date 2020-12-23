@@ -41,6 +41,7 @@ export default Vue.extend({
       ["mdi-home", "Home", "/"],
       ["mdi-head-heart-outline", "Desires", "/desires"],
       ["mdi-information-outline", "About", "/about"],
+      ["mdi-table-settings", "Table", "/funky"],
       ["mdi-cog-outline", "Settings", "./settings"]
     ]
   }),
