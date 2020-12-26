@@ -8,37 +8,37 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   {
     path: "/about",
     name: "About",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
     path: "/settings",
     name: "Settings",
     component: () =>
-      import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
+      import(/* webpackChunkName: "settings" */ "../views/Settings.vue")
   },
   {
     path: "/desires",
     name: "Desires",
     component: () =>
-      import(/* webpackChunkName: "desires" */ "../views/Desires.vue"),
+      import(/* webpackChunkName: "desires" */ "../views/Desires.vue")
   },
   {
     path: "/funky",
     name: "Table",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/FunkyTable.vue"),
+      import(/* webpackChunkName: "about" */ "../views/FunkyTable.vue")
   },
   {
     path: "/*",
     name: "Home",
-    component: Home,
-  },
+    component: Home
+  }
 ];
 
 const router = new VueRouter({

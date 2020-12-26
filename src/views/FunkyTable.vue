@@ -1,5 +1,5 @@
 <template>
-  <strata-table :headers="headers"/>
+  <strata-table :headers="headers" />
 </template>
 
 <script lang="ts">

@@ -1,34 +1,27 @@
 <template>
-  <v-container>
-    <div class="square-container">
-      <div class="content">
-        <v-btn
-          v-ripple="{ class: 'primary--text' }"
-          :to="item.to"
-          v-for="(item, index) in items"
-          :key="`squar-nav-${index}`"
-          class="ma-2"
-        >
-          <v-icon color="primary" x-large>{{ item.icon }}</v-icon>
-        </v-btn>
-      </div>
-    </div>
+  <v-container fluid>
+    <v-row no-gutters justify="space-around">
+      <v-btn
+        v-for="(item, index) in items"
+        :key="`squar-nav-${index}`"
+        v-ripple="{ class: 'primary--text' }"
+        :to="item.to"
+        class="ma-auto"
+      >
+        <v-icon color="primary" x-large>{{ item.icon }}</v-icon>
+      </v-btn>
+    </v-row>
   </v-container>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-interface NavItem {
-  id: string;
-  icon: string;
-  text: string;
-  to: string;
-  color: string;
-}
+import { NavigationItem } from "@/interfaces";
+
 export default Vue.extend({
   name: "SquareNavigation" as string,
   props: {
-    items: { type: Array as () => NavItem[], default: [] }
+    items: { type: Array as () => NavigationItem[], default: [] }
   }
 });
 </script>

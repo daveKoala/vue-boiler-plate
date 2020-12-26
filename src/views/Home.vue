@@ -38,6 +38,8 @@ import BasicLayout from "@/layouts/BasicLayout.vue";
 import Twitter from "@/components/Twitter.vue";
 import SquareNavigation from "@/components/SquareNavigation.vue";
 import Share from "@/components/Share.vue";
+import { NavigationItem } from "@/interfaces";
+
 export default Vue.extend({
   name: "Home",
   components: { Twitter, SquareNavigation, Share },
@@ -58,7 +60,7 @@ export default Vue.extend({
         to: "/settings",
         color: "red darken-2"
       }
-    ],
+    ] as NavigationItem[],
     cards: [
       {
         title: "Pre-fab homes",
