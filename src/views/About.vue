@@ -1,6 +1,25 @@
 <template>
-  <v-container>
-    <h1>This is an about page</h1>
+  <v-container fluid>
+    <v-card class="mx-auto my-12" max-width="374" height="100%">
+      <v-img
+        :src="require('../assets/desire_skill_knowledge.png')"
+        class="my-3"
+        contain
+        height="200"
+      />
+      <v-card-text class="text-justify">
+        <p>
+          The model above describes the influences on behavior changes found at
+          the intersection of the 3 circles.
+        </p>
+
+        <p>
+          The goal is not unconscious habits as that would be disingenuous
+          instead I want to equip users with tools that if practiced and
+          reflected upon would begin to embed positive habits.
+        </p>
+      </v-card-text>
+    </v-card>
   </v-container>
 </template>
 

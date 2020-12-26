@@ -20,7 +20,7 @@
       <NavigationDrawerContent />
     </v-navigation-drawer>
 
-    <v-main class="grey lighten-2">
+    <v-main class="white">
       <slot>
         <p>Put content here</p>
       </slot>

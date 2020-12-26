@@ -1,7 +1,6 @@
 <template>
   <v-container fluid>
     <SquareNavigation :items="squareNav" />
-
     <v-row dense>
       <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
         <v-card>
@@ -45,7 +44,13 @@ export default Vue.extend({
   components: { Twitter, SquareNavigation, Share },
   data: () => ({
     squareNav: [
-      { id: "home", icon: "mdi-home", text: "Home", to: "/", color: "red" },
+      {
+        id: "",
+        icon: "mdi-table-settings",
+        text: "Table",
+        to: "/funky",
+        color: ""
+      },
       {
         id: "desire",
         icon: "mdi-head-heart-outline",
@@ -54,10 +59,10 @@ export default Vue.extend({
         color: "red lighten-1"
       },
       {
-        id: "settings",
-        icon: "mdi-cog-outline",
-        text: "Settings",
-        to: "/settings",
+        id: "about",
+        icon: "mdi-information-outline",
+        text: "About",
+        to: "/about",
         color: "red darken-2"
       }
     ] as NavigationItem[],

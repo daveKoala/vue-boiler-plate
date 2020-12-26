@@ -1,12 +1,11 @@
 <template>
   <v-container fluid>
-    <v-row no-gutters justify="space-around">
+    <v-row justify="space-around">
       <v-btn
-        v-for="(item, index) in items"
+        v-for="(item, index) in navItems"
         :key="`squar-nav-${index}`"
         v-ripple="{ class: 'primary--text' }"
         :to="item.to"
-        class="ma-auto"
       >
         <v-icon color="primary" x-large>{{ item.icon }}</v-icon>
       </v-btn>
@@ -22,41 +21,50 @@ export default Vue.extend({
   name: "SquareNavigation" as string,
   props: {
     items: { type: Array as () => NavigationItem[], default: [] }
+  },
+  computed: {
+    navItems(): NavigationItem[] {
+      return this.items.filter((item: NavigationItem, index: number) => {
+        if (index <= 3) {
+          return item;
+        }
+      });
+    }
   }
 });
 </script>
 
 <style lang="scss" scoped>
-.square-container {
-  display: flex;
-  flex-wrap: wrap;
-}
+// .square-container {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
 
-.square {
-  position: relative;
-  flex-basis: calc(33.333% - 10px);
-  margin: 5px;
-  border: 1px solid;
-  box-sizing: border-box;
-}
+// .square {
+//   position: relative;
+//   flex-basis: calc(33.333% - 10px);
+//   margin: 5px;
+//   border: 1px solid;
+//   box-sizing: border-box;
+// }
 
-.square::before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
+// .square::before {
+//   content: "";
+//   display: block;
+//   padding-top: 100%;
+// }
 
-.square .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+// .square .content {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   width: 100%;
 
-  display: flex; /* added for centered text */
-  justify-content: center; /* added for centered text */
-  align-items: center; /* added for centered text */
-}
+//   display: flex; /* added for centered text */
+//   justify-content: center; /* added for centered text */
+//   align-items: center; /* added for centered text */
+// }
 
 /* setting min-width is necessary for the width to work */
 .v-btn {
