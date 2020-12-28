@@ -25,16 +25,20 @@
         <p>Put content here</p>
       </slot>
     </v-main>
+
+    <BottomNav />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import NavigationDrawerContent from "@/layouts/NavigationDrawerContent.vue";
+import BottomNav from "@/layouts/BottomNavigation.vue";
 export default Vue.extend({
   name: "BasicLayout" as string,
   components: {
-    NavigationDrawerContent
+    NavigationDrawerContent,
+    BottomNav
   },
 
   data: () => ({
