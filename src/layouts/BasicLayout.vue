@@ -1,12 +1,12 @@
 <template>
   <div>
-    <v-app-bar app color="transparent" class="white--text">
+    <v-app-bar app flat color="transparent" class="white--text">
       <v-app-bar-nav-icon
         @click="drawer = !drawer"
         class="white--text"
       ></v-app-bar-nav-icon>
 
-      <v-toolbar-title >{{ applicationName }}</v-toolbar-title>
+      <v-toolbar-title>{{ applicationName }}</v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -50,7 +50,8 @@ export default Vue.extend({
       const name =
         this.$route.name?.toLowerCase() === "home"
           ? `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`
-          : this.$route.name || `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`;
+          : this.$route.name ||
+            `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`;
 
       return name;
     }
