@@ -4,6 +4,7 @@ module.exports = {
     name: "skills-desire",
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "black",
-    workboxPluginMode: "GenerateSW"
+    workboxPluginMode: "GenerateSW",
+    orientation: "portrait"
   }
 };
