@@ -3,9 +3,10 @@
     app
     fixed
     grow
+    dark
     v-model="activeItem"
-    color="primary"
     class="pt-2"
+    id="bottom-nav"
   >
     <v-btn
       v-for="(item, index) in items"

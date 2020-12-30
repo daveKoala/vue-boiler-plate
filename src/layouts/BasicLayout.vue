@@ -1,26 +1,26 @@
 <template>
   <div>
-    <v-app-bar app color="orange darken-4" class="white--text">
+    <v-app-bar app color="transparent" class="white--text">
       <v-app-bar-nav-icon
         @click="drawer = !drawer"
         class="white--text"
       ></v-app-bar-nav-icon>
 
-      <v-toolbar-title>{{ applicationName }}</v-toolbar-title>
+      <v-toolbar-title >{{ applicationName }}</v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer
       v-model="drawer"
-      color="orange darken-4"
+      color="grey darken-4"
       fixed
       temporary
-      overlay-color="orange darken-4"
+      overlay-color="grey darken-4"
       overlay-opacity="0.5"
     >
       <NavigationDrawerContent />
     </v-navigation-drawer>
 
-    <v-main class="white">
+    <v-main class="">
       <slot>
         <p>Put content here</p>
       </slot>
@@ -47,7 +47,12 @@ export default Vue.extend({
 
   computed: {
     applicationName(): string {
-      return `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`;
+      const name =
+        this.$route.name?.toLowerCase() === "home"
+          ? `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`
+          : this.$route.name || `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`;
+
+      return name;
     }
   }
 });
@@ -55,4 +60,8 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import "@/assets/styles/common.scss";
+
+.v-toolbar__title {
+  text-transform: capitalize;
+}
 </style>

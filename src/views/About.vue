@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-card class="mx-auto my-12" max-width="374" height="100%">
+    <v-card height="100%">
       <v-img
         :src="require('../assets/desire_skill_knowledge.png')"
         class="my-3"
