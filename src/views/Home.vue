@@ -43,29 +43,29 @@ export default Vue.extend({
   name: "Home",
   components: { Twitter, SquareNavigation, Share },
   data: () => ({
-    squareNav: [
-      {
-        id: "",
-        icon: "mdi-table-settings",
-        text: "Table",
-        to: "/funky",
-        color: ""
-      },
-      {
-        id: "desire",
-        icon: "mdi-head-heart-outline",
-        text: "Desire",
-        to: "/desires",
-        color: "red lighten-1"
-      },
-      {
-        id: "about",
-        icon: "mdi-information-outline",
-        text: "About",
-        to: "/about",
-        color: "red darken-2"
-      }
-    ] as NavigationItem[],
+    // squareNav: [
+    //   {
+    //     id: "",
+    //     icon: "mdi-table-settings",
+    //     name: "Table",
+    //     to: "/funky",
+    //     color: ""
+    //   },
+    //   {
+    //     id: "desire",
+    //     icon: "mdi-head-heart-outline",
+    //     name: "Desire",
+    //     to: "/desires",
+    //     color: "red lighten-1"
+    //   },
+    //   {
+    //     id: "about",
+    //     icon: "mdi-information-outline",
+    //     name: "About",
+    //     to: "/about",
+    //     color: "red darken-2"
+    //   }
+    // ] as NavigationItem[],
     cards: [
       {
         title: "Pre-fab homes",
@@ -85,6 +85,15 @@ export default Vue.extend({
     ]
   }),
 
+  computed: {
+    squareNav(): NavigationItem[] {
+      return this.$store.getters["Navigation/collection"]([
+        "Table",
+        "Desire",
+        "About"
+      ]);
+    }
+  },
   created() {
     this.$emit("update:layout", BasicLayout);
   }

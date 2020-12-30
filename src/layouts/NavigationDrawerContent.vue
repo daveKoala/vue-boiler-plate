@@ -2,7 +2,7 @@
   <v-list nav dense>
     <v-list-item>
       <v-list-item-content class="title white--text">
-        <v-list-item-title>
+        <v-list-item-title >
           {{ applicationName }}
         </v-list-item-title>
         <v-list-item-subtitle class="title white--text">
@@ -14,7 +14,7 @@
     <v-divider></v-divider>
 
     <v-list-item
-      v-for="([icon, text, to], i) in items"
+      v-for="({ icon, name, to }, i) in items"
       :key="i"
       link
       :to="to"
@@ -26,26 +26,21 @@
       </v-list-item-icon>
 
       <v-list-item-content class="white--text">
-        <v-list-item-title>{{ text }}</v-list-item-title>
+        <v-list-item-title>{{ name }}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
   </v-list>
 </template>
 
 <script lang="ts">
+import { NavigationItem } from "@/interfaces";
 import Vue from "vue";
 export default Vue.extend({
   name: "NavigationDrawerContent",
-  data: () => ({
-    items: [
-      ["mdi-home", "Home", "/"],
-      ["mdi-head-heart-outline", "Desires", "/desires"],
-      ["mdi-information-outline", "About", "/about"],
-      ["mdi-table-settings", "Table", "/funky"],
-      ["mdi-cog-outline", "Settings", "./settings"]
-    ]
-  }),
   computed: {
+    items(): NavigationItem[] {
+      return this.$store.getters["Navigation/all"];
+    },
     applicationName(): string {
       return this.$store.getters["App/appName"];
     },
@@ -58,3 +53,7 @@ export default Vue.extend({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/styles/common.scss";
+</style>

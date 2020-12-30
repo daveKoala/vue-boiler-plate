@@ -64,5 +64,6 @@ export default Vue.extend({
 
 .v-toolbar__title {
   text-transform: capitalize;
+  font-weight: 600;
 }
 </style>

@@ -1,7 +1,7 @@
 export interface NavigationItem {
   id?: string;
   icon: string;
-  text: string;
+  name: string;
   to: string;
   color: string;
 }

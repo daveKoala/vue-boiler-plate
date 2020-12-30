@@ -9,13 +9,13 @@
     id="bottom-nav"
   >
     <v-btn
-      v-for="(item, index) in items"
+      v-for="({ to, name, icon, id }, index) in items"
       :key="`bottom-nav-${index}`"
-      :value="item.id"
-      :to="{ path: item.to }"
+      :value="id"
+      :to="{ path: to }"
     >
-      <span>{{ item.text }}</span>
-      <v-icon>{{ item.icon }}</v-icon>
+      <span>{{ name }}</span>
+      <v-icon>{{ icon }}</v-icon>
     </v-btn>
   </v-bottom-navigation>
 </template>
@@ -30,29 +30,11 @@ export default Vue.extend({
   }),
   computed: {
     items(): NavigationItem[] {
-      return [
-        {
-          id: "",
-          icon: "mdi-table-settings",
-          text: "Table",
-          to: "/funky",
-          color: ""
-        },
-        {
-          id: "desire",
-          icon: "mdi-head-heart-outline",
-          text: "Desire",
-          to: "/desires",
-          color: "red lighten-1"
-        },
-        {
-          id: "about",
-          icon: "mdi-information-outline",
-          text: "About",
-          to: "/about",
-          color: "red darken-2"
-        }
-      ];
+      return this.$store.getters["Navigation/collection"]([
+        "Home",
+        "Desire",
+        "About"
+      ]);
     }
   }
 });

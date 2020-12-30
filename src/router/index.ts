@@ -36,7 +36,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: "/*",
-    name: "Home",
+    name: "404",
     component: Home
   }
 ];
