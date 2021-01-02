@@ -2,7 +2,7 @@
   <v-list nav dense>
     <v-list-item>
       <v-list-item-content class="title white--text">
-        <v-list-item-title >
+        <v-list-item-title>
           {{ applicationName }}
         </v-list-item-title>
         <v-list-item-subtitle class="title white--text">

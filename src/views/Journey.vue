@@ -133,7 +133,7 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 export default Vue.extend({
   name: "Journey" as string,
-  components: { },
+  components: {},
   created() {
     this.$emit("update:layout", BasicLayout);
   }
