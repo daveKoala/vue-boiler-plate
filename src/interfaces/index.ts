@@ -5,3 +5,10 @@ export interface NavigationItem {
   to: string;
   color: string;
 }
+
+export interface Card {
+  id?: string;
+  src: string;
+  title: string;
+  flex: number;
+}

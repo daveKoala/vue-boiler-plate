@@ -17,6 +17,12 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
+    path: "/journey",
+    name: "Journey",
+    component: () =>
+      import(/* webpackChunkName: "journey" */ "../views/Journey.vue")
+  },
+  {
     path: "/settings",
     name: "Settings",
     component: () =>
@@ -32,7 +38,7 @@ const routes: Array<RouteConfig> = [
     path: "/funky",
     name: "Table",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/FunkyTable.vue")
+      import(/* webpackChunkName: "table" */ "../views/FunkyTable.vue")
   },
   {
     path: "/*",

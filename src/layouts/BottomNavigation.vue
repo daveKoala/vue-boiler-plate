@@ -32,6 +32,7 @@ export default Vue.extend({
     items(): NavigationItem[] {
       return this.$store.getters["Navigation/collection"]([
         "Home",
+        "Journey",
         "Desire",
         "About"
       ]);

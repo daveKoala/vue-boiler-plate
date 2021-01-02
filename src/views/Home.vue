@@ -3,28 +3,9 @@
     <SquareNavigation :items="squareNav" />
     <v-row dense>
       <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-        <v-card>
-          <v-img
-            :src="card.src"
-            class="white--text align-end"
-            gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            height="120px"
-          >
-            <v-card-title v-text="card.title"></v-card-title>
-          </v-img>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-
-            <v-btn icon>
-              <v-icon>mdi-bookmark</v-icon>
-            </v-btn>
-
-            <Share />
-          </v-card-actions>
-        </v-card>
+        <ArticleCard :card="card" />
       </v-col>
-      <v-col cols="12" xs="4" sm="6" v-for="n in 3" :key="`twiiter-${n}`">
+      <v-col cols="12" xs="4" sm="6" v-for="n in 3" :key="`twitter-${n}`">
         <Twitter />
       </v-col>
     </v-row>
@@ -36,36 +17,13 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import Twitter from "@/components/Twitter.vue";
 import SquareNavigation from "@/components/SquareNavigation.vue";
-import Share from "@/components/Share.vue";
-import { NavigationItem } from "@/interfaces";
+import ArticleCard from "@/components/ArticleCard.vue";
+import { NavigationItem, Card } from "@/interfaces";
 
 export default Vue.extend({
   name: "Home",
-  components: { Twitter, SquareNavigation, Share },
+  components: { Twitter, SquareNavigation, ArticleCard },
   data: () => ({
-    // squareNav: [
-    //   {
-    //     id: "",
-    //     icon: "mdi-table-settings",
-    //     name: "Table",
-    //     to: "/funky",
-    //     color: ""
-    //   },
-    //   {
-    //     id: "desire",
-    //     icon: "mdi-head-heart-outline",
-    //     name: "Desire",
-    //     to: "/desires",
-    //     color: "red lighten-1"
-    //   },
-    //   {
-    //     id: "about",
-    //     icon: "mdi-information-outline",
-    //     name: "About",
-    //     to: "/about",
-    //     color: "red darken-2"
-    //   }
-    // ] as NavigationItem[],
     cards: [
       {
         title: "Pre-fab homes",
@@ -82,14 +40,14 @@ export default Vue.extend({
         src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
         flex: 6
       }
-    ]
+    ] as Card[]
   }),
 
   computed: {
     squareNav(): NavigationItem[] {
       return this.$store.getters["Navigation/collection"]([
-        "Table",
-        "Desire",
+        // "Table",
+        "journey",
         "About"
       ]);
     }
