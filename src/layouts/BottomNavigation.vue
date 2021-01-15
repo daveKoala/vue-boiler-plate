@@ -32,9 +32,10 @@ export default Vue.extend({
     items(): NavigationItem[] {
       return this.$store.getters["Navigation/collection"]([
         "Home",
-        "Journey",
+        // "Journey",
         "Desire",
-        "About"
+        "About",
+        "QRScanner"
       ]);
     }
   }

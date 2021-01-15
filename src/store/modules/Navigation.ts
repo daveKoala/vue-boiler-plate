@@ -16,56 +16,63 @@ const state: NavigationState = {
         icon: "mdi-home",
         name: "Home",
         to: "/",
-        color: ""
+        color: "",
       },
       {
         id: "",
         icon: "mdi-table-settings",
         name: "Table",
         to: "/funky",
-        color: ""
+        color: "",
       },
       {
         id: "desire",
         icon: "mdi-head-heart-outline",
         name: "Desire",
         to: "/desires",
-        color: "red lighten-1"
+        color: "red lighten-1",
       },
       {
         id: "journey",
         icon: "mdi-map-marker",
         name: "Journey",
         to: "/journey",
-        color: "red darken-2"
+        color: "red darken-2",
       },
       {
         id: "about",
         icon: "mdi-information-outline",
         name: "About",
         to: "/about",
-        color: "red darken-2"
+        color: "red darken-2",
       },
       {
         id: "settings",
         icon: "mdi-cog-outline",
         name: "Setting",
         to: "/settings",
-        color: "red darken-2"
-      }
-    ]
-  }
+        color: "red darken-2",
+      },
+      {
+        id: "qr-scanner",
+        icon: "mdi-qrcode-scan",
+        name: "QRScanner",
+        to: "/qr-scanner",
+        color: "red darken-2",
+      },
+    ],
+  },
 };
 
 const getters = {
   collection: (state: NavigationState) => (collection: string[]) => {
-    return state.nav.navItems.filter(item =>
+    return state.nav.navItems.filter((item) =>
       collection.some(
-        col => item.name.toLowerCase() === col.toLocaleLowerCase()
+        (col) => item.name.toLowerCase() === col.toLocaleLowerCase()
       )
     );
   },
-  all: (state: NavigationState) => state.nav.navItems
+  all: (state: NavigationState) => state.nav.navItems,
 };
 const mutations = {};
 
@@ -73,5 +80,5 @@ export default {
   namespaced: true,
   state,
   getters,
-  mutations
+  mutations,
 };

@@ -41,6 +41,12 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "table" */ "../views/FunkyTable.vue")
   },
   {
+    path: "/qr-scanner",
+    name: "QR Scanner",
+    component: () =>
+      import(/* webpackChunkName: "qrscanner" */ "../views/QRScanner.vue")
+  },
+  {
     path: "/*",
     name: "404",
     component: Home
