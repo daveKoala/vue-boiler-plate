@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <span class="white--text">{{ qrData }}</span>
     <qrcode-stream @decode="onDecode"></qrcode-stream>
   </v-container>
 </template>
@@ -13,15 +12,12 @@ import { QrcodeStream } from "vue-qrcode-reader";
 export default Vue.extend({
   name: "QRScanner" as string,
   components: { QrcodeStream },
-  data: () => ({
-    qrData: "sdssdsds",
-  }),
   created() {
     this.$emit("update:layout", BasicLayout);
   },
   methods: {
-    onDecode(r: string) {
-      this.qrData = r;
+    onDecode(str: string) {
+      this.$router.push({ name: "content", params: { id: str } });
     },
   },
 });

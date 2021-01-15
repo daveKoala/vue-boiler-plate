@@ -35,7 +35,7 @@ export default Vue.extend({
         // "Journey",
         "Desire",
         "About",
-        "QRScanner"
+        "qr"
       ]);
     }
   }

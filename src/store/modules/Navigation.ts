@@ -54,9 +54,9 @@ const state: NavigationState = {
         color: "red darken-2",
       },
       {
-        id: "qr-scanner",
+        id: "qr",
         icon: "mdi-qrcode-scan",
-        name: "QRScanner",
+        name: "Scan",
         to: "/qr-scanner",
         color: "red darken-2",
       },
@@ -68,7 +68,7 @@ const getters = {
   collection: (state: NavigationState) => (collection: string[]) => {
     return state.nav.navItems.filter((item) =>
       collection.some(
-        (col) => item.name.toLowerCase() === col.toLocaleLowerCase()
+        (col) => item.id.toLowerCase() === col.toLocaleLowerCase()
       )
     );
   },

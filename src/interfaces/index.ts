@@ -1,5 +1,5 @@
 export interface NavigationItem {
-  id?: string;
+  id: string;
   icon: string;
   name: string;
   to: string;
