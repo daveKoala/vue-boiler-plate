@@ -23,6 +23,7 @@
         </p>
       </v-card-text>
       <v-card-actions>
+        <go-back />
         <v-spacer></v-spacer>
         <Share />
       </v-card-actions>
@@ -34,12 +35,12 @@
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import Share from "@/components/Share.vue";
-
+import GoBack from "@/components/GoBack.button.vue";
 export default Vue.extend({
   name: "Content",
   created() {
     this.$emit("update:layout", BasicLayout);
   },
-  components: { Share }
+  components: { Share, GoBack }
 });
 </script>

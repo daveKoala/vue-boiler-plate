@@ -4,7 +4,7 @@
       <v-timeline-item color="purple lighten-2" fill-dot small right>
         <v-card>
           <v-card-title class="purple lighten-2">
-            <v-icon dark size="42" class="mr-4">
+            <v-icon :dark="$store.getters['App/dark']" size="42" class="mr-4">
               mdi-magnify
             </v-icon>
             <h2 class="display-1 white--text font-weight-light">
@@ -34,7 +34,7 @@
             <h2 class="display-1 mr-4 white--text font-weight-light">
               Title 2
             </h2>
-            <v-icon dark size="42">
+            <v-icon :dark="$store.getters['App/dark']" size="42">
               mdi-home-outline
             </v-icon>
           </v-card-title>
@@ -56,7 +56,7 @@
       <v-timeline-item color="cyan lighten-1" fill-dot small right>
         <v-card>
           <v-card-title class="cyan lighten-1">
-            <v-icon class="mr-4" dark size="42">
+            <v-icon class="mr-4" :dark="$store.getters['App/dark']" size="42">
               mdi-email-outline
             </v-icon>
             <h2 class="display-1 white--text font-weight-light">
@@ -80,7 +80,7 @@
             <h2 class="display-1 mr-4 white--text font-weight-light">
               Title 4
             </h2>
-            <v-icon dark size="42">
+            <v-icon :dark="$store.getters['App/dark']" size="42">
               mdi-account-multiple-outline
             </v-icon>
           </v-card-title>
@@ -105,7 +105,7 @@
       <v-timeline-item color="green lighten-1" fill-dot small right>
         <v-card>
           <v-card-title class="green lighten-1">
-            <v-icon class="mr-4" dark size="42">
+            <v-icon class="mr-4" :dark="$store.getters['App/dark']" size="42">
               mdi-phone-in-talk
             </v-icon>
             <h2 class="display-1 white--text font-weight-light">

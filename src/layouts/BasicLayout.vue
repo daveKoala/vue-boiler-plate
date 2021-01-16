@@ -1,21 +1,16 @@
 <template>
   <div>
-    <v-app-bar app flat dark class="white--text">
-      <v-app-bar-nav-icon
-        @click="drawer = !drawer"
-        class="white--text"
-      ></v-app-bar-nav-icon>
+    <v-app-bar app flat :dark="$store.getters['App/dark']">
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>{{ applicationName }}</v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer
       v-model="drawer"
-      color="grey darken-4"
       fixed
       temporary
-      overlay-color="grey darken-4"
-      overlay-opacity="0.5"
+      :dark="$store.getters['App/dark']"
     >
       <NavigationDrawerContent />
     </v-navigation-drawer>

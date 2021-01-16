@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire-dark">
     <component :is="layout">
       <v-fade-transition mode="out-in">
         <router-view :key="$route.fullPath" :layout.sync="layout" />

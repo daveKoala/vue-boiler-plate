@@ -3,10 +3,10 @@
     app
     fixed
     grow
-    dark
     v-model="activeItem"
     class="pt-2"
     id="bottom-nav"
+    :dark="$store.getters['App/dark']"
   >
     <v-btn
       v-for="({ to, name, icon, id }, index) in items"
@@ -32,10 +32,8 @@ export default Vue.extend({
     items(): NavigationItem[] {
       return this.$store.getters["Navigation/collection"]([
         "Home",
-        // "Journey",
-        "Desire",
-        "About",
-        "qr"
+        "toolbox",
+        "Journey",
       ]);
     }
   }

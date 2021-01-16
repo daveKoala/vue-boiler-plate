@@ -1,15 +1,22 @@
 <template>
   <v-dialog v-model="dialog" width="500" transition="dialog-bottom-transition">
     <template v-slot:activator="{ on, attrs }">
-      <v-btn icon color="green lighten-2" dark v-bind="attrs" v-on="on" x-small>
+      <v-btn
+        icon
+        color="green lighten-2"
+        :dark="$store.getters['App/dark']"
+        v-bind="attrs"
+        v-on="on"
+        x-small
+      >
         <v-icon>mdi-binoculars</v-icon>
       </v-btn>
     </template>
 
     <v-card>
-      <v-toolbar dark color="primary">
+      <v-toolbar :dark="$store.getters['App/dark']" color="primary">
         <v-spacer></v-spacer>
-        <v-btn icon dark @click="dialog = false">
+        <v-btn icon :dark="$store.getters['App/dark']" @click="dialog = false">
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-toolbar>

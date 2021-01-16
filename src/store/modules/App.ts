@@ -10,13 +10,13 @@ interface AppState {
 const state: AppState = {
   app: {
     appName: "Knowledge/Skills",
-    dark: true,
+    dark: true
   }
 };
 
 const getters = {
   appName: (state: AppState) => state.app.appName,
-  dark: (state: AppState) => state.app.dark,
+  dark: (state: AppState) => state.app.dark
 };
 const mutations = {
   toggleDark(state: AppState) {

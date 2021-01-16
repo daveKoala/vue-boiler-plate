@@ -7,6 +7,7 @@
           <v-btn v-on:click="clearHistory" x-small>Clear</v-btn>
         </v-list-item-action>
       </v-list-item>
+      <v-divider></v-divider>
       <v-list-item>
         <v-list-item-content>Dark or light theme</v-list-item-content>
         <v-list-item-action>
@@ -30,8 +31,8 @@ export default Vue.extend({
       },
       get() {
         return this.$store.getters["App/dark"];
-      },
-    },
+      }
+    }
   },
   created() {
     this.$emit("update:layout", BasicLayout);
@@ -39,8 +40,8 @@ export default Vue.extend({
   methods: {
     clearHistory(): void {
       this.$store.commit("History/clearQRHistory");
-    },
-  },
+    }
+  }
 });
 </script>
 

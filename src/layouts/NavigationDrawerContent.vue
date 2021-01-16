@@ -1,11 +1,11 @@
 <template>
   <v-list nav dense>
     <v-list-item>
-      <v-list-item-content class="title white--text">
+      <v-list-item-content>
         <v-list-item-title>
           {{ applicationName }}
         </v-list-item-title>
-        <v-list-item-subtitle class="title white--text">
+        <v-list-item-subtitle>
           {{ subtitle }}
         </v-list-item-subtitle>
       </v-list-item-content>
@@ -18,14 +18,13 @@
       :key="i"
       link
       :to="to"
-      class="white--text"
       active-class="blue--text darken4"
     >
       <v-list-item-icon>
-        <v-icon color="white">{{ icon }}</v-icon>
+        <v-icon>{{ icon }}</v-icon>
       </v-list-item-icon>
 
-      <v-list-item-content class="white--text">
+      <v-list-item-content>
         <v-list-item-title>{{ name }}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
