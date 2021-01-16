@@ -72,6 +72,10 @@ const getters = {
     }
     return res;
   },
+
+  byID: (state: ContentState) => (id: string) => {
+    return state.content.articles.filter(article => article.id === id);
+  }
 };
 
 const mutations = {};

@@ -1,16 +1,10 @@
 <template>
   <v-container fluid>
     <v-card class="mx-auto my-12">
-      <v-img
-        src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-        height="250"
-      >
-        <v-card-title class="white--text mt-8">{{
-          $route.params.id
-        }}</v-card-title>
+      <v-img :src="card.src" height="250">
+        <v-card-title class="white--text mt-8">{{ card.title }}</v-card-title>
       </v-img>
       <v-card-text class="text-justify">
-        {{ $route.params.id }}
         <p>
           The model above describes the influences on behavior changes found at
           the intersection of the 3 circles.
@@ -39,12 +33,18 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import Share from "@/components/Share.vue";
 import GoBack from "@/components/GoBack.button.vue";
+import { Card } from "@/interfaces";
 export default Vue.extend({
   name: "Content",
   created() {
     this.$emit("update:layout", BasicLayout);
   },
   components: { Share, GoBack },
+  computed: {
+    card(): Card {
+      return this.$store.getters["Content/byID"](this.$route.params.id);
+    },
+  },
   methods: {
     bookmark(): void {
       // Replace with bookmark component
