@@ -26,16 +26,19 @@ export default Vue.extend({
   data: () => ({
     cards: [
       {
+        id: "Pre-fab homes",
         title: "Pre-fab homes",
         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
         flex: 12
       },
       {
+        id: "Favorite road trips",
         title: "Favorite road trips",
         src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
         flex: 6
       },
       {
+        id: "Best airlines",
         title: "Best airlines",
         src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
         flex: 6

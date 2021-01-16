@@ -10,8 +10,12 @@
     </v-img>
 
     <v-card-actions>
-      <ArticleContent :content="card" />
+      <v-btn link icon :to="content()" color="blue" small>
+        <v-icon>mdi-book-open-page-variant-outline</v-icon>
+      </v-btn>
       <v-spacer></v-spacer>
+
+      <ArticlePreview :content="card" />
 
       <v-btn icon>
         <v-icon>mdi-bookmark</v-icon>
@@ -25,15 +29,20 @@
 <script lang="ts">
 import Vue from "vue";
 import Share from "@/components/Share.vue";
-import ArticleContent from "@/components/ArticleContent.vue";
+import ArticlePreview from "@/components/ArticlePreview.vue";
 import { Card } from "@/interfaces";
 
 export default Vue.extend({
   name: "ArticleCard" as string,
-  components: { Share, ArticleContent },
+  components: { Share, ArticlePreview },
   props: {
-    card: { type: Object as () => Card, required: true }
-  }
+    card: { type: Object as () => Card, required: true },
+  },
+  methods: {
+    content(): { name: string; params: { id: string } } {
+      return { name: "content", params: { id: this.card.id } };
+    },
+  },
 });
 </script>
 

@@ -7,7 +7,7 @@ export interface NavigationItem {
 }
 
 export interface Card {
-  id?: string;
+  id: string;
   src: string;
   title: string;
   flex: number;

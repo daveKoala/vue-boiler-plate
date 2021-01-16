@@ -1,8 +1,8 @@
 <template>
   <v-dialog v-model="dialog" width="500" transition="dialog-bottom-transition">
     <template v-slot:activator="{ on, attrs }">
-      <v-btn icon color="green lighten-2" dark v-bind="attrs" v-on="on">
-        <v-icon>mdi-book-open-blank-variant</v-icon>
+      <v-btn icon color="green lighten-2" dark v-bind="attrs" v-on="on" x-small>
+        <v-icon>mdi-binoculars</v-icon>
       </v-btn>
     </template>
 
@@ -48,7 +48,7 @@ import Share from "@/components/Share.vue";
 import { Card } from "@/interfaces";
 
 export default Vue.extend({
-  name: "ArticleContent" as string,
+  name: "ArticlePreview" as string,
   components: { Share },
   props: {
     content: { type: Object as () => Card, required: true }

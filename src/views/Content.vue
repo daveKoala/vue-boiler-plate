@@ -22,6 +22,10 @@
           reflected upon would begin to embed positive habits.
         </p>
       </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <Share />
+      </v-card-actions>
     </v-card>
   </v-container>
 </template>
@@ -29,11 +33,13 @@
 <script lang="ts">
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
+import Share from "@/components/Share.vue";
 
 export default Vue.extend({
   name: "Content",
   created() {
     this.$emit("update:layout", BasicLayout);
   },
+  components: { Share },
 });
 </script>
