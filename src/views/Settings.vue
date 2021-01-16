@@ -1,19 +1,46 @@
 <template>
   <v-container>
-    <Tiles />
+    <v-list>
+      <v-list-item>
+        <v-list-item-content>Clear history</v-list-item-content>
+        <v-list-item-action>
+          <v-btn v-on:click="clearHistory" x-small>Clear</v-btn>
+        </v-list-item-action>
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-content>Dark or light theme</v-list-item-content>
+        <v-list-item-action>
+          <v-switch v-model="dark"></v-switch>
+        </v-list-item-action>
+      </v-list-item>
+    </v-list>
   </v-container>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
-import Tiles from "@/components/Tiles.vue";
 export default Vue.extend({
   name: "AppSettings" as string,
-  components: { Tiles },
+  components: {},
+  computed: {
+    dark: {
+      set() {
+        this.$store.commit("App/toggleDark");
+      },
+      get() {
+        return this.$store.getters["App/dark"];
+      },
+    },
+  },
   created() {
     this.$emit("update:layout", BasicLayout);
-  }
+  },
+  methods: {
+    clearHistory(): void {
+      this.$store.commit("History/clearQRHistory");
+    },
+  },
 });
 </script>
 

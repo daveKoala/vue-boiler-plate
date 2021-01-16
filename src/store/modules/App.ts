@@ -1,5 +1,6 @@
 interface App {
   appName: string;
+  dark: boolean;
 }
 
 interface AppState {
@@ -8,14 +9,20 @@ interface AppState {
 
 const state: AppState = {
   app: {
-    appName: "Knowledge/Skills"
+    appName: "Knowledge/Skills",
+    dark: true,
   }
 };
 
 const getters = {
-  appName: (state: AppState) => state.app.appName
+  appName: (state: AppState) => state.app.appName,
+  dark: (state: AppState) => state.app.dark,
 };
-const mutations = {};
+const mutations = {
+  toggleDark(state: AppState) {
+    state.app.dark = !state.app.dark;
+  }
+};
 
 export default {
   namespaced: true,
