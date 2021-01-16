@@ -6,19 +6,10 @@
 
       <v-tab-item>
         <v-container fluid>
-          <v-row no-gutters>
-            <template v-for="n in 4">
-              <v-col :key="n">
-                <v-card class="pa-2" outlined tile>
-                  Column
-                </v-card>
-              </v-col>
-              <v-responsive
-                v-if="n === 2"
-                :key="`width-${n}`"
-                width="100%"
-              ></v-responsive>
-            </template>
+          <v-row dense>
+            <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
+              <ArticleCard :card="card" />
+            </v-col>
           </v-row>
         </v-container>
       </v-tab-item>
@@ -33,10 +24,18 @@
 <script lang="ts">
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
+import ArticleCard from "@/components/ArticleCard.vue";
+import { Card } from "@/interfaces";
 export default Vue.extend({
   name: "ToolKit",
+  components: { ArticleCard },
   created() {
     this.$emit("update:layout", BasicLayout);
   },
+  computed: {
+    cards(): Card[] {
+      return this.$store.getters["Content/all"];
+    }
+  }
 });
 </script>

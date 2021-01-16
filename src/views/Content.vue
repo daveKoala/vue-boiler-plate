@@ -25,6 +25,9 @@
       <v-card-actions>
         <go-back />
         <v-spacer></v-spacer>
+        <v-btn icon :click="bookmark">
+          <v-icon color="green">mdi-bookmark</v-icon>
+        </v-btn>
         <Share />
       </v-card-actions>
     </v-card>
@@ -41,6 +44,11 @@ export default Vue.extend({
   created() {
     this.$emit("update:layout", BasicLayout);
   },
-  components: { Share, GoBack }
+  components: { Share, GoBack },
+  methods: {
+    bookmark(): void {
+      // Replace with bookmark component
+    },
+  },
 });
 </script>

@@ -11,4 +11,6 @@ export interface Card {
   src: string;
   title: string;
   flex: number;
+  read: Date;
+  bookmarked: boolean;
 }
