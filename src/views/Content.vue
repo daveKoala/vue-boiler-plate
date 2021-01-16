@@ -40,6 +40,6 @@ export default Vue.extend({
   created() {
     this.$emit("update:layout", BasicLayout);
   },
-  components: { Share },
+  components: { Share }
 });
 </script>

@@ -8,12 +8,12 @@ interface HistoryState {
 
 const state: HistoryState = {
   history: {
-    qrHistory: [],
-  },
+    qrHistory: []
+  }
 };
 
 const getters = {
-  QRHistory: (state: HistoryState) => state.history.qrHistory,
+  QRHistory: (state: HistoryState) => state.history.qrHistory
 };
 const mutations = {
   addQRHistory(state: HistoryState, str: string) {
@@ -30,5 +30,5 @@ export default {
   state,
   getters,
   mutations,
-  actions,
+  actions
 };

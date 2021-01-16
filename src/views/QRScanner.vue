@@ -44,7 +44,7 @@ export default Vue.extend({
   computed: {
     qrHistory() {
       return this.$store.getters["History/QRHistory"];
-    },
+    }
   },
   methods: {
     onDecode(str: string): void {
@@ -53,8 +53,8 @@ export default Vue.extend({
     },
     clearHistory(): void {
       this.$store.commit("History/clearQRHistory");
-    },
-  },
+    }
+  }
 });
 </script>
 

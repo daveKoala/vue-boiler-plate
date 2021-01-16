@@ -36,13 +36,13 @@ export default Vue.extend({
   name: "ArticleCard" as string,
   components: { Share, ArticlePreview },
   props: {
-    card: { type: Object as () => Card, required: true },
+    card: { type: Object as () => Card, required: true }
   },
   methods: {
     content(): { name: string; params: { id: string } } {
       return { name: "content", params: { id: this.card.id } };
-    },
-  },
+    }
+  }
 });
 </script>
 
