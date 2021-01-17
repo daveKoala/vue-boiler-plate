@@ -31,7 +31,7 @@
             ></v-rating>
 
             <v-spacer></v-spacer>
-            <Share />
+            <Share :linkParam="item.id" />
           </v-card-actions>
         </v-expansion-panel-content>
       </v-expansion-panel>

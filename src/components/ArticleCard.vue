@@ -17,7 +17,7 @@
 
       <bookmark-button :id="card.id" :status="card.bookmarked" />
 
-      <Share />
+      <Share :linkParam="card.id" />
     </v-card-actions>
   </v-card>
 </template>

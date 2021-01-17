@@ -43,7 +43,7 @@
         <v-btn icon>
           <v-icon>mdi-bookmark</v-icon>
         </v-btn>
-        <Share />
+        <Share :linkParam="content.id" />
       </v-card-actions>
     </v-card>
   </v-dialog>

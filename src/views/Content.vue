@@ -1,16 +1,12 @@
 <template>
   <v-container fluid>
     <v-card class="mx-auto my-12">
-      <v-img
-        src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-        height="250"
-      >
+      <v-img :src="card.src" height="250">
         <v-card-title class="white--text mt-8">{{
           $route.params.id
         }}</v-card-title>
       </v-img>
       <v-card-text class="text-justify">
-        {{ card }}
         <p>
           The model above describes the influences on behavior changes found at
           the intersection of the 3 circles.
@@ -28,7 +24,7 @@
 
         <bookmark-button :id="card.id" :status="card.bookmarked" />
 
-        <Share />
+        <Share :linkParam="card.id" />
       </v-card-actions>
     </v-card>
   </v-container>
@@ -50,7 +46,7 @@ export default Vue.extend({
   computed: {
     card(): Card {
       return this.$store.getters["Content/byID"](this.$route.params.id);
-    }
-  }
+    },
+  },
 });
 </script>

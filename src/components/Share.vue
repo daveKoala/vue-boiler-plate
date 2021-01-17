@@ -47,21 +47,27 @@
 import Vue from "vue";
 export default Vue.extend({
   name: "ShareDialog" as string,
+  props: {
+    linkParam: { type: String, default: "" },
+  },
   data: () => ({
     copied: false,
     dialog: false,
-    link: "https://g.co/kgs/nkrK43/bbc"
   }),
-
+  computed: {
+    link(): string {
+      return `${process.env.VUE_APP_LINK_BASE_URL}/content/${this.linkParam}`;
+    },
+  },
   methods: {
-    copy() {
+    copy(): void {
       navigator.clipboard.writeText(this.link);
       this.copied = true;
       setTimeout(() => {
         this.copied = false;
       }, 2500);
-    }
-  }
+    },
+  },
 });
 </script>
 
