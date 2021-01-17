@@ -24,7 +24,6 @@ export default Vue.extend({
   name: "Home",
   components: { Twitter, SquareNavigation, ArticleCard },
 
-
   computed: {
     squareNav(): NavigationItem[] {
       return this.$store.getters["Navigation/collection"]([
@@ -34,7 +33,7 @@ export default Vue.extend({
       ]);
     },
     cards(): Card[] {
-      return this.$store.getters["Content/random"](4);
+      return this.$store.getters["Content/bookmarked"];
     }
   },
   created() {

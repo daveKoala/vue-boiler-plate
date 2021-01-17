@@ -33,7 +33,7 @@ export default Vue.extend({
       return this.$store.getters["Navigation/collection"]([
         "Home",
         "toolbox",
-        "Journey",
+        "Journey"
       ]);
     }
   }

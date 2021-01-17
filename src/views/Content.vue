@@ -1,10 +1,16 @@
 <template>
   <v-container fluid>
     <v-card class="mx-auto my-12">
-      <v-img :src="card.src" height="250">
-        <v-card-title class="white--text mt-8">{{ card.title }}</v-card-title>
+      <v-img
+        src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
+        height="250"
+      >
+        <v-card-title class="white--text mt-8">{{
+          $route.params.id
+        }}</v-card-title>
       </v-img>
       <v-card-text class="text-justify">
+        {{ card }}
         <p>
           The model above describes the influences on behavior changes found at
           the intersection of the 3 circles.
@@ -19,9 +25,9 @@
       <v-card-actions>
         <go-back />
         <v-spacer></v-spacer>
-        <v-btn icon :click="bookmark">
-          <v-icon color="green">mdi-bookmark</v-icon>
-        </v-btn>
+
+        <bookmark-button :id="card.id" :status="card.bookmarked" />
+
         <Share />
       </v-card-actions>
     </v-card>
@@ -33,22 +39,18 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import Share from "@/components/Share.vue";
 import GoBack from "@/components/GoBack.button.vue";
+import BookmarkButton from "@/components/Bookmark.button.vue";
 import { Card } from "@/interfaces";
 export default Vue.extend({
   name: "Content",
   created() {
     this.$emit("update:layout", BasicLayout);
   },
-  components: { Share, GoBack },
+  components: { Share, GoBack, BookmarkButton },
   computed: {
     card(): Card {
       return this.$store.getters["Content/byID"](this.$route.params.id);
-    },
-  },
-  methods: {
-    bookmark(): void {
-      // Replace with bookmark component
-    },
-  },
+    }
+  }
 });
 </script>

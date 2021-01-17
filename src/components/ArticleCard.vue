@@ -15,9 +15,7 @@
       </v-btn>
       <v-spacer></v-spacer>
 
-      <v-btn icon :click="bookmark">
-        <v-icon :color="card.bookmarked ? 'green' : ''">mdi-bookmark</v-icon>
-      </v-btn>
+      <bookmark-button :id="card.id" :status="card.bookmarked" />
 
       <Share />
     </v-card-actions>
@@ -27,13 +25,14 @@
 <script lang="ts">
 import Vue from "vue";
 import Share from "@/components/Share.vue";
+import BookmarkButton from "@/components/Bookmark.button.vue";
 import { Card } from "@/interfaces";
 
 export default Vue.extend({
   name: "ArticleCard" as string,
-  components: { Share },
+  components: { Share, BookmarkButton },
   props: {
-    card: { type: Object as () => Card, required: true },
+    card: { type: Object as () => Card, required: true }
   },
   methods: {
     content(): { name: string; params: { id: string } } {
@@ -41,8 +40,8 @@ export default Vue.extend({
     },
     bookmark(): void {
       this.card.bookmarked = !this.card.bookmarked;
-    },
-  },
+    }
+  }
 });
 </script>
 

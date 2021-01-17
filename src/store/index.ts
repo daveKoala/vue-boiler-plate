@@ -15,6 +15,6 @@ export default new Vuex.Store({
     App,
     Navigation,
     History,
-    Content,
-  },
+    Content
+  }
 });

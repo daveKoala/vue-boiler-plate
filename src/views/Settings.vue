@@ -9,6 +9,13 @@
       </v-list-item>
       <v-divider></v-divider>
       <v-list-item>
+        <v-list-item-content>Clear bookmarks</v-list-item-content>
+        <v-list-item-action>
+          <v-btn v-on:click="clearBookmarks" x-small>Clear</v-btn>
+        </v-list-item-action>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list-item>
         <v-list-item-content>Dark or light theme</v-list-item-content>
         <v-list-item-action>
           <v-switch v-model="dark"></v-switch>
@@ -40,6 +47,9 @@ export default Vue.extend({
   methods: {
     clearHistory(): void {
       this.$store.commit("History/clearQRHistory");
+    },
+    clearBookmarks(): void {
+      this.$store.commit("Content/clearBookmarks");
     }
   }
 });

@@ -17,7 +17,7 @@ const state: ContentState = {
         src: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
         flex: 6,
         bookmarked: false,
-        read: new Date("2020-12-12"),
+        read: new Date("2020-12-12")
       },
       {
         id: "parallax",
@@ -25,36 +25,36 @@ const state: ContentState = {
         src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
         flex: 6,
         bookmarked: false,
-        read: new Date("2020-10-12"),
+        read: new Date("2020-10-12")
       },
       {
-        id: "Pre-fab homes",
+        id: "Pre-fab-homes",
         title: "Pre-fab homes",
         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
         flex: 6,
         bookmarked: false,
-        read: new Date("2020-10-12"),
+        read: new Date("2020-10-12")
       },
       {
-        id: "Favorite road trips",
+        id: "Favorite-road-trips",
         title: "Favorite road trips",
         src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
         flex: 6,
 
         bookmarked: true,
-        read: new Date("2021-01-12"),
+        read: new Date("2021-01-12")
       },
       {
-        id: "Best airlines",
+        id: "Best-airlines",
         title: "Best airlines",
         src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
         flex: 6,
 
         bookmarked: false,
-        read: new Date("2020-10-12"),
-      },
-    ],
-  },
+        read: new Date("2020-10-12")
+      }
+    ]
+  }
 };
 
 const getters = {
@@ -74,11 +74,27 @@ const getters = {
   },
 
   byID: (state: ContentState) => (id: string) => {
-    return state.content.articles.filter(article => article.id === id);
-  }
+    return state.content.articles.filter(article => article.id === id)[0];
+  },
+
+  bookmarked: (state: ContentState) =>
+    state.content.articles.filter(article => article.bookmarked === true)
 };
 
-const mutations = {};
+const mutations = {
+  bookmark(state: ContentState, id: string) {
+    state.content.articles.map(article => {
+      if (article.id === id) {
+        article.bookmarked = !article.bookmarked;
+      }
+    });
+  },
+  clearBookmarks(state: ContentState) {
+    state.content.articles.map(article => {
+      article.bookmarked = false;
+    });
+  }
+};
 const actions = {};
 
 export default {
@@ -86,5 +102,5 @@ export default {
   state,
   getters,
   mutations,
-  actions,
+  actions
 };
