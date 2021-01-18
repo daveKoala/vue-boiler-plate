@@ -91,49 +91,17 @@ export default Vue.extend({
     icons: {
       mdiAccount: "mdi-home",
       mdiPencil: "mdi-home",
-      mdiShareVariant: "mdi-share-variant-outline"
+      mdiShareVariant: "mdi-share-variant-outline",
     },
-    items: [
-      {
-        id: "1a",
-        title: "Give feedback to team members",
-        body: "xxx xxxxx xxxxxx x x x x x",
-        rating: 0,
-        selected: false
-      },
-      {
-        id: "2a",
-        title: "Manage team members proformance",
-        body: "xxx xxxxx xxxxxx x x x x x",
-        rating: 0,
-        selected: false
-      },
-      {
-        id: "3a",
-        title: "Team member(s) life outside work effecting thier proformance",
-        body: "xxx xxxxx xxxxxx x x x x x",
-        rating: 0,
-        selected: false
-      },
-      {
-        id: "4a",
-        title: "Building trust",
-        body: "xxx xxxxx xxxxxx x x x x x",
-        rating: 0,
-        selected: false
-      },
-      {
-        id: "5a",
-        title: "Letting go and giving responsibility to others",
-        body: "xxx xxxxx xxxxxx x x x x x",
-        rating: 0,
-        selected: false
-      }
-    ],
     rating: 0,
-    selected: false
+    selected: false,
   }),
 
+  computed: {
+    items() {
+      return this.$store.getters["Desire/all"];
+    },
+  },
   methods: {
     isSelected(index: number, item: { selected: boolean }): boolean {
       if (!this.panel.some(i => i === index)) {
@@ -143,8 +111,8 @@ export default Vue.extend({
         item.selected = true;
         return true;
       }
-    }
-  }
+    },
+  },
 });
 </script>
 

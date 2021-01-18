@@ -35,7 +35,7 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import Share from "@/components/Share.vue";
 import GoBack from "@/components/GoBack.button.vue";
-import BookmarkButton from "@/components/Bookmark.button.vue";
+import BookmarkButton from "@/components/Article/Bookmark.button.vue";
 import { Card } from "@/interfaces";
 export default Vue.extend({
   name: "Content",

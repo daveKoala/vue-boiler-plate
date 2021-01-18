@@ -4,6 +4,7 @@ import App from "./modules/App";
 import Navigation from "./modules/Navigation";
 import History from "./modules/History";
 import Content from "./modules/Content";
+import Desire from "./modules/Desire";
 
 Vue.use(Vuex);
 
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     App,
     Navigation,
     History,
-    Content
-  }
+    Content,
+    Desire
+  },
 });

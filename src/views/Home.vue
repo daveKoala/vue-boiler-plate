@@ -17,7 +17,7 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import Twitter from "@/components/Twitter.vue";
 import SquareNavigation from "@/components/SquareNavigation.vue";
-import ArticleCard from "@/components/ArticleCard.vue";
+import ArticleCard from "@/components/Article/ArticleCard.vue";
 import { NavigationItem, Card } from "@/interfaces";
 
 export default Vue.extend({

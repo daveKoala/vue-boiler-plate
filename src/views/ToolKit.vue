@@ -24,7 +24,7 @@
 <script lang="ts">
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
-import ArticleCard from "@/components/ArticleCard.vue";
+import ArticleCard from "@/components/Article/ArticleCard.vue";
 import { Card } from "@/interfaces";
 export default Vue.extend({
   name: "ToolKit",
