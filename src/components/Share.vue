@@ -48,16 +48,16 @@ import Vue from "vue";
 export default Vue.extend({
   name: "ShareDialog" as string,
   props: {
-    linkParam: { type: String, default: "" },
+    linkParam: { type: String, default: "" }
   },
   data: () => ({
     copied: false,
-    dialog: false,
+    dialog: false
   }),
   computed: {
     link(): string {
       return `${process.env.VUE_APP_LINK_BASE_URL}/content/${this.linkParam}`;
-    },
+    }
   },
   methods: {
     copy(): void {
@@ -66,8 +66,8 @@ export default Vue.extend({
       setTimeout(() => {
         this.copied = false;
       }, 2500);
-    },
-  },
+    }
+  }
 });
 </script>
 

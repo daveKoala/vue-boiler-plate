@@ -91,16 +91,16 @@ export default Vue.extend({
     icons: {
       mdiAccount: "mdi-home",
       mdiPencil: "mdi-home",
-      mdiShareVariant: "mdi-share-variant-outline",
+      mdiShareVariant: "mdi-share-variant-outline"
     },
     rating: 0,
-    selected: false,
+    selected: false
   }),
 
   computed: {
     items() {
       return this.$store.getters["Desire/all"];
-    },
+    }
   },
   methods: {
     isSelected(index: number, item: { selected: boolean }): boolean {
@@ -111,8 +111,8 @@ export default Vue.extend({
         item.selected = true;
         return true;
       }
-    },
-  },
+    }
+  }
 });
 </script>
 

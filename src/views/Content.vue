@@ -46,7 +46,7 @@ export default Vue.extend({
   computed: {
     card(): Card {
       return this.$store.getters["Content/byID"](this.$route.params.id);
-    },
-  },
+    }
+  }
 });
 </script>
