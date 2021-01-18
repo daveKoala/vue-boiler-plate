@@ -17,7 +17,8 @@ const state: ContentState = {
         src: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
         flex: 6,
         bookmarked: false,
-        read: new Date("2020-12-12")
+        read: new Date("2020-12-12"),
+        isNew: true,
       },
       {
         id: "parallax",
@@ -25,7 +26,7 @@ const state: ContentState = {
         src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
         flex: 6,
         bookmarked: false,
-        read: new Date("2020-10-12")
+        read: new Date("2020-10-12"),
       },
       {
         id: "Pre-fab-homes",
@@ -33,7 +34,8 @@ const state: ContentState = {
         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
         flex: 6,
         bookmarked: false,
-        read: new Date("2020-10-12")
+        read: new Date("2020-10-12"),
+        isNew: true,
       },
       {
         id: "Favorite-road-trips",
@@ -42,7 +44,8 @@ const state: ContentState = {
         flex: 6,
 
         bookmarked: true,
-        read: new Date("2021-01-12")
+        read: new Date("2021-01-12"),
+        isNew: true,
       },
       {
         id: "Best-airlines",
@@ -51,10 +54,10 @@ const state: ContentState = {
         flex: 6,
 
         bookmarked: false,
-        read: new Date("2020-10-12")
-      }
-    ]
-  }
+        read: new Date("2020-10-12"),
+      },
+    ],
+  },
 };
 
 const getters = {

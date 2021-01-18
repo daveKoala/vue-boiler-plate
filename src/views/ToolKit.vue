@@ -7,7 +7,14 @@
       <v-tab-item>
         <v-container fluid>
           <v-row dense>
-            <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
+            <v-col
+              v-for="card in cards"
+              :key="card.title"
+              :lg="3"
+              :md="4"
+              :sm="6"
+              :cols="card.flex"
+            >
               <ArticleCard :card="card" />
             </v-col>
           </v-row>
@@ -35,7 +42,7 @@ export default Vue.extend({
   computed: {
     cards(): Card[] {
       return this.$store.getters["Content/all"];
-    }
-  }
+    },
+  },
 });
 </script>

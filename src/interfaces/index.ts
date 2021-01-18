@@ -13,4 +13,5 @@ export interface Card {
   flex: number;
   read: Date;
   bookmarked: boolean;
+  isNew?: boolean;
 }

@@ -2,6 +2,7 @@
   <v-container fluid>
     <v-card class="mx-auto my-12">
       <v-img :src="card.src" height="250">
+        <new-article :card="card" large />
         <v-card-title class="white--text mt-8">{{
           $route.params.id
         }}</v-card-title>
@@ -36,17 +37,18 @@ import BasicLayout from "@/layouts/BasicLayout.vue";
 import Share from "@/components/Share.vue";
 import GoBack from "@/components/GoBack.button.vue";
 import BookmarkButton from "@/components/Article/Bookmark.button.vue";
+import NewArticle from "@/components/Article/NewArticle.badge.vue";
 import { Card } from "@/interfaces";
 export default Vue.extend({
   name: "Content",
   created() {
     this.$emit("update:layout", BasicLayout);
   },
-  components: { Share, GoBack, BookmarkButton },
+  components: { Share, GoBack, BookmarkButton, NewArticle },
   computed: {
     card(): Card {
       return this.$store.getters["Content/byID"](this.$route.params.id);
-    }
-  }
+    },
+  },
 });
 </script>

@@ -6,6 +6,7 @@
       gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
       height="120px"
     >
+    <new-article :card="card" />
       <v-card-title v-text="card.title"></v-card-title>
     </v-img>
 
@@ -26,11 +27,12 @@
 import Vue from "vue";
 import Share from "@/components/Share.vue";
 import BookmarkButton from "@/components/Article/Bookmark.button.vue";
+import NewArticle from "@/components/Article/NewArticle.badge.vue";
 import { Card } from "@/interfaces";
 
 export default Vue.extend({
   name: "ArticleCard" as string,
-  components: { Share, BookmarkButton },
+  components: { Share, BookmarkButton, NewArticle },
   props: {
     card: { type: Object as () => Card, required: true }
   },

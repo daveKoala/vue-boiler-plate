@@ -1,14 +1,32 @@
 <template>
   <v-container fluid>
     <SquareNavigation :items="squareNav" />
-    <v-row dense>
-      <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-        <ArticleCard :card="card" />
-      </v-col>
-      <v-col cols="12" xs="4" sm="6" v-for="n in 3" :key="`twitter-${n}`">
-        <Twitter />
-      </v-col>
-    </v-row>
+    <v-sheet class="mx-auto" max-width="1280" color="transparent">
+      <v-row dense justify="center">
+        <v-col
+          v-for="card in cards"
+          :key="card.title"
+          :lg="3"
+          :md="4"
+          :sm="6"
+          :cols="card.flex"
+        >
+          <ArticleCard :card="card" />
+        </v-col>
+      </v-row>
+      <v-row dense justify="center">
+        <v-col
+          cols="6"
+          :lg="3"
+          :md="4"
+          :sm="6"
+          v-for="n in 3"
+          :key="`twitter-${n}`"
+        >
+          <Twitter />
+        </v-col>
+      </v-row>
+    </v-sheet>
   </v-container>
 </template>
 
@@ -29,15 +47,15 @@ export default Vue.extend({
       return this.$store.getters["Navigation/collection"]([
         // "Table",
         "journey",
-        "About"
+        "About",
       ]);
     },
     cards(): Card[] {
       return this.$store.getters["Content/bookmarked"];
-    }
+    },
   },
   created() {
     this.$emit("update:layout", BasicLayout);
-  }
+  },
 });
 </script>
