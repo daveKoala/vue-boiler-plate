@@ -16,9 +16,11 @@
     </v-navigation-drawer>
 
     <v-main class="">
+      <v-sheet class="mx-auto" max-width="1280" color="transparent">
       <slot>
         <p>Put content here</p>
       </slot>
+      </v-sheet>
     </v-main>
 
     <BottomNav />

@@ -19,6 +19,8 @@
             <th>Year</th>
             <th>ISBN-13</th>
             <th>ISBN-10</th>
+            <th>ISBN-20</th>
+            <th>ISBN-30</th>
           </tr>
         </thead>
         <tbody>
@@ -28,12 +30,16 @@
             <td>1605</td>
             <td>9783125798502</td>
             <td>3125798507</td>
+            <td>3125798507</td>
+            <td>3125798507</td>
           </tr>
           <tr>
             <th scope="row">Gabrielle-Suzanne Barbot de Villeneuve</th>
             <td>La Belle et la Bête</td>
             <td>1740</td>
             <td>9781910880067</td>
+            <td>191088006X</td>
+            <td>191088006X</td>
             <td>191088006X</td>
           </tr>
           <tr>
@@ -45,12 +51,16 @@
             <td>1763</td>
             <td>9781330454862</td>
             <td>1330454863</td>
+            <td>1330454863</td>
+            <td>1330454863</td>
           </tr>
           <tr>
             <th scope="row">Mary Shelley</th>
             <td>Frankenstein; or, The Modern Prometheus</td>
             <td>1818</td>
             <td>9781530278442</td>
+            <td>1530278449</td>
+            <td>1530278449</td>
             <td>1530278449</td>
           </tr>
           <tr>
@@ -59,12 +69,16 @@
             <td>1851</td>
             <td>9781530697908</td>
             <td>1530697905</td>
+            <td>1530697905</td>
+            <td>1530697905</td>
           </tr>
           <tr>
             <th scope="row">Emma Dorothy Eliza Nevitte Southworth</th>
             <td>The Hidden Hand</td>
             <td>1888</td>
             <td>9780813512969</td>
+            <td>0813512964</td>
+            <td>0813512964</td>
             <td>0813512964</td>
           </tr>
           <tr>
@@ -73,6 +87,8 @@
             <td>1925</td>
             <td>9780743273565</td>
             <td>0743273567</td>
+            <td>0743273567</td>
+            <td>0743273567</td>
           </tr>
           <tr>
             <th scope="row">George Orwell</th>
@@ -80,12 +96,16 @@
             <td>1948</td>
             <td>9780451524935</td>
             <td>0451524934</td>
+            <td>0451524934</td>
+            <td>0451524934</td>
           </tr>
           <tr>
             <th scope="row">Nnedi Okorafor</th>
             <td>Who Fears Death</td>
             <td>2010</td>
             <td>9780756406691</td>
+            <td>0756406692</td>
+            <td>0756406692</td>
             <td>0756406692</td>
           </tr>
         </tbody>
