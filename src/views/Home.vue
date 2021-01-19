@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
-    <SquareNavigation :items="squareNav" />
     <v-sheet class="mx-auto" max-width="1280" color="transparent">
+      <square-navigation :names="['home', 'journey', 'toolkit']" />
       <v-row dense justify="center">
         <v-col
           v-for="card in cards"
@@ -40,19 +40,12 @@ import { NavigationItem, Card } from "@/interfaces";
 
 export default Vue.extend({
   name: "Home",
-  components: { Twitter, SquareNavigation, ArticleCard },
+  components: { Twitter, ArticleCard, SquareNavigation },
 
   computed: {
-    squareNav(): NavigationItem[] {
-      return this.$store.getters["Navigation/collection"]([
-        // "Table",
-        "journey",
-        "About"
-      ]);
-    },
     cards(): Card[] {
       return this.$store.getters["Content/bookmarked"];
-    }
+    },
   },
   created() {
     this.$emit("update:layout", BasicLayout);

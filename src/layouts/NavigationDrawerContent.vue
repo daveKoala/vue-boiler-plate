@@ -14,14 +14,14 @@
     <v-divider></v-divider>
 
     <v-list-item
-      v-for="({ icon, name, to }, i) in items"
+      v-for="({ meta, name, path }, i) in items"
       :key="i"
       link
-      :to="to"
+      :to="path"
       active-class="blue--text darken4"
     >
       <v-list-item-icon>
-        <v-icon>{{ icon }}</v-icon>
+        <v-icon>{{ meta.icon }}</v-icon>
       </v-list-item-icon>
 
       <v-list-item-content>
@@ -32,13 +32,13 @@
 </template>
 
 <script lang="ts">
-import { NavigationItem } from "@/interfaces";
+// import { NavigationItem } from "@/interfaces";
 import Vue from "vue";
 export default Vue.extend({
   name: "NavigationDrawerContent",
   computed: {
-    items(): NavigationItem[] {
-      return this.$store.getters["Navigation/all"];
+    items(): unknown {
+      return this.$router.options.routes?.filter(route => route?.meta?.icon);
     },
     applicationName(): string {
       return this.$store.getters["App/appName"];

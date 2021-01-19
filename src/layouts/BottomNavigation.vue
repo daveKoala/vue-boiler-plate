@@ -9,34 +9,41 @@
     :dark="$store.getters['App/dark']"
   >
     <v-btn
-      v-for="({ to, name, icon, id }, index) in items"
+      v-for="({ path, name, meta }, index) in items"
       :key="`bottom-nav-${index}`"
-      :value="id"
-      :to="{ path: to }"
+      :value="name"
+      :to="{ path }"
     >
       <span>{{ name }}</span>
-      <v-icon>{{ icon }}</v-icon>
+      <v-icon>{{ meta.icon }}</v-icon>
     </v-btn>
   </v-bottom-navigation>
 </template>
 
 <script lang="ts">
-import { NavigationItem } from "@/interfaces";
 import Vue from "vue";
+import { RouteConfig } from "vue-router";
 export default Vue.extend({
   name: "BottomNavigation" as string,
   data: () => ({
-    activeItem: "top"
+    activeItem: "top",
   }),
   computed: {
-    items(): NavigationItem[] {
-      return this.$store.getters["Navigation/collection"]([
-        "Home",
-        "toolbox",
-        "Journey"
-      ]);
-    }
-  }
+    items(): RouteConfig[] {
+      const lists = ["Home", "toolkit", "Settings"];
+      const navItems = [] as RouteConfig[];
+      lists.forEach((str: string) => {
+        const strLowerCase = str.toLowerCase();
+        const index = this.$router.options.routes?.findIndex(
+          (item) => item.name?.toLowerCase() === strLowerCase
+        ) as number;
+        if (index !== -1 && this.$router.options.routes) {
+          navItems.push(this.$router.options.routes[index]);
+        }
+      });
+      return navItems;
+    },
+  },
 });
 </script>
 

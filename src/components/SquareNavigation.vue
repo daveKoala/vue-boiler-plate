@@ -2,12 +2,12 @@
   <v-container fluid>
     <v-row justify="space-around">
       <v-btn
-        v-for="({ to, icon }, index) in navItems"
+        v-for="({ path, meta }, index) in items"
         :key="`square-nav-${index}`"
         v-ripple="{ class: 'primary--text' }"
-        :to="to"
+        :to="path"
       >
-        <v-icon color="primary" x-large>{{ icon }}</v-icon>
+        <v-icon color="primary" x-large>{{ meta.icon }}</v-icon>
       </v-btn>
     </v-row>
   </v-container>
@@ -15,22 +15,30 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { NavigationItem } from "@/interfaces";
+import { RouteConfig } from "vue-router";
 
 export default Vue.extend({
   name: "SquareNavigation" as string,
   props: {
-    items: { type: Array as () => NavigationItem[], default: [] }
+    names: { type: Array as () => string[], default: () => [] },
   },
   computed: {
-    navItems(): NavigationItem[] {
-      return this.items.filter((item: NavigationItem, index: number) => {
-        if (index <= 3) {
-          return item;
+    items(): RouteConfig[] {
+      const navItems = [] as RouteConfig[];
+
+      this.names.forEach((str: string) => {
+        const strLowerCase = str.toLowerCase();
+        const index = this.$router.options.routes?.findIndex(
+          (item) => item.name?.toLowerCase() === strLowerCase
+        ) as number;
+
+        if (index !== -1 && this.$router.options.routes) {
+          navItems.push(this.$router.options.routes[index]);
         }
       });
-    }
-  }
+      return navItems;
+    },
+  },
 });
 </script>
 
@@ -41,6 +49,7 @@ export default Vue.extend({
   width: 72px;
   height: 72px;
   min-height: 72px;
+  margin: 4px;
 }
 /* removes grey hover effect */
 .v-btn::before {
