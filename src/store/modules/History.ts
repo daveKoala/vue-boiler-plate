@@ -13,13 +13,13 @@ const state: HistoryState = {
 };
 
 const getters = {
-  QRHistory: (state: HistoryState) => state.history.qrHistory,
+  QRHistory: (state: HistoryState): string[] => state.history.qrHistory,
 };
 const mutations = {
-  addQRHistory(state: HistoryState, str: string) {
+  addQRHistory(state: HistoryState, str: string): void {
     state.history.qrHistory.push(str);
   },
-  clearQRHistory(state: HistoryState) {
+  clearQRHistory(state: HistoryState): void {
     state.history.qrHistory = [];
   },
 };

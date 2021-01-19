@@ -67,7 +67,7 @@ const mutations = {
   addReview: (
     state: DesiresState,
     { id, value }: { id: string; value: number }
-  ) => {
+  ): void => {
     state.desire.collection.map((desire) => {
       if (desire.id === id) {
         desire.review.push({ date: new Date().toUTCString(), value });
@@ -76,7 +76,7 @@ const mutations = {
   },
 };
 const getters = {
-  all: (state: DesiresState) => state.desire.collection,
+  all: (state: DesiresState): Desire[] => state.desire.collection,
 };
 export default {
   namespaced: true,

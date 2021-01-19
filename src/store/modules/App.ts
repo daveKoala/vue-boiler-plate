@@ -1,7 +1,11 @@
+interface TabItem {
+  tabName: string;
+  value: number | null;
+}
 interface App {
   appName: string;
   dark: boolean;
-  tabs: { tabName: string; value: number | null }[];
+  tabs: TabItem[];
 }
 
 interface AppState {
@@ -17,16 +21,19 @@ const state: AppState = {
 };
 
 const getters = {
-  appName: (state: AppState) => state.app.appName,
-  dark: (state: AppState) => state.app.dark,
-  tab: (state: AppState) => (tabName: string) =>
+  appName: (state: AppState): string => state.app.appName,
+  dark: (state: AppState): boolean => state.app.dark,
+  tab: (state: AppState) => (tabName: string): TabItem =>
     state.app.tabs.filter((tab) => tab.tabName === tabName)[0],
 };
 const mutations = {
-  toggleDark(state: AppState) {
+  toggleDark(state: AppState): void {
     state.app.dark = !state.app.dark;
   },
-  tab(state: AppState, payload: { tabName: string; value: number | null }) {
+  tab(
+    state: AppState,
+    payload: { tabName: string; value: number | null }
+  ): void {
     state.app.tabs.map((tab) => {
       if (tab.tabName == payload.tabName) {
         tab.value = payload.value || 0;

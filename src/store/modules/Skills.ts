@@ -52,7 +52,7 @@ const mutations = {
   addReflections: (
     state: SkillsState,
     { id, value }: { id: string; value: number }
-  ) => {
+  ): void => {
     state.skills.collection.map((skill) => {
       if (skill.id === id) {
         skill.reflections.push({
@@ -63,7 +63,7 @@ const mutations = {
     });
   },
 
-  bookmark: (state: SkillsState, id: string) => {
+  bookmark: (state: SkillsState, id: string): void => {
     state.skills.collection.map((skill) => {
       if (skill.id === id) {
         skill.bookmarked = !skill.bookmarked;
@@ -73,7 +73,7 @@ const mutations = {
 };
 
 const getters = {
-  all: (state: SkillsState) => state.skills.collection,
+  all: (state: SkillsState): Skill[] => state.skills.collection,
   byId: (state: SkillsState) => (id: string): Skill | null =>
     state.skills.collection.filter((skill) => skill.id === id)[0] || null,
 };

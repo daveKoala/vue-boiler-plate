@@ -114,14 +114,20 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+interface Data {
+  items: unknown[];
+}
+
+export default Vue.extend({
   name: "TableWithFixedColumn",
-  data: () => ({
+  data: (): Data => ({
     items: [],
   }),
   computed: {
-    cols() {
+    cols(): unknown[] {
       const cols = [];
       for (let i = 1; i <= 20; i++) {
         cols.push({
@@ -133,7 +139,7 @@ export default {
       return cols;
     },
   },
-};
+});
 </script>
 <style>
 table {

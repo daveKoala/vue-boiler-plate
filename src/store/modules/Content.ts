@@ -61,9 +61,9 @@ const state: ContentState = {
 };
 
 const getters = {
-  all: (state: ContentState) => state.content.articles,
+  all: (state: ContentState): Card[] => state.content.articles,
 
-  random: (state: ContentState) => (num: number) => {
+  random: (state: ContentState) => (num: number): Card[] => {
     const res = [];
     for (let i = 0; i < num; ) {
       const random = Math.floor(Math.random() * state.content.articles.length);
@@ -76,23 +76,23 @@ const getters = {
     return res;
   },
 
-  byID: (state: ContentState) => (id: string) => {
+  byID: (state: ContentState) => (id: string): Card => {
     return state.content.articles.filter((article) => article.id === id)[0];
   },
 
-  bookmarked: (state: ContentState) =>
+  bookmarked: (state: ContentState): Card[] =>
     state.content.articles.filter((article) => article.bookmarked === true),
 };
 
 const mutations = {
-  bookmark(state: ContentState, id: string) {
+  bookmark(state: ContentState, id: string): void {
     state.content.articles.map((article) => {
       if (article.id === id) {
         article.bookmarked = !article.bookmarked;
       }
     });
   },
-  clearBookmarks(state: ContentState) {
+  clearBookmarks(state: ContentState): void {
     state.content.articles.map((article) => {
       article.bookmarked = false;
     });
