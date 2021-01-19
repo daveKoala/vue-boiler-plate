@@ -15,3 +15,15 @@ export interface Card {
   bookmarked: boolean;
   isNew?: boolean;
 }
+
+export interface Skill {
+  id: string;
+  reflections: { date: string; value: number }[];
+  practice: number;
+  name: string;
+  subTitle: string;
+  blurb: string;
+  content: string;
+  bookmarked: boolean;
+  src?: string;
+}

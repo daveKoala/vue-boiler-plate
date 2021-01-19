@@ -6,7 +6,7 @@
 
       <v-tab-item>
         <v-container fluid>
-          <v-row dense>
+          <v-row dense justify="center">
             <v-col
               v-for="card in cards"
               :key="card.title"
@@ -22,7 +22,7 @@
       </v-tab-item>
 
       <v-tab-item>
-        <v-container fluid> some thing her </v-container>
+        <skills-tab />
       </v-tab-item>
     </v-tabs>
   </v-container>
@@ -32,10 +32,11 @@
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import ArticleCard from "@/components/Article/ArticleCard.vue";
+import SkillsTab from "@/views/Toolkit/Skills/Skills.tab.vue";
 import { Card } from "@/interfaces";
 export default Vue.extend({
-  name: "ToolKit",
-  components: { ArticleCard },
+  name: "Toolkit",
+  components: { ArticleCard, SkillsTab },
   created() {
     this.$emit("update:layout", BasicLayout);
   },
