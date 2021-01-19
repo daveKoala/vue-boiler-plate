@@ -1,6 +1,11 @@
 <template>
   <v-container fluid>
-    <v-tabs background-color="white" color="deep-purple accent-4" right>
+    <v-tabs
+      background-color="white"
+      color="deep-purple accent-4"
+      right
+      v-model="tabIndex"
+    >
       <v-tab>Knowledge</v-tab>
       <v-tab>Skills</v-tab>
 
@@ -32,7 +37,7 @@
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import ArticleCard from "@/components/Article/ArticleCard.vue";
-import SkillsTab from "@/views/Toolkit/Skills/Skills.tab.vue";
+import SkillsTab from "@/views/Toolkit/Skills.tab.vue";
 import { Card } from "@/interfaces";
 export default Vue.extend({
   name: "Toolkit",
@@ -43,6 +48,14 @@ export default Vue.extend({
   computed: {
     cards(): Card[] {
       return this.$store.getters["Content/all"];
+    },
+    tabIndex: {
+      set(value: number | null): void {
+        this.$store.commit("App/tab", { tabName: "toolkit", value });
+      },
+      get(): number | null {
+        return this.$store.getters["App/tab"]("toolkit").value || null;
+      }
     }
   }
 });

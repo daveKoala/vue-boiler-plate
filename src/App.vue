@@ -20,10 +20,10 @@ export default Vue.extend({
 
   created() {
     this.$vuetify.theme.dark = false;
-  }, 
+  },
   computed: {
     inspireClass() {
-      if(this.$store.getters['App/dark']) {
+      if (this.$store.getters["App/dark"]) {
         return "inspire-dark";
       } else {
         return "inspire-light";

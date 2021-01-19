@@ -49,7 +49,7 @@ const state: SkillsState = {
 };
 
 const mutations = {
-  addreflections: (
+  addReflections: (
     state: SkillsState,
     { id, value }: { id: string; value: number }
   ) => {
@@ -74,7 +74,7 @@ const mutations = {
 
 const getters = {
   all: (state: SkillsState) => state.skills.collection,
-  skill: (state: SkillsState) => (id: string): Skill | null =>
+  byId: (state: SkillsState) => (id: string): Skill | null =>
     state.skills.collection.filter(skill => skill.id === id)[0] || null
 };
 

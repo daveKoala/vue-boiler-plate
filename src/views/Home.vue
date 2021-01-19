@@ -36,7 +36,7 @@ import BasicLayout from "@/layouts/BasicLayout.vue";
 import Twitter from "@/components/Twitter.vue";
 import SquareNavigation from "@/components/SquareNavigation.vue";
 import ArticleCard from "@/components/Article/ArticleCard.vue";
-import { NavigationItem, Card } from "@/interfaces";
+import { Card } from "@/interfaces";
 
 export default Vue.extend({
   name: "Home",
@@ -45,7 +45,7 @@ export default Vue.extend({
   computed: {
     cards(): Card[] {
       return this.$store.getters["Content/bookmarked"];
-    },
+    }
   },
   created() {
     this.$emit("update:layout", BasicLayout);
