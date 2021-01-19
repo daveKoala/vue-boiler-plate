@@ -10,20 +10,26 @@
         cols="6"
       >
         <v-card :dark="$store.getters['App/dark']">
-          <div class="d-flex flex-no-wrap justify-space-between">
-            <div>
-              <v-card-title class="headline" v-text="skill.name"></v-card-title>
-              <v-card-subtitle v-text="skill.name"></v-card-subtitle>
-              <v-card-actions>
-                <v-btn link icon :to="skillContent(skill)" color="blue" small>
-                  <v-icon>mdi-book-open-page-variant-outline</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </div>
-            <v-avatar class="ma-3" size="125" tile>
-              <v-img :src="skill.src" class="white--text align-end" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" height="120px"></v-img>
-            </v-avatar>
-          </div>
+          <v-img
+            :src="skill.src"
+            class="white--text align-end"
+            gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+            height="120px"
+          >
+            <v-card-title >
+              <template>
+                <span class="text-h2">Skill:</span>
+              </template>
+              </v-card-title>
+          </v-img>
+
+          <v-card-actions>
+            <v-btn link icon :to="skillContent(skill)" color="blue" small>
+              <v-icon>mdi-book-open-page-variant-outline</v-icon>
+            </v-btn>
+            <v-spacer></v-spacer>
+            {{skill.name}}
+          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>

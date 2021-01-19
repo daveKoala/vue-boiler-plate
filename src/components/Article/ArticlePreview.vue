@@ -13,7 +13,7 @@
       </v-btn>
     </template>
 
-    <v-card>
+    <v-card :dark="$store.getters['App/dark']">
       <v-toolbar :dark="$store.getters['App/dark']" color="primary">
         <v-spacer></v-spacer>
         <v-btn icon :dark="$store.getters['App/dark']" @click="dialog = false">

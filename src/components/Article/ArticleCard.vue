@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card :dark="$store.getters['App/dark']">
     <v-img
       :src="card.src"
       class="white--text align-end"

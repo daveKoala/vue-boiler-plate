@@ -7,7 +7,7 @@
         </v-btn>
       </template>
 
-      <v-card>
+      <v-card :dark="$store.getters['App/dark']">
         <v-card-title class="headline grey lighten-2"> Share </v-card-title>
 
         <v-card-text>

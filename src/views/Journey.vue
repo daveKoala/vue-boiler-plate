@@ -2,7 +2,7 @@
   <v-container>
     <v-timeline :dense="$vuetify.breakpoint.smAndDown">
       <v-timeline-item color="purple lighten-2" fill-dot small right>
-        <v-card>
+        <v-card :dark="$store.getters['App/dark']">
           <v-card-title class="purple lighten-2">
             <v-icon :dark="$store.getters['App/dark']" size="42" class="mr-4">
               mdi-magnify
@@ -25,7 +25,7 @@
       </v-timeline-item>
 
       <v-timeline-item color="amber lighten-1" fill-dot left small>
-        <v-card>
+        <v-card :dark="$store.getters['App/dark']">
           <v-card-title class="amber lighten-1 justify-end">
             <h2 class="display-1 mr-4 white--text font-weight-light">
               Title 2
@@ -50,7 +50,7 @@
       </v-timeline-item>
 
       <v-timeline-item color="cyan lighten-1" fill-dot small right>
-        <v-card>
+        <v-card :dark="$store.getters['App/dark']">
           <v-card-title class="cyan lighten-1">
             <v-icon class="mr-4" :dark="$store.getters['App/dark']" size="42">
               mdi-email-outline
@@ -69,7 +69,7 @@
       </v-timeline-item>
 
       <v-timeline-item color="red lighten-1" fill-dot left small>
-        <v-card>
+        <v-card :dark="$store.getters['App/dark']">
           <v-card-title class="red lighten-1 justify-end">
             <h2 class="display-1 mr-4 white--text font-weight-light">
               Title 4
@@ -95,7 +95,7 @@
       </v-timeline-item>
 
       <v-timeline-item color="green lighten-1" fill-dot small right>
-        <v-card>
+        <v-card :dark="$store.getters['App/dark']">
           <v-card-title class="green lighten-1">
             <v-icon class="mr-4" :dark="$store.getters['App/dark']" size="42">
               mdi-phone-in-talk

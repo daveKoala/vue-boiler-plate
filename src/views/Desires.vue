@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card class="mb-2" color="orange lighten-2" height="100%">
+    <v-card class="mb-2" color="orange lighten-2" height="100%" :dark="$store.getters['App/dark']">
       <v-card-text>
         Help us taylor your Strata experience by selecting one or more skills
         that you practice

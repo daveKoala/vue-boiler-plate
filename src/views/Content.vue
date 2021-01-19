@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-card class="mx-auto my-12">
+    <v-card class="mx-auto my-12" :dark="$store.getters['App/dark']">
       <v-img :src="card.src" height="250">
         <new-article :card="card" large />
         <v-card-title class="white--text mt-8">{{
