@@ -6,7 +6,7 @@
       gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
       height="120px"
     >
-    <new-article :card="card" />
+      <new-article :card="card" />
       <v-card-title v-text="card.title"></v-card-title>
     </v-img>
 

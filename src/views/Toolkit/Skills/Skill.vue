@@ -96,11 +96,11 @@ import Vue from "vue";
 export default Vue.extend({
   name: "SkillCard" as string,
   props: {
-    skill: { type: Object as () => Skill, required: true },
+    skill: { type: Object as () => Skill, required: true }
   },
   data: () => ({
-    dialog: false,
-  }),
+    dialog: false
+  })
 });
 </script>
 

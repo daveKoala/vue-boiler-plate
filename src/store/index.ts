@@ -19,6 +19,6 @@ export default new Vuex.Store({
     History,
     Content,
     Desire,
-    Skills,
+    Skills
   }
 });

@@ -47,15 +47,15 @@ export default Vue.extend({
       return this.$store.getters["Navigation/collection"]([
         // "Table",
         "journey",
-        "About",
+        "About"
       ]);
     },
     cards(): Card[] {
       return this.$store.getters["Content/bookmarked"];
-    },
+    }
   },
   created() {
     this.$emit("update:layout", BasicLayout);
-  },
+  }
 });
 </script>

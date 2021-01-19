@@ -24,8 +24,8 @@ export default Vue.extend({
   computed: {
     skills() {
       return this.$store.getters["Skills/all"];
-    },
-  },
+    }
+  }
 });
 </script>
 

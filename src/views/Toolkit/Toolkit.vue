@@ -43,7 +43,7 @@ export default Vue.extend({
   computed: {
     cards(): Card[] {
       return this.$store.getters["Content/all"];
-    },
-  },
+    }
+  }
 });
 </script>

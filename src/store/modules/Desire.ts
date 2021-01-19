@@ -24,7 +24,7 @@ const state: DesiresState = {
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: false,
-        review: [],
+        review: []
       },
       {
         id: "2a",
@@ -32,7 +32,7 @@ const state: DesiresState = {
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: false,
-        review: [],
+        review: []
       },
       {
         id: "3a",
@@ -40,7 +40,7 @@ const state: DesiresState = {
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: false,
-        review: [],
+        review: []
       },
       {
         id: "4a",
@@ -48,7 +48,7 @@ const state: DesiresState = {
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: false,
-        review: [],
+        review: []
       },
       {
         id: "5a",
@@ -56,10 +56,10 @@ const state: DesiresState = {
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: false,
-        review: [],
-      },
-    ],
-  },
+        review: []
+      }
+    ]
+  }
 };
 
 const actions = {};
@@ -68,20 +68,20 @@ const mutations = {
     state: DesiresState,
     { id, value }: { id: string; value: number }
   ) => {
-    state.desire.collection.map((desire) => {
+    state.desire.collection.map(desire => {
       if (desire.id === id) {
         desire.review.push({ date: new Date().toUTCString(), value });
       }
     });
-  },
+  }
 };
 const getters = {
-  all: (state: DesiresState) => state.desire.collection,
+  all: (state: DesiresState) => state.desire.collection
 };
 export default {
   namespaced: true,
   state,
   getters,
   mutations,
-  actions,
+  actions
 };
