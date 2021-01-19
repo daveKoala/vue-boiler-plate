@@ -16,14 +16,27 @@
         </v-img>
 
         <v-card-actions>
-          <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on" x-small>
-            Open
+          <v-btn icon color="blue lighten-2" dark v-bind="attrs" v-on="on">
+            <v-icon>mdi-book-open-page-variant-outline</v-icon>
           </v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
     </template>
-    <v-card>
+    <v-app-bar
+      color="primary accent-4"
+      dense
+      :dark="$store.getters['App/dark']"
+      height="24"
+    >
+      <v-spacer></v-spacer>
+      <v-btn color="white" icon @click="dialog = false" small>
+        <v-icon class="ml-2">
+          mdi-close
+        </v-icon>
+      </v-btn>
+    </v-app-bar>
+    <v-card flat tile>
       <v-img
         :src="skill.src"
         class="white--text align-end"
@@ -96,11 +109,11 @@ import Vue from "vue";
 export default Vue.extend({
   name: "SkillCard" as string,
   props: {
-    skill: { type: Object as () => Skill, required: true }
+    skill: { type: Object as () => Skill, required: true },
   },
   data: () => ({
-    dialog: false
-  })
+    dialog: false,
+  }),
 });
 </script>
 

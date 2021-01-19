@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire-dark">
+  <v-app id="inspire" :class="inspireClass">
     <component :is="layout">
       <v-fade-transition mode="out-in">
         <router-view :key="$route.fullPath" :layout.sync="layout" />
@@ -20,6 +20,15 @@ export default Vue.extend({
 
   created() {
     this.$vuetify.theme.dark = false;
+  }, 
+  computed: {
+    inspireClass() {
+      if(this.$store.getters['App/dark']) {
+        return "inspire-dark";
+      } else {
+        return "inspire-light";
+      }
+    }
   }
 });
 </script>
@@ -27,7 +36,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import "@/assets/styles/common.scss";
 
-.theme--light.v-application {
-  background-color: $AppBackgroundColor;
-}
+// .theme--light.v-application {
+//   background-color: $AppBackgroundColor;
+// }
 </style>
