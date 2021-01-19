@@ -21,13 +21,13 @@ export default Vue.extend({
   props: {
     card: { type: Object as () => Card, required: true },
     small: { type: Boolean, default: true },
-    large: { type: Boolean, default: false }
+    large: { type: Boolean, default: false },
   },
   computed: {
     isNew(): boolean {
       return this.card.isNew ?? false;
-    }
-  }
+    },
+  },
 });
 </script>
 

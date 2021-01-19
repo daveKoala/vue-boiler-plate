@@ -20,7 +20,7 @@ import { RouteConfig } from "vue-router";
 export default Vue.extend({
   name: "SquareNavigation" as string,
   props: {
-    names: { type: Array as () => string[], default: () => [] }
+    names: { type: Array as () => string[], default: () => [] },
   },
   computed: {
     items(): RouteConfig[] {
@@ -29,7 +29,7 @@ export default Vue.extend({
       this.names.forEach((str: string) => {
         const strLowerCase = str.toLowerCase();
         const index = this.$router.options.routes?.findIndex(
-          item => item.name?.toLowerCase() === strLowerCase
+          (item) => item.name?.toLowerCase() === strLowerCase
         ) as number;
 
         if (index !== -1 && this.$router.options.routes) {
@@ -37,8 +37,8 @@ export default Vue.extend({
         }
       });
       return navItems;
-    }
-  }
+    },
+  },
 });
 </script>
 

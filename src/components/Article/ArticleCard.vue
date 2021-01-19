@@ -34,16 +34,16 @@ export default Vue.extend({
   name: "ArticleCard" as string,
   components: { Share, BookmarkButton, NewArticle },
   props: {
-    card: { type: Object as () => Card, required: true }
+    card: { type: Object as () => Card, required: true },
   },
   methods: {
     content(): { name: string; params: { id: string } } {
       return { name: "content", params: { id: this.card.id } };
     },
     bookmark(): void {
-      this.card.bookmarked = !this.card.bookmarked;
-    }
-  }
+      this.$store.commit("Content/bookmark", this.card.id);
+    },
+  },
 });
 </script>
 

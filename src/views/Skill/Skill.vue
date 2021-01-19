@@ -31,7 +31,7 @@ export default Vue.extend({
   computed: {
     skill(): unknown {
       return this.$store.getters["Skills/byId"](this.$route.params.id);
-    }
+    },
     //   rating: {
     //     set(value: number) {
     //       this.$store.commit("Skills/addReflections", {
@@ -50,7 +50,7 @@ export default Vue.extend({
     //       return 1;
     //     },
     //   },
-  }
+  },
 });
 </script>
 

@@ -39,13 +39,13 @@ export default Vue.extend({
   computed: {
     skills() {
       return this.$store.getters["Skills/all"];
-    }
+    },
   },
   methods: {
     skillContent(skill: Skill): { name: string; params: { id: string } } {
       return { name: "skillContent", params: { id: skill.id } };
-    }
-  }
+    },
+  },
 });
 </script>
 

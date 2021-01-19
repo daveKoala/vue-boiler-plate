@@ -38,7 +38,7 @@ export default Vue.extend({
   name: "NavigationDrawerContent",
   computed: {
     items(): unknown {
-      return this.$router.options.routes?.filter(route => route?.meta?.icon);
+      return this.$router.options.routes?.filter((route) => route?.meta?.icon);
     },
     applicationName(): string {
       return this.$store.getters["App/appName"];
@@ -48,8 +48,8 @@ export default Vue.extend({
         return process.env.VUE_APP_ENV;
 
       return "";
-    }
-  }
+    },
+  },
 });
 </script>
 

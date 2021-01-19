@@ -26,7 +26,7 @@ import { RouteConfig } from "vue-router";
 export default Vue.extend({
   name: "BottomNavigation" as string,
   data: () => ({
-    activeItem: "top"
+    activeItem: "top",
   }),
   computed: {
     items(): RouteConfig[] {
@@ -35,15 +35,15 @@ export default Vue.extend({
       lists.forEach((str: string) => {
         const strLowerCase = str.toLowerCase();
         const index = this.$router.options.routes?.findIndex(
-          item => item.name?.toLowerCase() === strLowerCase
+          (item) => item.name?.toLowerCase() === strLowerCase
         ) as number;
         if (index !== -1 && this.$router.options.routes) {
           navItems.push(this.$router.options.routes[index]);
         }
       });
       return navItems;
-    }
-  }
+    },
+  },
 });
 </script>
 

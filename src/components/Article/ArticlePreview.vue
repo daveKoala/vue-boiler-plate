@@ -58,11 +58,11 @@ export default Vue.extend({
   name: "ArticlePreview" as string,
   components: { Share },
   props: {
-    content: { type: Object as () => Card, required: true }
+    content: { type: Object as () => Card, required: true },
   },
   data: () => ({
-    dialog: false
-  })
+    dialog: false,
+  }),
 });
 </script>
 

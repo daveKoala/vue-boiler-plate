@@ -118,7 +118,7 @@
 export default {
   name: "TableWithFixedColumn",
   data: () => ({
-    items: []
+    items: [],
   }),
   computed: {
     cols() {
@@ -127,12 +127,12 @@ export default {
         cols.push({
           text: `Column ${i}`,
           value: `column-${i}`,
-          width: 100
+          width: 100,
         });
       }
       return cols;
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

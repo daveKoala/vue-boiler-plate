@@ -5,6 +5,6 @@ module.exports = {
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "black",
     workboxPluginMode: "GenerateSW",
-    orientation: "portrait"
-  }
+    orientation: "portrait",
+  },
 };

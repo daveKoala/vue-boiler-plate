@@ -12,9 +12,7 @@
         <v-expansion-panel-header disable-icon-rotate>
           {{ item.title }}
           <template v-slot:actions v-if="isSelected(i, item)">
-            <v-icon color="teal">
-              mdi-check
-            </v-icon>
+            <v-icon color="teal"> mdi-check </v-icon>
           </template>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -52,9 +50,7 @@
       </template>
 
       <v-card>
-        <v-card-title class="headline grey lighten-2">
-          Confirm
-        </v-card-title>
+        <v-card-title class="headline grey lighten-2"> Confirm </v-card-title>
 
         <v-card-text>
           {{ items }}
@@ -64,9 +60,7 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="dialog = false">
-            Submit
-          </v-btn>
+          <v-btn color="primary" text @click="dialog = false"> Submit </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -91,28 +85,28 @@ export default Vue.extend({
     icons: {
       mdiAccount: "mdi-home",
       mdiPencil: "mdi-home",
-      mdiShareVariant: "mdi-share-variant-outline"
+      mdiShareVariant: "mdi-share-variant-outline",
     },
     rating: 0,
-    selected: false
+    selected: false,
   }),
 
   computed: {
     items() {
       return this.$store.getters["Desire/all"];
-    }
+    },
   },
   methods: {
     isSelected(index: number, item: { selected: boolean }): boolean {
-      if (!this.panel.some(i => i === index)) {
+      if (!this.panel.some((i) => i === index)) {
         item.selected = false;
         return false;
       } else {
         item.selected = true;
         return true;
       }
-    }
-  }
+    },
+  },
 });
 </script>
 

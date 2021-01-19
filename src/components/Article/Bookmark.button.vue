@@ -10,13 +10,13 @@ export default Vue.extend({
   name: "BookmarkButton" as string,
   props: {
     id: { type: String, required: true },
-    status: { type: Boolean, required: false }
+    status: { type: Boolean, required: false },
   },
   methods: {
     bookmark(): void {
       this.$store.commit("Content/bookmark", this.id);
-    }
-  }
+    },
+  },
 });
 </script>
 

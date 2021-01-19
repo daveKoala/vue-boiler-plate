@@ -31,6 +31,6 @@ export default Vue.extend({
   name: "About",
   created() {
     this.$emit("update:layout", BasicLayout);
-  }
+  },
 });
 </script>

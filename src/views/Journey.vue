@@ -7,9 +7,7 @@
             <v-icon :dark="$store.getters['App/dark']" size="42" class="mr-4">
               mdi-magnify
             </v-icon>
-            <h2 class="display-1 white--text font-weight-light">
-              Title 1
-            </h2>
+            <h2 class="display-1 white--text font-weight-light">Title 1</h2>
           </v-card-title>
           <v-container>
             <v-row>
@@ -19,9 +17,7 @@
                 Est et nobis iisque percipit.
               </v-col>
               <v-col class="hidden-sm-and-down text-right" md="2">
-                <v-icon size="64">
-                  mdi-calendar-text
-                </v-icon>
+                <v-icon size="64"> mdi-calendar-text </v-icon>
               </v-col>
             </v-row>
           </v-container>
@@ -59,9 +55,7 @@
             <v-icon class="mr-4" :dark="$store.getters['App/dark']" size="42">
               mdi-email-outline
             </v-icon>
-            <h2 class="display-1 white--text font-weight-light">
-              Title 3
-            </h2>
+            <h2 class="display-1 white--text font-weight-light">Title 3</h2>
           </v-card-title>
           <v-container>
             <v-row>
@@ -87,9 +81,7 @@
           <v-container>
             <v-row>
               <v-col class="hidden-sm-and-down" md="2">
-                <v-icon size="64">
-                  mdi-server-network
-                </v-icon>
+                <v-icon size="64"> mdi-server-network </v-icon>
               </v-col>
               <v-col cols="12" md="10">
                 Lorem ipsum dolor sit amet, no nam oblique veritus. Commune
@@ -108,9 +100,7 @@
             <v-icon class="mr-4" :dark="$store.getters['App/dark']" size="42">
               mdi-phone-in-talk
             </v-icon>
-            <h2 class="display-1 white--text font-weight-light">
-              Title 5
-            </h2>
+            <h2 class="display-1 white--text font-weight-light">Title 5</h2>
           </v-card-title>
           <v-container>
             <v-row>
@@ -136,7 +126,7 @@ export default Vue.extend({
   components: {},
   created() {
     this.$emit("update:layout", BasicLayout);
-  }
+  },
 });
 </script>
 

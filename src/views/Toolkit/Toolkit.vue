@@ -55,8 +55,8 @@ export default Vue.extend({
       },
       get(): number | null {
         return this.$store.getters["App/tab"]("toolkit").value || null;
-      }
-    }
-  }
+      },
+    },
+  },
 });
 </script>

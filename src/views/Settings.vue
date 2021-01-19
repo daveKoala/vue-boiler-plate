@@ -38,8 +38,8 @@ export default Vue.extend({
       },
       get() {
         return this.$store.getters["App/dark"];
-      }
-    }
+      },
+    },
   },
   created() {
     this.$emit("update:layout", BasicLayout);
@@ -50,8 +50,8 @@ export default Vue.extend({
     },
     clearBookmarks(): void {
       this.$store.commit("Content/clearBookmarks");
-    }
-  }
+    },
+  },
 });
 </script>
 

@@ -15,7 +15,7 @@ export default Vue.extend({
   name: "App",
 
   data: () => ({
-    layout: "div"
+    layout: "div",
   }),
 
   created() {
@@ -28,8 +28,8 @@ export default Vue.extend({
       } else {
         return "inspire-light";
       }
-    }
-  }
+    },
+  },
 });
 </script>
 

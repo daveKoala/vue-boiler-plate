@@ -35,11 +35,11 @@ export default Vue.extend({
   name: "BasicLayout" as string,
   components: {
     NavigationDrawerContent,
-    BottomNav
+    BottomNav,
   },
 
   data: () => ({
-    drawer: null
+    drawer: null,
   }),
 
   computed: {
@@ -51,8 +51,8 @@ export default Vue.extend({
             `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`;
 
       return name;
-    }
-  }
+    },
+  },
 });
 </script>
 

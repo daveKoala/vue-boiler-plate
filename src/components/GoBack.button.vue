@@ -11,8 +11,8 @@ export default Vue.extend({
   methods: {
     goBack(): void {
       return this.$router.go(-1);
-    }
-  }
+    },
+  },
 });
 </script>
 

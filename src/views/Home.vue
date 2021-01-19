@@ -45,10 +45,10 @@ export default Vue.extend({
   computed: {
     cards(): Card[] {
       return this.$store.getters["Content/bookmarked"];
-    }
+    },
   },
   created() {
     this.$emit("update:layout", BasicLayout);
-  }
+  },
 });
 </script>

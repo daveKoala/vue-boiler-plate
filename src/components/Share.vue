@@ -8,9 +8,7 @@
       </template>
 
       <v-card>
-        <v-card-title class="headline grey lighten-2">
-          Share
-        </v-card-title>
+        <v-card-title class="headline grey lighten-2"> Share </v-card-title>
 
         <v-card-text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -34,9 +32,7 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="dialog = false">
-            Close
-          </v-btn>
+          <v-btn color="primary" text @click="dialog = false"> Close </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -48,16 +44,16 @@ import Vue from "vue";
 export default Vue.extend({
   name: "ShareDialog" as string,
   props: {
-    linkParam: { type: String, default: "" }
+    linkParam: { type: String, default: "" },
   },
   data: () => ({
     copied: false,
-    dialog: false
+    dialog: false,
   }),
   computed: {
     link(): string {
       return `${process.env.VUE_APP_LINK_BASE_URL}/content/${this.linkParam}`;
-    }
+    },
   },
   methods: {
     copy(): void {
@@ -66,8 +62,8 @@ export default Vue.extend({
       setTimeout(() => {
         this.copied = false;
       }, 2500);
-    }
-  }
+    },
+  },
 });
 </script>
 
