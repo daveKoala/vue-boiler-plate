@@ -1,6 +1,6 @@
 <template>
   <v-btn icon @click="bookmark()">
-    <v-icon :color="status ? 'green' : ''">mdi-bookmark</v-icon>
+    <v-icon :color="status ? 'green' : ''">mdi-heart</v-icon>
   </v-btn>
 </template>
 

@@ -11,18 +11,39 @@
 
       <v-tab-item>
         <v-container fluid>
-          <v-row dense justify="center">
-            <v-col
-              v-for="card in cards"
-              :key="card.title"
-              :lg="3"
-              :md="4"
-              :sm="6"
-              :cols="card.flex"
-            >
-              <ArticleCard :card="card" />
-            </v-col>
-          </v-row>
+          <v-card :dark="$store.getters['App/dark']">
+            <v-list dense>
+              <template v-for="(card, index) in cards">
+                <v-list-item :key="card.title">
+                  <v-list-item-avatar rounded>
+                    <v-img :src="card.src"></v-img>
+                  </v-list-item-avatar>
+
+                  <v-list-item-content v-on:click="goTo(card)" class="mr-1">
+                    <v-list-item-title v-html="card.title"></v-list-item-title>
+                    <v-list-item-subtitle
+                      v-html="card.title"
+                    ></v-list-item-subtitle>
+                  </v-list-item-content>
+
+                  <v-list-item-action class="ml-0">
+                    <v-btn icon v-on:click="more(card)" x-small>
+                      <v-icon color="grey lighten-1">mdi-heart</v-icon>
+                    </v-btn>
+                   
+                  </v-list-item-action>
+                  <v-list-item-action class="ml-0">
+                    <v-btn icon v-on:click="more(card)" x-small>
+                      <v-icon color="grey lighten-1">mdi-dots-horizontal</v-icon>
+                    </v-btn>
+                   
+                  </v-list-item-action>
+                </v-list-item>
+
+                <v-divider :key="`card-divider-${index}`"></v-divider>
+              </template>
+            </v-list>
+          </v-card>
         </v-container>
       </v-tab-item>
 
@@ -36,12 +57,12 @@
 <script lang="ts">
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
-import ArticleCard from "@/components/Article/ArticleCard.vue";
+// import ArticleCard from "@/components/Article/ArticleCard.vue";
 import SkillsTab from "@/views/Toolkit/Skills.tab.vue";
 import { Card } from "@/interfaces";
 export default Vue.extend({
   name: "Toolkit",
-  components: { ArticleCard, SkillsTab },
+  components: { SkillsTab },
   created() {
     this.$emit("update:layout", BasicLayout);
   },
@@ -58,5 +79,13 @@ export default Vue.extend({
       },
     },
   },
+  methods: {
+    goTo(card: Card): void {
+      console.log("goto",card.id)
+    },
+    more(card: Card): void {
+      console.log("more",card.title)
+    }
+  }
 });
 </script>

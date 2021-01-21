@@ -41,7 +41,7 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn icon>
-          <v-icon>mdi-bookmark</v-icon>
+          <v-icon>mdi-heart</v-icon>
         </v-btn>
         <Share :linkParam="content.id" />
       </v-card-actions>
