@@ -9,10 +9,11 @@
         v-html="card.title"
         :class="textColor"
       ></v-list-item-title>
-      <v-list-item-subtitle
-        v-html="card.title"
-        :class="textColor"
-      ></v-list-item-subtitle>
+      <v-list-item-subtitle>
+        <v-chip color="green" text-color="white" x-small v-if="card.isNew">
+          New
+        </v-chip>
+      </v-list-item-subtitle>
     </v-list-item-content>
 
     <v-list-item-action class="ml-0">
