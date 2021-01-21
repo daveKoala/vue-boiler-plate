@@ -44,10 +44,35 @@ export default Vue.extend({
   created() {
     this.$emit("update:layout", BasicLayout);
   },
+  beforeDestroy() {
+    if (this.timerId) {
+      clearTimeout(this.timerId);
+    }
+  },
   components: { Share, GoBack, BookmarkButton, NewArticle },
+  watch: {
+    "$route.params.id": {
+      handler: function (newValue) {
+        if (newValue != null) {
+          this.setReadStatus(newValue);
+        }
+      },
+      immediate: true,
+    },
+  },
+  data: () => ({
+    timerId: null as number | null,
+  }),
   computed: {
     card(): Card {
       return this.$store.getters["Content/byID"](this.$route.params.id);
+    },
+  },
+  methods: {
+    setReadStatus(id: string): void {
+      this.timerId = setTimeout(() => {
+        this.$store.commit("Content/readStatus", { id, value: true });
+      }, 2000);
     },
   },
 });

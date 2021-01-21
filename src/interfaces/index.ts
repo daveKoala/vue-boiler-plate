@@ -11,7 +11,7 @@ export interface Card {
   src: string;
   title: string;
   flex: number;
-  read: Date;
+  read: string | null;
   bookmarked: boolean;
   isNew?: boolean;
 }
