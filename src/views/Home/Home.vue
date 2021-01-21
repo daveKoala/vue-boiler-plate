@@ -35,7 +35,7 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import Twitter from "@/components/Twitter.vue";
 import SquareNavigation from "@/components/SquareNavigation.vue";
-import ArticleCard from "@/components/Article/ArticleCard.vue";
+import ArticleCard from "@/views/Home/Article/ArticleCard.vue";
 import { Card } from "@/interfaces";
 
 export default Vue.extend({

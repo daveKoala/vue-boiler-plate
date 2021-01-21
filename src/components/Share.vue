@@ -2,7 +2,7 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn icon color="green lighten-2" v-bind="attrs" v-on="on">
+        <v-btn icon color="green lighten-2" v-bind="attrs" v-on="on" x-small>
           <v-icon>mdi-share-variant-outline</v-icon>
         </v-btn>
       </template>

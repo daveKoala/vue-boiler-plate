@@ -26,8 +26,8 @@
 <script lang="ts">
 import Vue from "vue";
 import Share from "@/components/Share.vue";
-import BookmarkButton from "@/components/Article/Bookmark.button.vue";
-import NewArticle from "@/components/Article/NewArticle.badge.vue";
+import BookmarkButton from "@/views/Home/Article/Bookmark.button.vue";
+import NewArticle from "@/views/Home/Article/NewArticle.badge.vue";
 import { Card } from "@/interfaces";
 
 export default Vue.extend({
