@@ -6,5 +6,9 @@ module.exports = {
     appleMobileWebAppStatusBarStyle: "black",
     workboxPluginMode: "GenerateSW",
     orientation: "portrait",
+    workboxOptions: {
+      skipWaiting: true,
+      clientsClaim: true,
+    }
   },
 };
