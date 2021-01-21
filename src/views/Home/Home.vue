@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-sheet class="mx-auto" max-width="1280" color="transparent">
-      <square-navigation :names="['home', 'checkIn', 'toolkit']" />
+      <square-navigation :names="['checkIn', 'toolkit', 'desires']" />
       <v-row dense no-gutters justify="space-between">
         <v-col
           cols="6"
