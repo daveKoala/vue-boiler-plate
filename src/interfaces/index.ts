@@ -19,7 +19,7 @@ export interface Card {
 export interface Skill {
   id: string;
   reflections: { date: string; value: number }[];
-  practice: number;
+  suggestedPractices: number;
   name: string;
   subTitle: string;
   blurb: string;

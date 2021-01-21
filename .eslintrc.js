@@ -1,6 +1,5 @@
 module.exports = {
   root: true,
-  plugins: ["prettier"],
   env: {
     node: true,
   },
