@@ -5,7 +5,8 @@ import Home from "../views/Home.vue";
 Vue.use(VueRouter);
 
 interface RouteMetaData {
-  icon: string;
+  icon?: string;
+  displayName: string;
 }
 
 const routes: Array<RouteConfig> = [
@@ -14,6 +15,7 @@ const routes: Array<RouteConfig> = [
     name: "Home",
     meta: {
       icon: "mdi-home",
+      displayName: "Home"
     } as RouteMetaData,
     component: Home,
   },
@@ -22,6 +24,7 @@ const routes: Array<RouteConfig> = [
     name: "About",
     meta: {
       icon: "mdi-information-outline",
+      displayName: "About"
     } as RouteMetaData,
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
@@ -31,6 +34,7 @@ const routes: Array<RouteConfig> = [
     name: "Journey",
     meta: {
       icon: "mdi-map-marker",
+      displayName: "Journey"
     } as RouteMetaData,
     component: () =>
       import(/* webpackChunkName: "journey" */ "../views/Journey.vue"),
@@ -40,6 +44,7 @@ const routes: Array<RouteConfig> = [
     name: "Settings",
     meta: {
       icon: "mdi-cog-outline",
+      displayName: "Settings"
     } as RouteMetaData,
     component: () =>
       import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
@@ -49,6 +54,7 @@ const routes: Array<RouteConfig> = [
     name: "Desires",
     meta: {
       icon: "mdi-head-heart-outline",
+      displayName: "Desires"
     } as RouteMetaData,
     component: () =>
       import(/* webpackChunkName: "desires" */ "../views/Desires.vue"),
@@ -58,6 +64,7 @@ const routes: Array<RouteConfig> = [
     name: "Table",
     meta: {
       icon: "mdi-table-settings",
+      displayName: "Table"
     } as RouteMetaData,
     component: () =>
       import(/* webpackChunkName: "table" */ "../views/FunkyTable.vue"),
@@ -67,6 +74,7 @@ const routes: Array<RouteConfig> = [
     name: "QR Scanner",
     meta: {
       icon: "mdi-qrcode-scan",
+      displayName: "QR Scanner"
     } as RouteMetaData,
     component: () =>
       import(/* webpackChunkName: "qrscanner" */ "../views/QRScanner.vue"),
@@ -74,12 +82,18 @@ const routes: Array<RouteConfig> = [
   {
     path: "/content/:id",
     name: "content",
+    meta: {
+      displayName: "Content"
+    },
     component: () =>
       import(/* webpackChunkName: "content" */ "../views/Content.vue"),
   },
   {
     path: "/skill/:id",
     name: "skillContent",
+    meta: {
+      displayName: "Skill"
+    },
     component: () =>
       import(/* webpackChunkName: "skill" */ "../views/Skill/Skill.vue"),
   },
@@ -88,9 +102,20 @@ const routes: Array<RouteConfig> = [
     name: "toolkit",
     meta: {
       icon: "mdi-hammer-wrench",
+      displayName: "Toolkit"
     } as RouteMetaData,
     component: () =>
       import(/* webpackChunkName: "toolkit" */ "../views/Toolkit/Toolkit.vue"),
+  },
+  {
+    path: "/check-in",
+    name: "checkIn",
+    meta: {
+      icon: "mdi-alarm-check",
+      displayName: "Check In"
+    } as RouteMetaData,
+    component: () =>
+      import(/* webpackChunkName: "checkIn" */ "../views/CheckIn/CheckIn.vue"),
   },
   {
     path: "/*",

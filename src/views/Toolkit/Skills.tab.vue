@@ -13,8 +13,8 @@
           <v-card-actions>
             <progress-bar :value="progress(skill)" color="amber" />
           </v-card-actions>
-          <v-img height="200px" :src="skill.src" v-on:click="goTo(skill)">
-            <v-card-title class="white--text mt-8">
+          <v-img height="120px" :src="skill.src" v-on:click="goTo(skill)">
+            <v-card-title class="white--text">
               <span class="text-h4">Skill:</span>{{ skill.name }}
             </v-card-title>
           </v-img>

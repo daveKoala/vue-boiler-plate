@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid>
-    <v-row justify="space-around">
+  <v-container fluid class="mb-2">
+    <v-row justify="center">
       <v-btn
         v-for="({ path, meta }, index) in items"
         :key="`square-nav-${index}`"

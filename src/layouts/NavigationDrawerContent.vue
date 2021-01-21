@@ -14,7 +14,7 @@
     <v-divider></v-divider>
 
     <v-list-item
-      v-for="({ meta, name, path }, i) in items"
+      v-for="({ meta, path }, i) in items"
       :key="i"
       link
       :to="path"
@@ -25,7 +25,7 @@
       </v-list-item-icon>
 
       <v-list-item-content>
-        <v-list-item-title>{{ name }}</v-list-item-title>
+        <v-list-item-title>{{ meta.displayName }}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
   </v-list>

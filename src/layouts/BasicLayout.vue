@@ -47,7 +47,7 @@ export default Vue.extend({
       const name =
         this.$route.name?.toLowerCase() === "home"
           ? `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`
-          : this.$route.name ||
+          : this.$route.meta.displayName ||
             `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`;
 
       return name;
