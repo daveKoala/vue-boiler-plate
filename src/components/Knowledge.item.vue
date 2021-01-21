@@ -1,6 +1,6 @@
 <template>
   <v-list-item :key="card.title">
-    <v-list-item-avatar rounded>
+    <v-list-item-avatar rounded max-width="30">
       <v-img :src="card.src" v-on:click="goTo()"></v-img>
     </v-list-item-avatar>
 
@@ -9,7 +9,7 @@
         v-html="card.title"
         :class="textColor"
       ></v-list-item-title>
-      <v-list-item-subtitle>
+      <v-list-item-subtitle v-if="!hideActions">
         <v-chip color="green" text-color="white" x-small v-if="card.isNew">
           New
         </v-chip>
@@ -38,9 +38,14 @@ export default Vue.extend({
     card: { type: Object as () => Card, required: true },
     hideActions: { type: Boolean, default: false },
   },
+  data: () => ({
+    textSizeClass: "caption",
+  }),
   computed: {
     textColor(): string {
-      return this.$store.getters["App/dark"] ? "white--text" : "black--text";
+      return this.$store.getters["App/dark"]
+        ? `white--text ${this.textSizeClass}`
+        : `black--text ${this.textSizeClass}`;
     },
   },
   methods: {

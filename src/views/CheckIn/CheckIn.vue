@@ -7,27 +7,6 @@
       </v-card-text>
     </v-card>
     <v-divider></v-divider>
-    <v-row dense>
-      <v-col
-        cols="6"
-        sm="6"
-        v-for="(card, index) in cards"
-        :key="`card-${index}`"
-      >
-        <v-card tile flat>
-          <v-list-item dense class="pl-0">
-            <v-list-item-avatar tile class="mt-0 mb-0">
-              <v-img :src="card.src"></v-img>
-            </v-list-item-avatar>
-            <v-list-item-content>
-              <v-list-item-title class="mb-1">{{
-                card.title
-              }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-card>
-      </v-col>
-    </v-row>
   </v-container>
 </template>
 
