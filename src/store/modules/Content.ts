@@ -97,14 +97,17 @@ const mutations = {
       article.bookmarked = false;
     });
   },
-  readStatus(state: ContentState, {id, value}: {id: string, value: boolean}): void {
-    state.content.articles.map(article => {
+  readStatus(
+    state: ContentState,
+    { id, value }: { id: string; value: boolean }
+  ): void {
+    state.content.articles.map((article) => {
       if (article.id === id) {
         article.isNew = false;
         article.read = new Date().toISOString();
       }
-    })
-  }
+    });
+  },
 };
 const actions = {};
 

@@ -7,8 +7,8 @@
       :dark="$store.getters['App/dark']"
     >
       <v-card-text>
-        Help us tailor your experience by selecting one or more skills
-        that you practice
+        Help us tailor your experience by selecting one or more skills that you
+        practice
       </v-card-text>
     </v-card>
 

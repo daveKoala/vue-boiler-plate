@@ -29,7 +29,7 @@
 <script lang="ts">
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
-import KnowledgeTabItem from "@/views/Toolkit/KnowledgeTab/Knowledge.tab.vue";
+import KnowledgeTabItem from "@/components/Knowledge.item.vue";
 import SkillsTab from "@/views/Toolkit/Skills.tab.vue";
 import { Card } from "@/interfaces";
 export default Vue.extend({

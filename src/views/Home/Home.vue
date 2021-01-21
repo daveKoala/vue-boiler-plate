@@ -2,16 +2,15 @@
   <v-container fluid>
     <v-sheet class="mx-auto" max-width="1280" color="transparent">
       <square-navigation :names="['home', 'checkIn', 'toolkit']" />
-      <v-row dense justify="center">
+      <v-row dense no-gutters justify="space-between">
         <v-col
-          v-for="card in cards"
-          :key="card.title"
-          :lg="3"
-          :md="4"
-          :sm="6"
-          :cols="card.flex"
+          cols="6"
+          sm="6"
+          v-for="(card, index) in cards"
+          :key="`card-${index}`"
         >
-          <ArticleCard :card="card" />
+          <knowledge-item :card="card" hideActions />
+          <v-divider></v-divider>
         </v-col>
       </v-row>
       <v-row dense justify="center">
@@ -35,12 +34,12 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import Twitter from "@/components/Twitter.vue";
 import SquareNavigation from "@/components/SquareNavigation.vue";
-import ArticleCard from "@/views/Home/Article/ArticleCard.vue";
+import KnowledgeItem from "@/components/Knowledge.item.vue";
 import { Card } from "@/interfaces";
 
 export default Vue.extend({
   name: "Home",
-  components: { Twitter, ArticleCard, SquareNavigation },
+  components: { Twitter, SquareNavigation, KnowledgeItem },
 
   computed: {
     cards(): Card[] {

@@ -16,12 +16,12 @@
       </v-list-item-subtitle>
     </v-list-item-content>
 
-    <v-list-item-action class="ml-0">
+    <v-list-item-action class="ml-0" v-if="!hideActions">
       <v-btn icon v-on:click="bookmark()" x-small>
         <v-icon :color="card.bookmarked ? 'green' : ''">mdi-heart</v-icon>
       </v-btn>
     </v-list-item-action>
-    <v-list-item-action class="ml-0">
+    <v-list-item-action class="ml-0" v-if="!hideActions">
       <share :linkParam="card.id" />
     </v-list-item-action>
   </v-list-item>
@@ -36,6 +36,7 @@ export default Vue.extend({
   components: { Share },
   props: {
     card: { type: Object as () => Card, required: true },
+    hideActions: { type: Boolean, default: false },
   },
   computed: {
     textColor(): string {
