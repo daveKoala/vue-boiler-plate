@@ -29,7 +29,7 @@
 
       <v-divider class="mx-4"></v-divider>
       <v-card-text> {{ skill }} </v-card-text>
-      <v-card-actions> 
+      <v-card-actions>
         <go-back />
         <v-spacer></v-spacer>
       </v-card-actions>

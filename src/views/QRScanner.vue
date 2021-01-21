@@ -1,6 +1,11 @@
 <template>
   <v-container>
-    <v-card class="mx-auto my-12" width="200" height="200" :dark="$store.getters['App/dark']">
+    <v-card
+      class="mx-auto my-12"
+      width="200"
+      height="200"
+      :dark="$store.getters['App/dark']"
+    >
       <qrcode-stream @decode="onDecode"></qrcode-stream>
       <v-list-item
         v-for="(id, index) in qrHistory"
