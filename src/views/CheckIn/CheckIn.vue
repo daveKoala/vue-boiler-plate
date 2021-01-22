@@ -20,9 +20,32 @@ export default Vue.extend({
   created() {
     this.$emit("update:layout", BasicLayout);
   },
+  beforeDestroy() {
+    if (this.timerId) {
+      clearTimeout(this.timerId);
+    }
+  },
+  watch: {
+    "$route.params.id": {
+      handler: function () {
+        this.setAlertStatus();
+      },
+      immediate: true,
+    },
+  },
+  data: () => ({
+    timerId: null as number | null,
+  }),
   computed: {
     cards(): Card[] {
       return this.$store.getters["Content/all"];
+    },
+  },
+  methods: {
+    setAlertStatus(): void {
+      this.timerId = setTimeout(() => {
+        this.$store.commit("App/alert", false);
+      }, 2000);
     },
   },
 });

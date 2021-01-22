@@ -16,7 +16,7 @@ const state: ContentState = {
         title: "Cooking",
         src: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
         flex: 6,
-        bookmarked: false,
+        bookmarked: true,
         read: null,
         isNew: true,
       },
@@ -115,10 +115,7 @@ const mutations = {
       article.bookmarked = false;
     });
   },
-  readStatus(
-    state: ContentState,
-    { id, value }: { id: string; value: boolean }
-  ): void {
+  readStatus(state: ContentState, id: string): void {
     state.content.articles.map((article) => {
       if (article.id === id) {
         article.isNew = false;

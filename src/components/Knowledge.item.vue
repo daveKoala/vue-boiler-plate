@@ -18,7 +18,9 @@
 
     <v-list-item-action class="ml-0" v-if="!hideActions">
       <v-btn icon v-on:click="bookmark()" x-small>
-        <v-icon :color="card.bookmarked ? 'green lighten-2' : ''">mdi-heart</v-icon>
+        <v-icon :color="card.bookmarked ? 'green lighten-2' : ''"
+          >mdi-heart</v-icon
+        >
       </v-btn>
     </v-list-item-action>
     <v-list-item-action class="ml-0" v-if="!hideActions">

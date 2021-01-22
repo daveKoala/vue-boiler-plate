@@ -71,7 +71,7 @@ export default Vue.extend({
   methods: {
     setReadStatus(id: string): void {
       this.timerId = setTimeout(() => {
-        this.$store.commit("Content/readStatus", { id, value: true });
+        this.$store.commit("Content/readStatus", id);
       }, 2000);
     },
   },
