@@ -14,6 +14,12 @@
           <v-btn v-on:click="clearBookmarks" x-small>Clear</v-btn>
         </v-list-item-action>
       </v-list-item>
+      <v-list-item>
+        <v-list-item-content>Reset alerts</v-list-item-content>
+        <v-list-item-action>
+          <v-btn v-on:click="resetAlerts" x-small>Clear</v-btn>
+        </v-list-item-action>
+      </v-list-item>
       <v-divider></v-divider>
       <v-list-item>
         <v-list-item-content>Dark or light theme</v-list-item-content>
@@ -50,6 +56,9 @@ export default Vue.extend({
     },
     clearBookmarks(): void {
       this.$store.commit("Content/clearBookmarks");
+    },
+    resetAlerts(): void {
+      this.$store.commit("App/alert", true);
     },
   },
 });
