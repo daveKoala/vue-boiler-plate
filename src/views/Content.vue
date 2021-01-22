@@ -36,8 +36,8 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import Share from "@/components/Share.vue";
 import GoBack from "@/components/GoBack.button.vue";
-import BookmarkButton from "@/views/Home/Article/Bookmark.button.vue";
-import NewArticle from "@/views/Home/Article/NewArticle.badge.vue";
+import BookmarkButton from "@/components/Bookmark.button.vue";
+import NewArticle from "@/components/NewArticle.badge.vue";
 import { Card } from "@/interfaces";
 export default Vue.extend({
   name: "Content",
