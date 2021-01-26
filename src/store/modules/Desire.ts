@@ -1,11 +1,4 @@
-interface Desire {
-  id: string;
-  title: string;
-  body: string;
-  rating: number;
-  selected: boolean;
-  review: { date: string; value: number }[];
-}
+import { Desire } from "@/interfaces";
 
 interface Desires {
   collection: Desire[];
@@ -31,7 +24,7 @@ const state: DesiresState = {
         title: "Manage team members performance",
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
-        selected: false,
+        selected: true,
         review: [],
       },
       {
@@ -47,7 +40,7 @@ const state: DesiresState = {
         title: "Building trust",
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
-        selected: false,
+        selected: true,
         review: [],
       },
       {
@@ -77,6 +70,8 @@ const mutations = {
 };
 const getters = {
   all: (state: DesiresState): Desire[] => state.desire.collection,
+  myDesires: (state: DesiresState): Desire[] =>
+    state.desire.collection.filter((desire) => desire.selected === true),
 };
 export default {
   namespaced: true,

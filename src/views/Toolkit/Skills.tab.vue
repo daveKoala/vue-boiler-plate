@@ -15,9 +15,12 @@
           </v-card-actions>
           <v-img height="120px" :src="skill.src" v-on:click="goTo(skill)">
             <v-card-title class="white--text">
-              <span class="text-h4">Skill:</span>{{ skill.name }}
+              <span class="text-h4">Skill:</span>
             </v-card-title>
           </v-img>
+          <v-card-title class="white--text">
+            {{ skill.name }}
+          </v-card-title>
         </v-card>
       </v-col>
     </v-row>

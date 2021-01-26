@@ -27,3 +27,12 @@ export interface Skill {
   bookmarked: boolean;
   src?: string;
 }
+
+export interface Desire {
+  id: string;
+  title: string;
+  body: string;
+  rating: number;
+  selected: boolean;
+  review: { date: string; value: number }[];
+}
