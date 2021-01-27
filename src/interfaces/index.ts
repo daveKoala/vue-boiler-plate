@@ -36,3 +36,11 @@ export interface Desire {
   selected: boolean;
   review: { date: string; value: number }[];
 }
+
+export interface To {
+  path?: string;
+  name?: string;
+  params?: {
+    [key: string]: string;
+  };
+}

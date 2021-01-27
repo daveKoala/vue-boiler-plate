@@ -1,61 +1,20 @@
 <template>
   <v-container fluid>
     <v-card :dark="$store.getters['App/dark']">
-      <v-card-text> How are you feeling? </v-card-text>
       <v-list two-line>
-        <v-subheader>Desires</v-subheader>
-        <v-list-item
+        <v-subheader>Desires: Rate your ability.</v-subheader>
+        <desire-check-in-list-item
           v-for="(desire, index) in desires"
-          :key="`desire-${index}`"
-        >
-          <v-list-item-avatar>
-            <v-img
-              :alt="`${desire.title} avatar`"
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-            />
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>{{ desire.title }}</v-list-item-title>
-            <v-rating
-              empty-icon="mdi-star"
-              full-icon="mdi-star"
-              half-icon="mdi-star"
-              hover
-              length="5"
-              size="18"
-              :value="star"
-            ></v-rating>
-          </v-list-item-content>
-          <v-list-item-icon>
-            <v-icon :color="true ? 'deep-purple accent-4' : 'grey'">
-              mdi-message-outline
-            </v-icon>
-          </v-list-item-icon>
-        </v-list-item>
+          :key="`checkInItem-${index}`"
+          :desire="desire"
+        />
 
-        <v-subheader>Skills</v-subheader>
-        <v-list-item v-for="(skill, index) in skills" :key="`skill-${index}`">
-          <v-list-item-avatar>
-            <v-img :alt="`${skill.name} avatar`" :src="skill.src" />
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>{{ skill.name }}</v-list-item-title>
-            <v-rating
-              empty-icon="mdi-star"
-              full-icon="mdi-star"
-              half-icon="mdi-star"
-              hover
-              length="5"
-              size="18"
-              :value="star"
-            ></v-rating>
-          </v-list-item-content>
-          <v-list-item-action>
-            <v-list-item-action-text v-text="`3.6`"></v-list-item-action-text>
-
-            <v-icon color="yellow darken-3"> mdi-star </v-icon>
-          </v-list-item-action>
-        </v-list-item>
+        <v-subheader>Skills: Rate your last practice.</v-subheader>
+        <skill-check-in-list-item
+          v-for="(skill, index) in skills"
+          :key="`skill-${index}`"
+          :skill="skill"
+        />
       </v-list>
     </v-card>
     <v-divider></v-divider>
@@ -66,9 +25,12 @@
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import { Card, Skill, Desire } from "@/interfaces";
+import DesireCheckInListItem from "@/views/CheckIn/DesireListItem.vue";
+import SkillCheckInListItem from "@/views/CheckIn/SkillListItem.vue";
 
 export default Vue.extend({
   name: "CheckIn",
+  components: { DesireCheckInListItem, SkillCheckInListItem },
   created() {
     this.$emit("update:layout", BasicLayout);
   },
@@ -87,7 +49,6 @@ export default Vue.extend({
   },
   data: () => ({
     timerId: null as number | null,
-    star: 3,
   }),
   computed: {
     cards(): Card[] {
