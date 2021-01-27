@@ -32,7 +32,7 @@ export default Vue.extend({
       if (pV === null) return 0;
       return Math.round((100 * pV) / this.skill.suggestedPractices);
     },
-  }
+  },
 });
 </script>
 
