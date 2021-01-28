@@ -26,13 +26,14 @@
         </div>
       </v-card-actions>
       <progress-bar :value="50" color="amber" />
-      <v-card-text>
-        <v-row align="center" class="mx-0"> </v-row>
-      </v-card-text>
 
+      <v-card-title v-html="skill.subTitle" />
       <v-divider class="mx-4"></v-divider>
-      <v-card-text> {{ skill }} </v-card-text>
-      
+      <v-card-text>
+        <p v-for="index in skill.suggestedPractices" :key="index">
+          {{ $loremIpsum().generateParagraphs(1) }}
+        </p>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>
