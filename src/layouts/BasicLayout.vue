@@ -44,11 +44,15 @@ export default Vue.extend({
 
   computed: {
     applicationName(): string {
+      const env =
+        process.env.VUE_APP_ENV.toLowerCase() !== "production"
+          ? `(${process.env.VUE_APP_ENV})`
+          : "";
       const name =
         this.$route.name?.toLowerCase() === "home"
-          ? `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`
+          ? `${this.$store.getters["App/appName"]} ${env}`
           : this.$route.meta.displayName ||
-            `${this.$store.getters["App/appName"]} (${process.env.VUE_APP_ENV})`;
+            `${this.$store.getters["App/appName"]} ${env}`;
 
       return name;
     },

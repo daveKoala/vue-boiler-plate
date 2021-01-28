@@ -31,7 +31,7 @@
       <v-divider class="mx-4"></v-divider>
       <v-card-text>
         <p v-for="index in skill.suggestedPractices" :key="index">
-          {{ $loremIpsum().generateParagraphs(1) }}
+          {{ text }}
         </p>
       </v-card-text>
     </v-card>
@@ -51,6 +51,9 @@ export default Vue.extend({
     this.$emit("update:layout", BasicLayout);
   },
   computed: {
+    text(): string {
+      return this.$loremIpsum().generateParagraphs(1);
+    },
     skill(): Skill {
       return this.$store.getters["Skills/byId"](this.$route.params.id);
     },

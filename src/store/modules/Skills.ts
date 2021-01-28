@@ -14,7 +14,7 @@ const state: SkillsState = {
       {
         id: "12",
         suggestedPractices: 8,
-        subTitle: "subtitle",
+        subTitle: "Eh? What ya saying?",
         name: "listening",
         reflections: [
           { date: "2021-01-01T23:16:00.000Z", value: 3 },
@@ -33,7 +33,7 @@ const state: SkillsState = {
       {
         id: "13",
         suggestedPractices: 10,
-        subTitle: "subtitle",
+        subTitle: "Really? I'll ask that again",
         name: "questioning",
         reflections: [
           { date: "2021-01-01T23:16:00.000Z", value: 3 },
@@ -50,7 +50,7 @@ const state: SkillsState = {
       {
         id: "14",
         suggestedPractices: 10,
-        subTitle: "subtitle",
+        subTitle: "Don't look back in anger",
         name: "reflections",
         reflections: [
           { date: "2021-01-09T23:16:00.000Z", value: 3 },

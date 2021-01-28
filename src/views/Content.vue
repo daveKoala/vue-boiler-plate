@@ -20,7 +20,7 @@
 
       <v-card-text class="text-justify">
         <p v-for="index in card.flex" :key="index">
-        {{ $loremIpsum().generateParagraphs(1) }}
+        {{ text }}
         </p>
       </v-card-text>
     </v-card>
@@ -62,6 +62,9 @@ export default Vue.extend({
   computed: {
     card(): Card {
       return this.$store.getters["Content/byID"](this.$route.params.id);
+    },
+    text(): string {
+      return this.$loremIpsum().generateParagraphs(1);
     },
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
-  <v-btn icon @click="goBack" v-bind="$attrs">
-    <v-icon>mdi-arrow-left</v-icon>
+  <v-btn @click="goBack" v-bind="$attrs">
+    <v-icon v-bind="$attrs" class="mr-1">mdi-arrow-left</v-icon>Back
   </v-btn>
 </template>
 
