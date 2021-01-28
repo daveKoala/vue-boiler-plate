@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.8.3",
+    "lorem-ipsum": "^2.0.3",
     "register-service-worker": "^1.7.2",
     "vue": "^2.6.12",
     "vue-qrcode-reader": "^2.3.16",

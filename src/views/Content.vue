@@ -7,26 +7,22 @@
           $route.params.id
         }}</v-card-title>
       </v-img>
-      <v-card-text class="text-justify">
-        <p>
-          The model above describes the influences on behavior changes found at
-          the intersection of the 3 circles.
-        </p>
 
-        <p>
-          The goal is not unconscious habits as that would be disingenuous
-          instead I want to equip users with tools that if practiced and
-          reflected upon would begin to embed positive habits.
-        </p>
-      </v-card-text>
       <v-card-actions>
-        <go-back />
+        <go-back small />
         <v-spacer></v-spacer>
 
         <bookmark-button :id="card.id" :status="card.bookmarked" />
 
         <Share :linkParam="card.id" />
       </v-card-actions>
+      <v-divider></v-divider>
+
+      <v-card-text class="text-justify">
+        <p v-for="index in card.flex" :key="index">
+        {{ $loremIpsum().generateParagraphs(1) }}
+        </p>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>

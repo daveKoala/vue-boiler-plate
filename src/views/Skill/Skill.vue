@@ -9,30 +9,30 @@
       >
         <v-card-title v-text="skill.name"></v-card-title>
       </v-img>
+      <v-card-actions>
+        <go-back x-small />
+        <v-spacer></v-spacer>
+        <v-rating
+          :value="meanStarValue"
+          color="amber"
+          dense
+          half-increments
+          readonly
+          size="14"
+        ></v-rating>
+
+        <div class="grey--text ml-4">
+          {{ meanStarValue }} {{ nReflections }}
+        </div>
+      </v-card-actions>
       <progress-bar :value="50" color="amber" />
       <v-card-text>
-        <v-row align="center" class="mx-0">
-          <v-rating
-            :value="meanStarValue"
-            color="amber"
-            dense
-            half-increments
-            readonly
-            size="14"
-          ></v-rating>
-
-          <div class="grey--text ml-4">
-            {{ meanStarValue }} {{ nReflections }}
-          </div>
-        </v-row>
+        <v-row align="center" class="mx-0"> </v-row>
       </v-card-text>
 
       <v-divider class="mx-4"></v-divider>
       <v-card-text> {{ skill }} </v-card-text>
-      <v-card-actions>
-        <go-back />
-        <v-spacer></v-spacer>
-      </v-card-actions>
+      
     </v-card>
   </v-container>
 </template>
