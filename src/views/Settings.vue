@@ -58,7 +58,7 @@ export default Vue.extend({
       this.$store.commit("Content/clearBookmarks");
     },
     resetAlerts(): void {
-      this.$store.commit("App/alert", true);
+      this.$store.commit("App/alertReset", true);
     },
   },
 });

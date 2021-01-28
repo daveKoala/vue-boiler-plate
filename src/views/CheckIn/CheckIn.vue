@@ -64,7 +64,7 @@ export default Vue.extend({
   methods: {
     setAlertStatus(): void {
       this.timerId = setTimeout(() => {
-        this.$store.commit("App/alert", false);
+        this.$store.commit("App/alertRead", "abc");
       }, 2000);
     },
   },

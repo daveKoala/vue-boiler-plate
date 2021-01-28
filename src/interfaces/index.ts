@@ -44,3 +44,10 @@ export interface To {
     [key: string]: string;
   };
 }
+export interface Alert {
+  id: string;
+  message: string;
+  createdOn: string;
+  readOn: string | null;
+  url?: string;
+}

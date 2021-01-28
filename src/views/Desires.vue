@@ -83,8 +83,13 @@ export default Vue.extend({
   created() {
     this.$emit("update:layout", BasicLayout);
   },
-
+  beforeDestroy() {
+    if (this.timerId) {
+      clearTimeout(this.timerId);
+    }
+  },
   data: () => ({
+    timerId: null as number | null,
     dialog: false,
     panel: [],
     icons: {
@@ -95,7 +100,14 @@ export default Vue.extend({
     rating: 0,
     selected: false,
   }),
-
+  watch: {
+    "$route.params.id": {
+      handler: function () {
+        this.setAlertStatus();
+      },
+      immediate: true,
+    },
+  },
   computed: {
     items() {
       return this.$store.getters["Desire/all"];
@@ -110,6 +122,11 @@ export default Vue.extend({
         item.selected = true;
         return true;
       }
+    },
+    setAlertStatus(): void {
+      this.timerId = setTimeout(() => {
+        this.$store.commit("App/alertRead", "a1b2c3");
+      }, 2000);
     },
   },
 });

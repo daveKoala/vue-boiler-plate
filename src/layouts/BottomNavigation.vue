@@ -49,6 +49,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .theme--dark.v-btn.v-btn--has-bg {
-  background-color: #2E2E2E;
+  background-color: #2e2e2e;
 }
 </style>
