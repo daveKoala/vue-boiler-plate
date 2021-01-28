@@ -64,6 +64,8 @@ export default Vue.extend({
       return this.$store.getters["Content/byID"](this.$route.params.id);
     },
     text(): string {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       return this.$loremIpsum().generateParagraphs(1);
     },
   },
