@@ -73,7 +73,7 @@ export default Vue.extend({
     },
     nReflections(): string {
       return `(${this.skill.reflections?.length || 0})`;
-    }
+    },
   },
 });
 </script>

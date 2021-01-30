@@ -20,7 +20,7 @@
 
       <v-card-text class="text-justify">
         <p v-for="index in card.flex" :key="index">
-        {{ text }}
+          {{ text }}
         </p>
       </v-card-text>
     </v-card>

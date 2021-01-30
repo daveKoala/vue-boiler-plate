@@ -27,7 +27,7 @@ export default Vue.extend({
   },
   data: () => ({
     star: 3,
-  })
+  }),
 });
 </script>
 
