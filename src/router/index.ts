@@ -118,6 +118,16 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "checkIn" */ "../views/CheckIn/CheckIn.vue"),
   },
   {
+    path: "/library",
+    name: "library",
+    meta: {
+      icon: "mdi-alarm-check",
+      displayName: "Library",
+    } as RouteMetaData,
+    component: () =>
+      import(/* webpackChunkName: "checkIn" */ "../views/Library/Library.vue"),
+  },
+  {
     path: "/*",
     name: "404",
     component: Home,

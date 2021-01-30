@@ -44,9 +44,11 @@ import BasicLayout from "@/layouts/BasicLayout.vue";
 import GoBack from "@/components/GoBack.button.vue";
 import ProgressBar from "@/components/ProgressBar.vue";
 import { Skill } from "@/interfaces";
+import ProgressMixin from "@/mixins/progress";
 export default Vue.extend({
   name: "SkillView" as string,
   components: { GoBack, ProgressBar },
+  mixins: [ProgressMixin],
   created() {
     this.$emit("update:layout", BasicLayout);
   },
@@ -58,12 +60,6 @@ export default Vue.extend({
     },
     skill(): Skill {
       return this.$store.getters["Skills/byId"](this.$route.params.id);
-    },
-    progress(): number {
-      const { reflections, suggestedPractices } = this.skill;
-      const pV = reflections.length || null;
-      if (pV === null) return 0;
-      return Math.round((100 * pV) / suggestedPractices);
     },
     meanStarValue(): number {
       if (this.skill.reflections.length < 1) return 0;
@@ -77,25 +73,7 @@ export default Vue.extend({
     },
     nReflections(): string {
       return `(${this.skill.reflections?.length || 0})`;
-    },
-    //   rating: {
-    //     set(value: number) {
-    //       this.$store.commit("Skills/addReflections", {
-    //         id: this.skill.id,
-    //         value,
-    //       });
-    //     },
-    //     get(): number {
-    //       const lastReflection = this.skill.reflections.slice(
-    //         this.skill.reflections.length - 1
-    //       );
-
-    //       if (lastReflection[0]?.value) {
-    //         return lastReflection[0].value;
-    //       }
-    //       return 1;
-    //     },
-    //   },
+    }
   },
 });
 </script>
