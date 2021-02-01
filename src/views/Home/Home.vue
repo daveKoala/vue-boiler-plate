@@ -8,6 +8,7 @@
         <v-divider></v-divider>
       </v-col>
     </v-row>
+    <summary-charts />
   </v-container>
 </template>
 
@@ -17,11 +18,12 @@ import BasicLayout from "@/layouts/BasicLayout.vue";
 import SquareNavigation from "@/components/SquareNavigation.vue";
 import KnowledgeItem from "@/components/Knowledge.item.vue";
 import Alerts from "@/views/Home/Alerts.vue";
+import SummaryCharts from "@/views/Home/SummaryCharts/SummaryCharts.vue";
 import { Card } from "@/interfaces";
 
 export default Vue.extend({
   name: "Home",
-  components: { SquareNavigation, KnowledgeItem, Alerts },
+  components: { SquareNavigation, KnowledgeItem, Alerts, SummaryCharts },
 
   computed: {
     cards(): Card[] {

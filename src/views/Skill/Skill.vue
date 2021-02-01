@@ -12,20 +12,16 @@
       <v-card-actions>
         <go-back x-small />
         <v-spacer></v-spacer>
-        <v-rating
+        <star-rating
           :value="meanStarValue"
-          color="amber"
-          dense
-          half-increments
-          readonly
-          size="14"
-        ></v-rating>
+          v-on:star-rating="starRating"
+        ></star-rating>
 
         <div class="grey--text ml-4">
           {{ meanStarValue }} {{ nReflections }}
         </div>
       </v-card-actions>
-      <progress-bar :value="50" color="amber" />
+      <progress-bar :value="progress" color="amber" />
 
       <v-card-title v-html="skill.subTitle" />
       <v-divider class="mx-4"></v-divider>
@@ -43,11 +39,12 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import GoBack from "@/components/GoBack.button.vue";
 import ProgressBar from "@/components/ProgressBar.vue";
+import StarRating from "@/components/StartRating.vue";
 import { Skill } from "@/interfaces";
 import ProgressMixin from "@/mixins/progress";
 export default Vue.extend({
   name: "SkillView" as string,
-  components: { GoBack, ProgressBar },
+  components: { GoBack, ProgressBar, StarRating },
   mixins: [ProgressMixin],
   created() {
     this.$emit("update:layout", BasicLayout);
@@ -61,18 +58,28 @@ export default Vue.extend({
     skill(): Skill {
       return this.$store.getters["Skills/byId"](this.$route.params.id);
     },
+    nReflections(): string {
+      return `(${this.skill.reflections?.length || 0})`;
+    },
     meanStarValue(): number {
       if (this.skill.reflections.length < 1) return 0;
 
       const x = this.skill.reflections.length;
-      const total = this.skill.reflections.reduce(
-        (accumulator, r) => accumulator + r.value,
-        0
-      );
+
+      const total = this.skill.reflections.reduce((accumulator, r) => {
+        accumulator += r.value;
+        return accumulator;
+      }, 0);
       return Math.round(total / x);
     },
-    nReflections(): string {
-      return `(${this.skill.reflections?.length || 0})`;
+  },
+  methods: {
+    starRating(e: number): void {
+      console.log("New rating: ", e)
+      this.$store.commit("Skills/addReflections", {
+        id: this.skill.id,
+        value: e,
+      });
     },
   },
 });
