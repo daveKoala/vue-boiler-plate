@@ -75,7 +75,7 @@ export default Vue.extend({
   },
   methods: {
     starRating(e: number): void {
-      console.log("New rating: ", e)
+      console.log("New rating: ", e);
       this.$store.commit("Skills/addReflections", {
         id: this.skill.id,
         value: e,

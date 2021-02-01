@@ -70,7 +70,7 @@ const mutations = {
     state: SkillsState,
     { id, value }: { id: string; value: number }
   ): void => {
-    const x = (value >= 0 && value <= 5) ? value : 0;
+    const x = value >= 0 && value <= 5 ? value : 0;
     state.skills.collection.map((skill) => {
       if (skill.id === id) {
         skill.reflections.push({

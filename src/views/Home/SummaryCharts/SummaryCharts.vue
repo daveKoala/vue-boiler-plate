@@ -39,7 +39,7 @@ export default Vue.extend({
           },
         },
         scales: {
-          yAxes: [{ ticks: {fontColor: "white"} }],
+          yAxes: [{ ticks: { fontColor: "white" } }],
           xAxes: [
             {
               ticks: {
