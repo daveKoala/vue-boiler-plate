@@ -8,7 +8,7 @@
         <v-divider></v-divider>
       </v-col>
     </v-row>
-    <summary-charts />
+    <quick-stats />
   </v-container>
 </template>
 
@@ -17,14 +17,23 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import SquareNavigation from "@/components/SquareNavigation.vue";
 import KnowledgeItem from "@/components/Knowledge.item.vue";
+import QuickStats from "@/views/Home/QuickStats.vue";
 import Alerts from "@/views/Home/Alerts.vue";
-import SummaryCharts from "@/views/Home/SummaryCharts/SummaryCharts.vue";
 import { Card } from "@/interfaces";
+
+export interface SkillData {
+  labels: string[];
+  datasets: { label: string; backgroundColor: string; data: number[] }[];
+}
 
 export default Vue.extend({
   name: "Home",
-  components: { SquareNavigation, KnowledgeItem, Alerts, SummaryCharts },
-
+  components: {
+    SquareNavigation,
+    KnowledgeItem,
+    Alerts,
+    QuickStats,
+  },
   computed: {
     cards(): Card[] {
       return this.$store.getters["Content/bookmarked"];
