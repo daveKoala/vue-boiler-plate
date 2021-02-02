@@ -1,8 +1,10 @@
 <template>
   <base-item
     :title="desire.title"
+    :id="desire.id"
     :link="{ name: 'Desires' }"
-    :ratingProgress="'3.4'"
+    :ratingProgress="progress"
+    v-on:star-rating="starRating"
   >
     <template v-slot:avatar>
       <v-list-item-avatar>
@@ -29,6 +31,25 @@ export default Vue.extend({
   data: () => ({
     star: 3,
   }),
+  computed: {
+    progress(): number {
+      const t = this.desire.review.reduce(
+        (acc, review) => {
+          acc.n++;
+          acc.tally += review.value;
+          return acc;
+        },
+        { tally: 0, n: 0 }
+      );
+
+      return Math.round(t.tally / t.n) || 0;
+    },
+  },
+  methods: {
+    starRating(e: { id: string; value: number }): void {
+      this.$store.commit("Desire/addReview", e);
+    },
+  },
 });
 </script>
 

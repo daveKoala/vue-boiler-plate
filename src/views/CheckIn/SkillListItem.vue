@@ -1,8 +1,10 @@
 <template>
   <base-item
     :title="skill.name"
+    :id="skill.id"
     :link="{ name: 'skillContent', params: { id: skill.id } }"
     :ratingProgress="`${progress}%`"
+    v-on:star-rating="starRating"
   >
     <template v-slot:avatar>
       <v-list-item-avatar>
@@ -28,6 +30,11 @@ export default Vue.extend({
   data: () => ({
     star: 3,
   }),
+  methods: {
+    starRating(e: { id: string; value: number }): void {
+      this.$store.commit("Skills/addReflections", e);
+    },
+  },
 });
 </script>
 
