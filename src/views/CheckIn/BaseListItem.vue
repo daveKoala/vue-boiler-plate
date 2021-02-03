@@ -5,12 +5,18 @@
         <v-img
           :alt="`${title} avatar`"
           src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
+          v-on:click="$emit('go-to', 'help')"
         />
       </v-list-item-avatar>
     </slot>
     <v-list-item-content>
       <v-list-item-title>{{ title }}</v-list-item-title>
-      <star-rating :value="star" v-on:star-rating="starRating"></star-rating>
+      <star-rating
+        :value="star"
+        v-on:star-rating="starRating"
+        v-bind="$attrs"
+        :size="28"
+      ></star-rating>
     </v-list-item-content>
     <v-list-item-action>
       <v-list-item-action-text
@@ -33,7 +39,7 @@ export default Vue.extend({
     title: { type: String, required: true },
     id: { type: String, required: true },
     link: { type: Object as () => To, required: false },
-    ratingProgress: { type: String, default: "0" },
+    ratingProgress: { type: [String, Number], default: "0" },
   },
   data: () => ({
     star: 0,

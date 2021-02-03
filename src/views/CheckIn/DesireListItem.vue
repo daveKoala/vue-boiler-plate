@@ -11,6 +11,7 @@
         <v-img
           :alt="`${desire.title} avatar`"
           src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
+          @click="goTo"
         />
       </v-list-item-avatar>
     </template>
@@ -48,6 +49,9 @@ export default Vue.extend({
   methods: {
     starRating(e: { id: string; value: number }): void {
       this.$store.commit("Desire/addReview", e);
+    },
+    goTo(): void {
+      this.$router.push({ name: "Desires", params: { id: this.desire.id } });
     },
   },
 });

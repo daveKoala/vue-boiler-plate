@@ -8,7 +8,7 @@
   >
     <template v-slot:avatar>
       <v-list-item-avatar>
-        <v-img :alt="`${skill.name} avatar`" :src="skill.src" />
+        <v-img :alt="`${skill.name} avatar`" :src="skill.src" @click="goTo" />
       </v-list-item-avatar>
     </template>
   </base-item>
@@ -33,6 +33,12 @@ export default Vue.extend({
   methods: {
     starRating(e: { id: string; value: number }): void {
       this.$store.commit("Skills/addReflections", e);
+    },
+    goTo(): void {
+      this.$router.push({
+        name: "skillContent",
+        params: { id: this.skill.id },
+      });
     },
   },
 });
