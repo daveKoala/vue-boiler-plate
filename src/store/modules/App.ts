@@ -5,16 +5,24 @@ interface TabItem {
   value: number | null;
 }
 
+interface SnackObject {
+  [key: string]: string | number | undefined;
+}
 interface App {
   appName: string;
   dark: boolean;
   tabs: TabItem[];
   alerts: Alert[];
+  snack: SnackObject;
 }
 
 interface AppState {
   app: App;
 }
+
+const getDefaultSnackState = (): SnackObject => {
+  return {};
+};
 
 const state: AppState = {
   app: {
@@ -43,6 +51,7 @@ const state: AppState = {
         url: "/desires",
       },
     ],
+    snack: getDefaultSnackState(),
   },
 };
 
@@ -53,6 +62,7 @@ const getters = {
     state.app.alerts.filter((alert) => !alert.readOn),
   tab: (state: AppState) => (tabName: string): TabItem =>
     state.app.tabs.filter((tab) => tab.tabName === tabName)[0],
+  snack: (state: AppState): SnackObject => state.app.snack,
 };
 const mutations = {
   toggleDark(state: AppState): void {
@@ -81,6 +91,12 @@ const mutations = {
         alert.readOn = null;
       }
     });
+  },
+  setSnack(state: AppState, showSnack: SnackObject): void {
+    state.app.snack = { ...showSnack };
+  },
+  resetSnack(state: AppState): void {
+    state.app.snack = getDefaultSnackState();
   },
 };
 

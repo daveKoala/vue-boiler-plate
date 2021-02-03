@@ -41,7 +41,9 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 export default Vue.extend({
   name: "AppSettings" as string,
-  components: {},
+  data: () => ({
+    snackbar: { show: false, text: "" },
+  }),
   computed: {
     dark: {
       set() {
@@ -58,16 +60,23 @@ export default Vue.extend({
   methods: {
     clearHistory(): void {
       this.$store.commit("History/clearQRHistory");
+      this.alert("Success: Clear QR history");
     },
     clearBookmarks(): void {
       this.$store.commit("Content/clearBookmarks");
+      this.alert("Success: Clear bookmarks");
     },
     resetAlerts(): void {
       this.$store.commit("App/alertReset", true);
+      this.alert("Success: Reset alerts");
     },
     clearProgress(): void {
       this.$store.commit("Skills/resetProgress");
       this.$store.commit("Desire/resetProgress");
+      this.alert("Success: Clear progress");
+    },
+    alert(message = "Success"): void {
+      this.$store.commit("App/setSnack", { message });
     },
   },
 });
