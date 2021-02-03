@@ -1,6 +1,6 @@
 <template>
   <base-item
-    :title="desire.title"
+    :title="desire.name"
     :id="desire.id"
     :link="{ name: 'Desires' }"
     :ratingProgress="progress"
@@ -9,7 +9,7 @@
     <template v-slot:avatar>
       <v-list-item-avatar>
         <v-img
-          :alt="`${desire.title} avatar`"
+          :alt="`${desire.name} avatar`"
           src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
           @click="goTo"
         />

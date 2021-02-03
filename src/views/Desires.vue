@@ -15,7 +15,7 @@
     <v-expansion-panels v-model="panel" multiple>
       <v-expansion-panel v-for="(item, i) in items" :key="i">
         <v-expansion-panel-header disable-icon-rotate>
-          {{ item.title }}
+          {{ item.name }}
           <template v-slot:actions v-if="isSelected(i, item)">
             <v-icon color="teal"> mdi-check </v-icon>
           </template>

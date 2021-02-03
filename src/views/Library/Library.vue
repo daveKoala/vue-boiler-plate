@@ -15,7 +15,7 @@
       color="transparent"
     >
       <v-card-title
-        v-html="collection.title"
+        v-html="collection.name"
         class="white--text"
       ></v-card-title>
       <div class="scrolling-wrapper-flexbox">
@@ -31,7 +31,7 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="120px"
             >
-              <v-card-title v-text="card.title"></v-card-title>
+              <v-card-title v-text="card.name"></v-card-title>
             </v-img>
           </v-card>
         </div>

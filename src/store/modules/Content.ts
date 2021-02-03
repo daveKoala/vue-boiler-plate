@@ -13,7 +13,7 @@ const state: ContentState = {
     articles: [
       {
         id: "cooking",
-        title: "Cooking",
+        name: "Cooking",
         src: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
         flex: 6,
         bookmarked: true,
@@ -22,7 +22,7 @@ const state: ContentState = {
       },
       {
         id: "parallax",
-        title: "Parallax",
+        name: "Parallax",
         src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
         flex: 4,
         bookmarked: false,
@@ -30,7 +30,7 @@ const state: ContentState = {
       },
       {
         id: "Pre-fab-homes",
-        title: "Pre-fab homes",
+        name: "Pre-fab homes",
         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
         flex: 5,
         bookmarked: false,
@@ -39,7 +39,7 @@ const state: ContentState = {
       },
       {
         id: "Favorite-road-trips",
-        title: "Favorite road trips",
+        name: "Favorite road trips",
         src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
         flex: 2,
 
@@ -49,7 +49,7 @@ const state: ContentState = {
       },
       {
         id: "Best-airlines",
-        title: "Best airlines",
+        name: "Best airlines",
         src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
         flex: 6,
 
@@ -58,7 +58,7 @@ const state: ContentState = {
       },
       {
         id: "bikes",
-        title: "Motorcycles",
+        name: "Motorcycles",
         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
         flex: 10,
         bookmarked: false,
@@ -67,7 +67,7 @@ const state: ContentState = {
       },
       {
         id: "dogs",
-        title: "Dogs of the world",
+        name: "Dogs of the world",
         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
         flex: 12,
         bookmarked: false,

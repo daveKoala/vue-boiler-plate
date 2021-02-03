@@ -13,7 +13,7 @@ const state: DesiresState = {
     collection: [
       {
         id: "1a",
-        title: "Give feedback to team members",
+        name: "Give feedback to team members",
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: false,
@@ -21,7 +21,7 @@ const state: DesiresState = {
       },
       {
         id: "2a",
-        title: "Manage team members performance",
+        name: "Manage team members performance",
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: true,
@@ -29,7 +29,7 @@ const state: DesiresState = {
       },
       {
         id: "3a",
-        title: "Team member(s) life outside work effecting their performance",
+        name: "Team member(s) life outside work effecting their performance",
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: false,
@@ -37,7 +37,7 @@ const state: DesiresState = {
       },
       {
         id: "4a",
-        title: "Building trust",
+        name: "Building trust",
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: true,
@@ -45,7 +45,7 @@ const state: DesiresState = {
       },
       {
         id: "5a",
-        title: "Letting go and giving responsibility to others",
+        name: "Letting go and giving responsibility to others",
         body: "xxx xxxxx xxxxxx x x x x x",
         rating: 0,
         selected: false,

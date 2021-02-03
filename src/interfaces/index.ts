@@ -1,23 +1,19 @@
-export interface NavigationItem {
+export interface ContentBase {
   id: string;
-  icon: string;
   name: string;
-  to: string;
-  color: string;
+  src?: string | undefined;
 }
 
-export interface Card {
-  id: string;
-  src: string;
-  title: string;
+export interface Card extends ContentBase {
+  // src: string;
+  // title: string;
   flex: number;
   read: string | null;
   bookmarked: boolean;
   isNew?: boolean;
 }
 
-export interface Skill {
-  id: string;
+export interface Skill extends ContentBase {
   reflections: { date: string; value: number }[];
   suggestedPractices: number;
   name: string;
@@ -25,12 +21,12 @@ export interface Skill {
   blurb: string;
   content: string;
   bookmarked: boolean;
-  src?: string;
+  // src?: string;
 }
 
-export interface Desire {
+export interface Desire extends ContentBase {
   id: string;
-  title: string;
+  // title: string;
   body: string;
   rating: number;
   selected: boolean;

@@ -1,12 +1,12 @@
 <template>
-  <v-list-item :key="card.title">
+  <v-list-item :key="card.name">
     <v-list-item-avatar rounded max-width="30">
       <v-img :src="card.src" v-on:click="goTo()"></v-img>
     </v-list-item-avatar>
 
     <v-list-item-content v-on:click="goTo()" class="mr-1" :class="textColor">
       <v-list-item-title
-        v-html="card.title"
+        v-html="card.name"
         :class="textColor"
       ></v-list-item-title>
       <v-list-item-subtitle v-if="!hideActions">
@@ -55,7 +55,7 @@ export default Vue.extend({
       this.$router.push({ name: "content", params: { id: this.card.id } });
     },
     more(): void {
-      console.log("more", this.card.title);
+      console.log("more", this.card.name);
     },
     bookmark(): void {
       this.$store.commit("Content/bookmark", this.card.id);
