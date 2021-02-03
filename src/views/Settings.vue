@@ -2,16 +2,21 @@
   <v-container>
     <v-list>
       <v-list-item>
-        <v-list-item-content>Clear history</v-list-item-content>
+        <v-list-item-content>Clear QR scanner history</v-list-item-content>
         <v-list-item-action>
           <v-btn v-on:click="clearHistory" x-small>Clear</v-btn>
         </v-list-item-action>
       </v-list-item>
-      <v-divider></v-divider>
       <v-list-item>
         <v-list-item-content>Clear bookmarks</v-list-item-content>
         <v-list-item-action>
           <v-btn v-on:click="clearBookmarks" x-small>Clear</v-btn>
+        </v-list-item-action>
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-content>Clear ratings & progress</v-list-item-content>
+        <v-list-item-action>
+          <v-btn v-on:click="clearProgress" x-small>Clear</v-btn>
         </v-list-item-action>
       </v-list-item>
       <v-list-item>
@@ -59,6 +64,10 @@ export default Vue.extend({
     },
     resetAlerts(): void {
       this.$store.commit("App/alertReset", true);
+    },
+    clearProgress(): void {
+      this.$store.commit("Skills/resetProgress");
+      this.$store.commit("Desire/resetProgress");
     },
   },
 });

@@ -88,6 +88,11 @@ const mutations = {
       }
     });
   },
+  resetProgress: (state: SkillsState): void => {
+    state.skills.collection.map((col) => {
+      col.reflections = [];
+    });
+  },
 };
 
 const getters = {

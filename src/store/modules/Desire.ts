@@ -67,6 +67,11 @@ const mutations = {
       }
     });
   },
+  resetProgress: (state: DesiresState): void => {
+    state.desire.collection.map((desire) => {
+      desire.review = [];
+    });
+  },
 };
 const getters = {
   all: (state: DesiresState): Desire[] => state.desire.collection,
