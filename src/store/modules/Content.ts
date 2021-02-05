@@ -14,7 +14,7 @@ const state: ContentState = {
       {
         id: "cooking",
         name: "Cooking",
-        src: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
+        src: "https://robohash.org/david.clare@cirrus-connect.com.png",
         flex: 6,
         bookmarked: true,
         read: null,
@@ -31,7 +31,7 @@ const state: ContentState = {
       {
         id: "Pre-fab-homes",
         name: "Pre-fab homes",
-        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+        src: "https://robohash.org/mr.d.clare@gmail.com.png",
         flex: 5,
         bookmarked: false,
         read: null,
@@ -40,7 +40,7 @@ const state: ContentState = {
       {
         id: "Favorite-road-trips",
         name: "Favorite road trips",
-        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+        src: "https://robohash.org/favorite%20road%20trips.png",
         flex: 2,
 
         bookmarked: true,
@@ -50,7 +50,7 @@ const state: ContentState = {
       {
         id: "Best-airlines",
         name: "Best airlines",
-        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        src: "https://robohash.org/Best%20airlines.png",
         flex: 6,
 
         bookmarked: false,
@@ -59,7 +59,7 @@ const state: ContentState = {
       {
         id: "bikes",
         name: "Motorcycles",
-        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+        src: "https://robohash.org/spit%20or%20swallow.png",
         flex: 10,
         bookmarked: false,
         read: null,
