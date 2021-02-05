@@ -12,6 +12,19 @@
     </v-tabs>
 
     <v-list dense v-if="tabIndex != 1">
+      <v-list-item>
+        <v-text-field
+          color="white"
+          background-color="white"
+          class="text--white"
+          v-model="searchText"
+          label="Search"
+          solo
+          outlined
+          clearable
+          v-if="tabIndex != 1"
+        ></v-text-field>
+      </v-list-item>
       <template v-for="(card, index) in cards">
         <knowledge-tab-item
           :card="card"
@@ -38,9 +51,12 @@ export default Vue.extend({
   created() {
     this.$emit("update:layout", BasicLayout);
   },
+  data: () => ({
+    searchText: "",
+  }),
   computed: {
     cards(): Card[] {
-      return this.$store.getters["Content/all"];
+      return this.$store.getters["Content/filtered"](this.searchText);
     },
     tabIndex: {
       set(value: number | null): void {

@@ -100,6 +100,15 @@ const getters = {
 
   bookmarked: (state: ContentState): Card[] =>
     state.content.articles.filter((article) => article.bookmarked === true),
+
+  filtered: (state: ContentState) => (str: string | null): Card[] => {
+    if (str === null || str.length < 4) return state.content.articles;
+
+    const strLowerCase = str?.toLowerCase();
+    return state.content.articles.filter((article) =>
+      article.name.toLowerCase().includes(strLowerCase)
+    );
+  },
 };
 
 const mutations = {
