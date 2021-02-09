@@ -11,7 +11,6 @@
         <v-card-title class="headline grey lighten-2"> Share </v-card-title>
 
         <v-card-text>
-          Feel free to share this.
           <v-text-field
             ref="linkToCopy"
             :label="copied ? 'Link copied' : 'Click to copy link'"
@@ -20,7 +19,7 @@
             :value="link"
             @click="copy"
           ></v-text-field>
-          The above link will open in any browser.
+          Feel free to share this. The link will open in any browser.
         </v-card-text>
 
         <v-divider></v-divider>
