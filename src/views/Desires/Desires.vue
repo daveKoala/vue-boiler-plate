@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <v-alert color="green lighten-2" border="left" elevation="2" colored-border>
+      What would you like to do better? Choose as many or as few as you want
+    </v-alert>
     <v-row>
       <v-col cols="6" md="4" v-for="(item, index) in items" :key="index">
         <desire-card :desire="item" />

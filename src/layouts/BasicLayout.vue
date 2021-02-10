@@ -3,7 +3,10 @@
     <v-app-bar app flat :dark="$store.getters['App/dark']">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>{{ applicationName }}</v-toolbar-title>
+        <v-icon v-if="icon" class="mr-1">{{icon}}</v-icon>
+      <v-toolbar-title>
+        {{ applicationName }}
+        </v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -43,6 +46,10 @@ export default Vue.extend({
   }),
 
   computed: {
+    icon(): string | null {
+      if (this.$route.meta.icon) return this.$route.meta.icon;
+      return null;
+    },
     applicationName(): string {
       const env =
         process.env.VUE_APP_ENV.toLowerCase() !== "production"
