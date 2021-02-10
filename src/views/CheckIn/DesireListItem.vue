@@ -15,17 +15,21 @@
         />
       </v-list-item-avatar>
     </template>
+    <template v-slot:rating>
+      <emoji-rating :value="0" v-on:emoji-select="starRating" />
+    </template>
   </base-item>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import BaseItem from "@/views/CheckIn/BaseListItem.vue";
+import EmojiRating from "@/components/Emoji/EmojiRating.vue";
 import { Desire } from "@/interfaces";
 
 export default Vue.extend({
   name: "CheckInListItemDesire" as string,
-  components: { BaseItem },
+  components: { BaseItem, EmojiRating },
   props: {
     desire: { type: Object as () => Desire, required: true },
   },
@@ -33,7 +37,7 @@ export default Vue.extend({
     star: 3,
   }),
   computed: {
-    progress(): number {
+    progress(): string {
       const t = this.desire.review.reduce(
         (acc, review) => {
           acc.n++;
@@ -43,12 +47,13 @@ export default Vue.extend({
         { tally: 0, n: 0 }
       );
 
-      return Math.round(t.tally / t.n) || 0;
+      return `x̄${Math.round(t.tally / t.n)}` || `x̄${0}`;
     },
   },
   methods: {
-    starRating(e: { id: string; value: number }): void {
-      this.$store.commit("Desire/addReview", e);
+    starRating(value: number): void {
+      console.log({ id: this.desire.id, value });
+      this.$store.commit("Desire/addReview", { id: this.desire.id, value });
     },
     goTo(): void {
       this.$router.push({ name: "Desires", params: { id: this.desire.id } });

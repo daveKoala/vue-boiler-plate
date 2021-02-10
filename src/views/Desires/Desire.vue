@@ -10,7 +10,7 @@
     <v-card-actions>
       <v-checkbox
         v-model="selected"
-        label="Select"
+        :label="selected ? 'Selected' : 'Select'"
         color="green lighten-2"
         hide-details
       ></v-checkbox>

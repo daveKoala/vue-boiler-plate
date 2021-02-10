@@ -11,12 +11,14 @@
     </slot>
     <v-list-item-content>
       <v-list-item-title>{{ title }}</v-list-item-title>
-      <star-rating
-        :value="star"
-        v-on:star-rating="starRating"
-        v-bind="$attrs"
-        :size="28"
-      ></star-rating>
+      <slot name="rating">
+        <star-rating
+          :value="star"
+          v-on:star-rating="starRating"
+          v-bind="$attrs"
+          :size="28"
+        ></star-rating>
+      </slot>
     </v-list-item-content>
     <v-list-item-action>
       <v-list-item-action-text
