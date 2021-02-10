@@ -15,6 +15,7 @@ const state: DesiresState = {
         id: "1a",
         name: "Give feedback to team members",
         body: "xxx xxxxx xxxxxx x x x x x",
+        src: "https://robohash.org/Give%20feedback%20to%20team%20members.png",
         rating: 0,
         selected: false,
         review: [],
@@ -23,6 +24,7 @@ const state: DesiresState = {
         id: "2a",
         name: "Manage team members performance",
         body: "xxx xxxxx xxxxxx x x x x x",
+        src: "https://robohash.org/Manage%20team%20members%20performance.png",
         rating: 0,
         selected: true,
         review: [],
@@ -31,6 +33,8 @@ const state: DesiresState = {
         id: "3a",
         name: "Team member(s) life outside work effecting their performance",
         body: "xxx xxxxx xxxxxx x x x x x",
+        src:
+          "https://robohash.org/life%20outside%20work%20effecting%20their%20performance.png",
         rating: 0,
         selected: false,
         review: [],
@@ -39,6 +43,7 @@ const state: DesiresState = {
         id: "4a",
         name: "Building trust",
         body: "xxx xxxxx xxxxxx x x x x x",
+        src: "https://robohash.org/Building%20trust.png",
         rating: 0,
         selected: true,
         review: [],
@@ -47,6 +52,8 @@ const state: DesiresState = {
         id: "5a",
         name: "Letting go and giving responsibility to others",
         body: "xxx xxxxx xxxxxx x x x x x",
+        src:
+          "https://robohash.org/Letting%20go%20and%20giving%20responsibility%20to%20others.png",
         rating: 0,
         selected: false,
         review: [],
@@ -70,6 +77,13 @@ const mutations = {
   resetProgress: (state: DesiresState): void => {
     state.desire.collection.map((desire) => {
       desire.review = [];
+    });
+  },
+  selectToggle: (state: DesiresState, id: string): void => {
+    state.desire.collection.map((desire) => {
+      if (desire.id === id) {
+        desire.selected = !desire.selected;
+      }
     });
   },
 };

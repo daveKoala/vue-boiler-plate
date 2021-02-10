@@ -57,7 +57,7 @@ const routes: Array<RouteConfig> = [
       displayName: "Desires",
     } as RouteMetaData,
     component: () =>
-      import(/* webpackChunkName: "desires" */ "../views/Desires.vue"),
+      import(/* webpackChunkName: "desires" */ "../views/Desires/Desires.vue"),
   },
   {
     path: "/funky",
