@@ -14,10 +14,7 @@
       :key="`collection-${key}`"
       color="transparent"
     >
-      <v-card-title
-        v-html="collection.name"
-        class="white--text"
-      ></v-card-title>
+      <v-card-title v-html="collection.name" class="white--text"></v-card-title>
       <div class="scrolling-wrapper-flexbox">
         <div
           class="card"

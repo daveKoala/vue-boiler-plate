@@ -24,8 +24,8 @@ export default Vue.extend({
       if (this.value >= 5) return this.icons[4];
 
       return this.icons[this.value];
-    }
-  }
+    },
+  },
 });
 </script>
 

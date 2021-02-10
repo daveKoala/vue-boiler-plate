@@ -3,10 +3,10 @@
     <v-app-bar app flat :dark="$store.getters['App/dark']">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-        <v-icon v-if="icon" class="mr-1">{{icon}}</v-icon>
+      <v-icon v-if="icon" class="mr-1">{{ icon }}</v-icon>
       <v-toolbar-title>
         {{ applicationName }}
-        </v-toolbar-title>
+      </v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer

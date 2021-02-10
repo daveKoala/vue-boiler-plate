@@ -52,7 +52,6 @@ export default Vue.extend({
   },
   methods: {
     starRating(value: number): void {
-      console.log({ id: this.desire.id, value });
       this.$store.commit("Desire/addReview", { id: this.desire.id, value });
     },
     goTo(): void {
