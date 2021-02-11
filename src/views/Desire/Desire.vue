@@ -11,9 +11,23 @@
       </v-img>
       <v-card-actions>
         <go-back x-small />
+        <v-spacer></v-spacer>
+        <v-btn @click="showProgress = !showProgress" text>{{
+          !showProgress ? "Progress" : "Hide"
+        }}</v-btn>
       </v-card-actions>
-      <Progress />
-      <v-card-text v-html="$loremIpsum().generateParagraphs(10)"> </v-card-text>
+      <Progress v-if="showProgress" transition="scroll-y-transition" />
+      <v-card-text v-html="$loremIpsum().generateParagraphs(1)"> </v-card-text>
+      <v-card-text
+        ><iframe
+          width="275px"
+          src="https://www.youtube.com/embed/QJhrZsN43Lo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe
+      ></v-card-text>
+      <v-card-text v-html="$loremIpsum().generateParagraphs(2)"> </v-card-text>
     </v-card>
   </v-container>
 </template>
@@ -30,6 +44,9 @@ export default Vue.extend({
   created() {
     this.$emit("update:layout", BasicLayout);
   },
+  data: () => ({
+    showProgress: true,
+  }),
   computed: {
     desire(): Desire {
       return this.$store.getters["Desire/id"](this.$route.params.id);

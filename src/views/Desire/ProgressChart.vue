@@ -1,7 +1,5 @@
 <template>
-  <v-container>
-    <line-chart :data="lineChartData" :options="options" />
-  </v-container>
+  <line-chart :data="lineChartData" :options="options" />
 </template>
 
 <script lang="ts">
