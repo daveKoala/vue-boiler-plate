@@ -13,6 +13,8 @@ export interface Scales {
 export interface Ticks {
   fontColor: string;
   beginAtZero?: boolean;
+  stepSize?: number;
+  callback?: (n: number) => void;
 }
 
 export interface Axes {
@@ -20,8 +22,9 @@ export interface Axes {
 }
 
 export interface Legend {
-  labels: Labels;
+  labels?: Labels;
   id?: string;
+  display?: boolean;
 }
 
 export interface Labels {

@@ -8,11 +8,7 @@
   >
     <template v-slot:avatar>
       <v-list-item-avatar>
-        <v-img
-          :alt="`${desire.name} avatar`"
-          src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
-          @click="goTo"
-        />
+        <v-img :alt="`${desire.name} avatar`" :src="desire.src" @click="goTo" />
       </v-list-item-avatar>
     </template>
     <template v-slot:rating>
@@ -56,7 +52,10 @@ export default Vue.extend({
       this.$store.commit("Desire/addReview", { id: this.desire.id, value });
     },
     goTo(): void {
-      this.$router.push({ name: "Desires", params: { id: this.desire.id } });
+      this.$router.push({
+        name: "desireContent",
+        params: { id: this.desire.id },
+      });
     },
   },
 });

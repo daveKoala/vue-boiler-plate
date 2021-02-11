@@ -91,6 +91,8 @@ const getters = {
   all: (state: DesiresState): Desire[] => state.desire.collection,
   myDesires: (state: DesiresState): Desire[] =>
     state.desire.collection.filter((desire) => desire.selected === true),
+  id: (state: DesiresState) => (id: string): Desire =>
+    state.desire.collection.filter((desire) => desire.id === id)[0],
 };
 export default {
   namespaced: true,

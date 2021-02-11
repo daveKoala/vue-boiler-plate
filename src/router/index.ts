@@ -98,6 +98,15 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "skill" */ "../views/Skill/Skill.vue"),
   },
   {
+    path: "/desire/:id",
+    name: "desireContent",
+    meta: {
+      displayName: "Desire",
+    },
+    component: () =>
+      import(/* webpackChunkName: "desire" */ "../views/Desire/Desire.vue"),
+  },
+  {
     path: "/tool-kit",
     name: "toolkit",
     meta: {
