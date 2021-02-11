@@ -38,6 +38,33 @@
           short space of time, instead I want to equip users with tools that if
           practiced and reflected upon would begin to embed positive habits.
         </p>
+        <h2>Skills</h2>
+        <p>
+          A skill is something you practice and as you practice and reflect your
+          competence will increase. Each skill is given a suggested number or
+          practices to aim for during your training. You will see a progress bar
+          for each skill along with your average rating and total number of
+          ratings.
+        </p>
+        <h2>Knowledge</h2>
+        <p>
+          These are articles, videos, links to content chosen to support your
+          desires and as additional resources for your skill.
+        </p>
+        <p>
+          Knowledge articles are sharable with others outside the programme, but
+          will link to our site.
+        </p>
+        <h2>Check In</h2>
+        <p>
+          A single place where you can update and record our progress in
+          practicing skills and most importantly how you feel about your chosen
+          desires
+        </p>
+        <p>
+          You will be prompted to check in via, notifications and alerts on the
+          home page.
+        </p>
       </v-card-text>
     </v-card>
   </v-container>
