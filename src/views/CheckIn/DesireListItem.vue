@@ -47,7 +47,8 @@ export default Vue.extend({
         { tally: 0, n: 0 }
       );
 
-      return `x̄${Math.round(t.tally / t.n)}` || `x̄${0}`;
+      const n = Math.round(t.tally / t.n) || 0;
+      return `${n}`;
     },
   },
   methods: {

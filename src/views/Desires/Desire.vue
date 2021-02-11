@@ -7,46 +7,28 @@
     ></v-img>
 
     <v-card-title v-html="desire.name"></v-card-title>
+    <v-card-subtitle>
+      <desire-selector-content />
+    </v-card-subtitle>
+
     <v-card-actions>
+      <v-spacer></v-spacer>
       <v-checkbox
         v-model="selected"
-        :label="selected ? 'Selected' : 'Select'"
         color="green lighten-2"
         hide-details
       ></v-checkbox>
-
-      <v-spacer></v-spacer>
-      <emoji-rating :value="emoji" color="green lighten-2" />
     </v-card-actions>
-
-    <v-card-actions>
-      <v-btn color="orange lighten-2" text> More </v-btn>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon @click="show = !show">
-        <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
-      </v-btn>
-    </v-card-actions>
-
-    <v-expand-transition>
-      <div v-show="show">
-        <v-divider></v-divider>
-
-        <v-card-text v-html="$loremIpsum().generateParagraphs(4)">
-        </v-card-text>
-      </div>
-    </v-expand-transition>
   </v-card>
 </template>
 
 <script lang="ts">
 import { Desire } from "@/interfaces";
 import Vue from "vue";
-import EmojiRating from "./EmojiRating.vue";
+import DesireSelectorContent from "./SelectorContent.dialog.vue";
 export default Vue.extend({
   name: "DesireCard" as string,
-  components: { EmojiRating },
+  components: { DesireSelectorContent },
   props: {
     desire: { type: Object as () => Desire, required: true },
   },
