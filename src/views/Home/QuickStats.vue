@@ -50,6 +50,11 @@ export default Vue.extend({
             ...bg(i++),
             data: [5, 2, 3, 2, 4, 4],
           },
+          {
+            label: "Knowledge",
+            ...bg(i++),
+            data: [2, 4, 7, 11],
+          },
         ],
       };
     },
@@ -65,12 +70,12 @@ export default Vue.extend({
         },
         scales: {
           yAxes: [
-            { 
-              ticks: { 
+            {
+              ticks: {
                 fontColor: "white",
                 stepSize: 1,
-              } 
-            }
+              },
+            },
           ],
           xAxes: [
             {
