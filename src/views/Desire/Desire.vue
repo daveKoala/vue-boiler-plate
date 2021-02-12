@@ -17,17 +17,18 @@
         }}</v-btn>
       </v-card-actions>
       <Progress v-if="showProgress" transition="scroll-y-transition" />
-      <v-card-text v-html="$loremIpsum().generateParagraphs(1)"> </v-card-text>
-      <v-card-text
-        ><iframe
+      <v-card-text>
+        {{ $loremIpsum().generateParagraphs(1) }}
+        <iframe
           width="275px"
           src="https://www.youtube.com/embed/QJhrZsN43Lo"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        ></iframe
-      ></v-card-text>
-      <v-card-text v-html="$loremIpsum().generateParagraphs(2)"> </v-card-text>
+          class="float-md-left mr-2"
+        ></iframe>
+        {{ $loremIpsum().generateParagraphs(3) }}</v-card-text
+      >
     </v-card>
   </v-container>
 </template>

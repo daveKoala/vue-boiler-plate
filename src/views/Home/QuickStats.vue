@@ -64,7 +64,14 @@ export default Vue.extend({
           },
         },
         scales: {
-          yAxes: [{ ticks: { fontColor: "white" } }],
+          yAxes: [
+            { 
+              ticks: { 
+                fontColor: "white",
+                stepSize: 1,
+              } 
+            }
+          ],
           xAxes: [
             {
               ticks: {

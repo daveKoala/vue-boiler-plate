@@ -49,7 +49,7 @@ export default Vue.extend({
     options(): ChartOptions {
       return {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         legend: {
           display: false,
         },

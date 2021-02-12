@@ -5,8 +5,6 @@ export interface ContentBase {
 }
 
 export interface Card extends ContentBase {
-  // src: string;
-  // title: string;
   flex: number;
   read: string | null;
   bookmarked: boolean;
@@ -21,12 +19,9 @@ export interface Skill extends ContentBase {
   blurb: string;
   content: string;
   bookmarked: boolean;
-  // src?: string;
 }
 
 export interface Desire extends ContentBase {
-  id: string;
-  // title: string;
   body: string;
   rating: number;
   selected: boolean;
