@@ -7,6 +7,14 @@
         <knowledge-item :card="card" hideActions />
         <v-divider></v-divider>
       </v-col>
+      <v-col
+        cols="12"
+        v-for="(desire, index) in desires"
+        :key="`desire-${index}`"
+      >
+        <knowledge-item :card="desire" hideActions routeName="desireContent" />
+        <v-divider></v-divider>
+      </v-col>
     </v-row>
     <quick-stats />
   </v-container>
@@ -19,7 +27,7 @@ import SquareNavigation from "@/components/SquareNavigation.vue";
 import KnowledgeItem from "@/components/Knowledge.item.vue";
 import QuickStats from "@/views/Home/QuickStats.vue";
 import Alerts from "@/views/Home/Alerts.vue";
-import { Card } from "@/interfaces";
+import { Card, Desire } from "@/interfaces";
 
 export interface SkillData {
   labels: string[];
@@ -37,6 +45,9 @@ export default Vue.extend({
   computed: {
     cards(): Card[] {
       return this.$store.getters["Content/bookmarked"];
+    },
+    desires(): Desire[] {
+      return this.$store.getters["Desire/myDesires"];
     },
   },
   created() {

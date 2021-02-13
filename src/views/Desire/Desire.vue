@@ -12,7 +12,7 @@
       <v-card-actions>
         <go-back x-small />
         <v-spacer></v-spacer>
-        <v-btn @click="showProgress = !showProgress" text>{{
+        <v-btn @click="showProgress = !showProgress" text x-small>{{
           !showProgress ? "Progress" : "Hide"
         }}</v-btn>
       </v-card-actions>
@@ -46,7 +46,7 @@ export default Vue.extend({
     this.$emit("update:layout", BasicLayout);
   },
   data: () => ({
-    showProgress: true,
+    showProgress: false,
   }),
   computed: {
     desire(): Desire {

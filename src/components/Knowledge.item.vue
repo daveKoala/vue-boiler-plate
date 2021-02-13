@@ -32,13 +32,14 @@
 <script lang="ts">
 import Vue from "vue";
 import Share from "@/components/Share.vue";
-import { Card } from "@/interfaces";
+import { Card, Desire } from "@/interfaces";
 export default Vue.extend({
-  name: "Toolkit",
+  name: "KnowledgeListItem",
   components: { Share },
   props: {
-    card: { type: Object as () => Card, required: true },
+    card: { type: Object as () => Card | Desire, required: true },
     hideActions: { type: Boolean, default: false },
+    routeName: { type: String, default: "content" },
   },
   data: () => ({
     textSizeClass: "caption",
@@ -52,7 +53,7 @@ export default Vue.extend({
   },
   methods: {
     goTo(): void {
-      this.$router.push({ name: "content", params: { id: this.card.id } });
+      this.$router.push({ name: this.routeName, params: { id: this.card.id } });
     },
     more(): void {
       console.log("more", this.card.name);
