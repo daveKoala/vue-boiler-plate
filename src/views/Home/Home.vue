@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-   <install-banner />
+    <install-banner />
     <square-navigation :names="['checkIn', 'toolkit', 'desires']" />
     <alerts />
     <v-row dense no-gutters justify="space-between">
@@ -29,7 +29,7 @@ import KnowledgeItem from "@/components/Knowledge.item.vue";
 import QuickStats from "@/views/Home/QuickStats.vue";
 import Alerts from "@/views/Home/Alerts.vue";
 import { Card, Desire } from "@/interfaces";
-import InstallBanner from "./InstallBanner.vue";
+import InstallBanner from "@/components/InstallPrompts/InstallBanner.vue";
 
 export interface SkillData {
   labels: string[];

@@ -1,19 +1,4 @@
-<template>
-  <div>
-    <v-banner v-if="deferredPrompt" color="info" dark class="text-left">
-      You can install this site as an app on your phone. It takes up hardly any
-      space and works off line too
-
-      <template v-slot:actions>
-        <v-btn text @click="dismiss">Dismiss</v-btn>
-        <v-btn text @click="install">Install</v-btn>
-      </template>
-    </v-banner>
-  </div>
-</template>
-
-<script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 import Cookies from "js-cookie";
 
 interface Data {
@@ -21,8 +6,7 @@ interface Data {
   days: number;
 }
 
-export default Vue.extend({
-  name: "InstallBanner" as string,
+export const installPromptsMixins = Vue.extend({
   data: (): Data => ({
     deferredPrompt: null,
     days: 15,
@@ -52,6 +36,3 @@ export default Vue.extend({
     });
   },
 });
-</script>
-
-<style lang="scss" scoped></style>

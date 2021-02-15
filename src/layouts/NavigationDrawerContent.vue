@@ -28,13 +28,23 @@
         <v-list-item-title>{{ meta.displayName }}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
+
+    <v-divider></v-divider>
+
+    <v-list-item>
+      <v-list-item-content>
+        <install-list-item />
+      </v-list-item-content>
+    </v-list-item>
   </v-list>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import InstallListItem from "@/components/InstallPrompts/InstallListItem.vue";
 export default Vue.extend({
   name: "NavigationDrawerContent",
+  components: { InstallListItem },
   computed: {
     items(): unknown {
       return this.$router.options.routes?.filter((route) => route?.meta?.icon);
