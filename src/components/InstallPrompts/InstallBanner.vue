@@ -5,8 +5,8 @@
       space and works off line too
 
       <template v-slot:actions>
-        <v-btn text outline @click="dismiss">Dismiss</v-btn>
-        <v-btn text outline @click="install">Install</v-btn>
+        <v-btn text outlined @click="dismiss">Dismiss</v-btn>
+        <v-btn text outlined @click="install">Install</v-btn>
       </template>
     </v-banner>
   </div>
