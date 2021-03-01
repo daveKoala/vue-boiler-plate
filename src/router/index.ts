@@ -137,6 +137,16 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "checkIn" */ "../views/Library/Library.vue"),
   },
   {
+    path: "/axios-retry",
+    name: "axios",
+    meta: {
+      icon: "mdi-alarm-check",
+      displayName: "Axios Retry",
+    } as RouteMetaData,
+    component: () =>
+      import(/* webpackChunkName: "axiosRetry" */ "../views/AxiosRetry.vue"),
+  },
+  {
     path: "/*",
     name: "404",
     component: Home,

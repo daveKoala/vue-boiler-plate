@@ -34,7 +34,7 @@
           >Reset alerts</v-list-item-content
         >
         <v-list-item-action>
-          <v-btn v-on:click="resetAlerts" x-small color="primary">Clear</v-btn>
+          <v-btn v-on:click="resetAlerts" x-small color="primary">Reset</v-btn>
         </v-list-item-action>
       </v-list-item>
       <v-divider></v-divider>

@@ -32,6 +32,9 @@
         >Clear history</v-btn
       >
     </v-card>
+    <v-card>
+      {{ users }}
+    </v-card>
   </v-container>
 </template>
 
@@ -40,14 +43,21 @@ import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
 import { QrcodeStream } from "vue-qrcode-reader";
 
+interface Data {
+  users: null | unknown;
+}
+
 export default Vue.extend({
   name: "QRScanner" as string,
   components: { QrcodeStream },
   created() {
     this.$emit("update:layout", BasicLayout);
   },
+  data: (): Data => ({
+    users: null,
+  }),
   computed: {
-    qrHistory() {
+    qrHistory(): unknown {
       return this.$store.getters["History/QRHistory"];
     },
   },
