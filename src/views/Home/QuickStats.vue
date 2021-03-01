@@ -43,17 +43,17 @@ export default Vue.extend({
           {
             label: "Skills",
             ...bg(i++),
-            data: [3, 4, 1, 2, 4, 5],
+            data: [3, 1, 2, 4, 5, 6],
           },
           {
             label: "Desires",
             ...bg(i++),
-            data: [5, 2, 3, 2, 4, 4],
+            data: [5, 2, 3, 2, 4, 6],
           },
           {
             label: "Knowledge",
             ...bg(i++),
-            data: [2, 4, 7, 11],
+            data: [2, 4, 7, 8],
           },
         ],
       };
