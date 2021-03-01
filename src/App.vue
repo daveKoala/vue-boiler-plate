@@ -42,3 +42,10 @@ export default Vue.extend({
 //   background-color: $AppBackgroundColor;
 // }
 </style>
+
+<style>
+.v-card__text,
+.v-card__title {
+  word-break: normal; /* maybe !important  */
+}
+</style>

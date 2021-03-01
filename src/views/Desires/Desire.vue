@@ -52,8 +52,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.v-card__text,
-.v-card__title {
-  word-break: normal; /* maybe !important  */
-}
+// .v-card__text,
+// .v-card__title {
+//   word-break: normal; /* maybe !important  */
+// }
 </style>
