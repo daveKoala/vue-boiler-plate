@@ -8,7 +8,7 @@
 
     <v-card-title v-html="desire.name"></v-card-title>
     <v-card-subtitle>
-      <desire-selector-content />
+      <desire-selector-content :desire="desire" />
     </v-card-subtitle>
 
     <v-card-actions>
