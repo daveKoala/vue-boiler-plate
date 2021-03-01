@@ -33,8 +33,7 @@ const state: DesiresState = {
         id: "3a",
         name: "Team member(s) life outside work effecting their performance",
         body: "xxx xxxxx xxxxxx x x x x x",
-        src:
-          "https://robohash.org/life%20outside%20work%20effecting%20their%20performance.png",
+        src: "https://robohash.org/elephant.png",
         rating: 0,
         selected: false,
         review: [],
@@ -43,7 +42,7 @@ const state: DesiresState = {
         id: "4a",
         name: "Building trust",
         body: "xxx xxxxx xxxxxx x x x x x",
-        src: "https://robohash.org/Building%20trust.png",
+        src: "https://robohash.org/cows.png",
         rating: 0,
         selected: true,
         review: [],
