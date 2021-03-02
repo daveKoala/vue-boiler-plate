@@ -9,38 +9,40 @@
       />
       <v-card-text class="text-justify white--text">
         <p>
-          The model above describes the influences on behavior changes found at
-          the intersection of the 3 circles. Knowledge, skill and desire are
-          three factors that bring about human habits. Habits that are lived.
+          The model above describes the influences on behavior. Behavior is
+          found at the intersection of the 3 circles. Knowledge, skills and
+          desires are three factors that bring about human habits.
         </p>
 
         <h2>Begin</h2>
         <p>
-          Before you begin you first need to know where you are going. Your
-          organisation has selected areas were they would like to address within
-          the organisation. You are given the option to select how you are going
-          to achieve this in ways that are relevant to you and your own desires.
+          Before starting a journey you first need to know where you are going.
+          Your organisation has selected areas which they would like to offer
+          assiatnace within the organisation. You are given the option to select
+          those that you feel are of benefit and relevance to your current and
+          future roles.
         </p>
         <p>
-          Understanding your desires and how they align with your organisation's
-          we wont waste time, we allow you to keep focused and give you the
-          tools and support to succeed
+          By understanding your desires and how they align with your
+          organisation's needs we allow you to keep focused and give you the
+          tools and support to succeed.
         </p>
 
         <h2>Supporting you</h2>
         <p>
-          Your desires allow us to support you in growing your knowledge and
-          skills. Checking in regularly and recording your experience and
-          progress will help us focus on your needs
+          Knowing your desires allow us offer support in increasing your
+          knowledge and skills. Checking in regularly and recording your
+          experience and progress will help keep focus and allow us to taylor
+          content to your needs.
         </p>
         <p>
-          The goal is not unconscious habits as that would be impossible is a
-          short space of time, instead I want to equip users with tools that if
-          practiced and reflected upon would begin to embed positive habits.
+          Developing long term unconscious habits is impossible given the
+          limited time; instead let us give you the knowledge and skill that if
+          practiced and reflected upon will soon begin to embed positive habits.
         </p>
         <h2>Skills</h2>
         <p>
-          A skill is something you practice and as you practice and reflect your
+          A skill is something you practice, as you practice and reflect your
           competence will increase. Each skill is given a suggested number or
           practices to aim for during your training. You will see a progress bar
           for each skill along with your average rating and total number of
@@ -64,6 +66,21 @@
         <p>
           You will be prompted to check in via, notifications and alerts on the
           home page.
+        </p>
+
+        <h2>Your cohort</h2>
+        <p>You can see the progress of the others in your cohort</p>
+
+        <h2>New content</h2>
+        <p>
+          You are busy, you don't have time to plough through countless articles
+          and videos. We will try and keep the suggested materials sharp and to
+          the point. The app will alert you to related new content and any pre
+          workshop tasks.
+        </p>
+        <p>
+          Articles and videos will have additional further reading links, links
+          to share and links for reading via ebooks
         </p>
       </v-card-text>
     </v-card>
