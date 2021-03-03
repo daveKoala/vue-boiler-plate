@@ -137,6 +137,18 @@ const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "checkIn" */ "../views/Library/Library.vue"),
   },
   {
+    path: "/calendar",
+    name: "calendar",
+    meta: {
+      icon: "mdi-calendar-month",
+      displayName: "Calendar",
+    } as RouteMetaData,
+    component: () =>
+      import(
+        /* webpackChunkName: "calendar" */ "../views/Calendar/Calendar.vue"
+      ),
+  },
+  {
     path: "/axios-retry",
     name: "axios",
     meta: {
