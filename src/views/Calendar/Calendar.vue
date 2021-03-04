@@ -82,10 +82,23 @@ export default Vue.extend({
 
       document.body.removeChild(element);
     },
+    mkDateArray(date: Date): ics.DateArray {
+      const response = date
+        .toISOString()
+        .split(/(?:-|T|:)+/)
+        .filter((chunk) => chunk.length > 1 && !chunk.includes("Z"))
+        .map((str: string) => {
+          return parseInt(str);
+        }) as ics.DateArray;
+      return response;
+    },
     createEvent(): string {
+      const today = new Date();
+      const date = new Date();
+      date.setDate(today.getDate() + 10);
       const event = {
         title: "Lunch",
-        start: [2021, 4, 15, 12, 15],
+        start: this.mkDateArray(date),
         duration: { minutes: 45 },
         // start: [2018, 5, 30, 6, 30],
         // duration: { hours: 6, minutes: 30 },
