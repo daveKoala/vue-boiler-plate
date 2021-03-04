@@ -44,7 +44,10 @@
         Office365
       </v-btn>
     </ICS>
-    <v-btn @click="download">Click me</v-btn>
+    <v-btn @click="download" class="ma-2 warning">
+      <v-icon left dark>mdi-sort-calendar-ascending</v-icon>
+      Download ICS 
+    </v-btn>
   </v-container>
 </template>
 
@@ -61,7 +64,7 @@ export default Vue.extend({
   },
   components: { ICS },
   data: () => ({
-    filename: "hello.ics",
+    filename: "event.ics",
     text: "Hello world",
   }),
   computed: {
