@@ -37,17 +37,27 @@ const routes: Array<RouteConfig> = [
       displayName: "Journey",
     } as RouteMetaData,
     component: () =>
-      import(/* webpackChunkName: "journey" */ "../views/Journey.vue"),
+      import(/* webpackChunkName: "journey" */ "../views/Journey/Journey.vue"),
   },
   {
-    path: "/settings",
-    name: "Settings",
+    path: "/check-in",
+    name: "checkIn",
     meta: {
-      icon: "mdi-cog-outline",
-      displayName: "Settings",
+      icon: "mdi-alarm-check",
+      displayName: "Check In",
     } as RouteMetaData,
     component: () =>
-      import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
+      import(/* webpackChunkName: "checkIn" */ "../views/CheckIn/CheckIn.vue"),
+  },
+  {
+    path: "/library",
+    name: "library",
+    meta: {
+      icon: "mdi-alarm-check",
+      displayName: "Library",
+    } as RouteMetaData,
+    component: () =>
+      import(/* webpackChunkName: "checkIn" */ "../views/Library/Library.vue"),
   },
   {
     path: "/desires",
@@ -58,6 +68,38 @@ const routes: Array<RouteConfig> = [
     } as RouteMetaData,
     component: () =>
       import(/* webpackChunkName: "desires" */ "../views/Desires/Desires.vue"),
+  },
+  {
+    path: "/tool-kit",
+    name: "toolkit",
+    meta: {
+      icon: "mdi-hammer-wrench",
+      displayName: "Toolkit",
+    } as RouteMetaData,
+    component: () =>
+      import(/* webpackChunkName: "toolkit" */ "../views/Toolkit/Toolkit.vue"),
+  },
+  {
+    path: "/calendar",
+    name: "calendar",
+    meta: {
+      icon: "mdi-calendar-month",
+      displayName: "Calendar",
+    } as RouteMetaData,
+    component: () =>
+      import(
+        /* webpackChunkName: "calendar" */ "../views/Calendar/Calendar.vue"
+      ),
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+    meta: {
+      icon: "mdi-cog-outline",
+      displayName: "Settings",
+    } as RouteMetaData,
+    component: () =>
+      import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
   },
   {
     path: "/funky",
@@ -78,6 +120,16 @@ const routes: Array<RouteConfig> = [
     } as RouteMetaData,
     component: () =>
       import(/* webpackChunkName: "qrscanner" */ "../views/QRScanner.vue"),
+  },
+  {
+    path: "/azure",
+    name: "azure",
+    meta: {
+      icon: "mdi-microsoft-azure",
+      displayName: "Azure",
+    } as RouteMetaData,
+    component: () =>
+      import(/* webpackChunkName: "azure" */ "../views/Azure/Azure.vue"),
   },
   {
     path: "/content/:id",
@@ -105,48 +157,6 @@ const routes: Array<RouteConfig> = [
     },
     component: () =>
       import(/* webpackChunkName: "desire" */ "../views/Desire/Desire.vue"),
-  },
-  {
-    path: "/tool-kit",
-    name: "toolkit",
-    meta: {
-      icon: "mdi-hammer-wrench",
-      displayName: "Toolkit",
-    } as RouteMetaData,
-    component: () =>
-      import(/* webpackChunkName: "toolkit" */ "../views/Toolkit/Toolkit.vue"),
-  },
-  {
-    path: "/check-in",
-    name: "checkIn",
-    meta: {
-      icon: "mdi-alarm-check",
-      displayName: "Check In",
-    } as RouteMetaData,
-    component: () =>
-      import(/* webpackChunkName: "checkIn" */ "../views/CheckIn/CheckIn.vue"),
-  },
-  {
-    path: "/library",
-    name: "library",
-    meta: {
-      icon: "mdi-alarm-check",
-      displayName: "Library",
-    } as RouteMetaData,
-    component: () =>
-      import(/* webpackChunkName: "checkIn" */ "../views/Library/Library.vue"),
-  },
-  {
-    path: "/calendar",
-    name: "calendar",
-    meta: {
-      icon: "mdi-calendar-month",
-      displayName: "Calendar",
-    } as RouteMetaData,
-    component: () =>
-      import(
-        /* webpackChunkName: "calendar" */ "../views/Calendar/Calendar.vue"
-      ),
   },
   {
     path: "/axios-retry",

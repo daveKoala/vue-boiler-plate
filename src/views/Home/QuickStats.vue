@@ -53,7 +53,7 @@ export default Vue.extend({
           {
             label: "Knowledge",
             ...bg(i++),
-            data: [2, 4, 7, 8],
+            data: [2, 4, 7, 8, 8.5, 9],
           },
         ],
       };

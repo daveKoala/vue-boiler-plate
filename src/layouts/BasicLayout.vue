@@ -19,7 +19,7 @@
     </v-navigation-drawer>
 
     <v-main class="">
-      <v-sheet class="mx-auto" max-width="1280" color="transparent">
+      <v-sheet class="mx-auto" color="transparent">
         <slot>
           <p>Put content here</p>
         </slot>

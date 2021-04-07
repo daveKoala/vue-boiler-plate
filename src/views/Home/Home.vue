@@ -17,6 +17,7 @@
         <v-divider></v-divider>
       </v-col>
     </v-row>
+    <span style="color: white">My progress</span>
     <quick-stats />
   </v-container>
 </template>

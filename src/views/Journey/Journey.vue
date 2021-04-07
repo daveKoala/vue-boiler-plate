@@ -121,11 +121,54 @@
 <script lang="ts">
 import Vue from "vue";
 import BasicLayout from "@/layouts/BasicLayout.vue";
+import { EventAttributes } from "ics";
+
+export interface Activity {
+  id: string;
+  name: string;
+  body: string;
+  type: string;
+  event: EventAttributes | null;
+}
+
+export interface Module {
+  id: string;
+  name: string;
+  body: string;
+  activities: Activity[];
+}
+
+export interface Journey {
+  id: string;
+  name: string;
+  body: string;
+  modules: Module[];
+}
 export default Vue.extend({
   name: "Journey" as string,
   components: {},
   created() {
     this.$emit("update:layout", BasicLayout);
+  },
+  computed: {
+    journey(): Journey {
+      return {
+        id: "j1",
+        name: "",
+        body: "",
+        modules: [
+          {
+            id: "m0",
+            name: "Module 0",
+            body: "",
+            activities: [{ id: "", name: "", body: "", event: null, type: "" }],
+          },
+          { id: "m1", name: "Module 1", body: "", activities: [] },
+          { id: "m2", name: "Module 2", body: "", activities: [] },
+          { id: "m3", name: "Module 3", body: "", activities: [] },
+        ],
+      };
+    },
   },
 });
 </script>
